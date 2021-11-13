@@ -60,3 +60,33 @@ nav > span > a{
 	font-size: 12px;
 	color: white;
 }
+article.pronostico > p{
+	margin: 0;
+    color: white;
+	line-height: 16px;
+}
+p.pronosticoTitle {
+    letter-spacing: 5.3px;
+}
+p.pronosticoAnimalito {
+    letter-spacing: 3.25px;
+}
+p.pronosticoSuerte {
+    letter-spacing: 2.2px;
+}
+.birthday{
+	font-size: 9.75px;
+    color: white;
+}
+.pronosticoImgBorder{
+	width: 200px;
+    height: 200px;
+    border: solid 1px white;
+    border-radius: 50%;
+}
+.pronosticosDiv{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}

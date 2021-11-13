@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Slick CSS -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/main.css" type="text/css">
@@ -78,8 +78,22 @@
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/08.png" class="img-fluid">06:00 PM</div>
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/09.png" class="img-fluid">07:00 PM</div>
         </div>
-        <div class="col-lg-4">
-          <img src="assets/img/ReticulaConTexto_Pronósticos_LG_HD.png" alt="Pronosticos" class="img-fluid">
+        <div class="col-lg-4 row d-flex">
+          <article class="col-sm-6 pronostico">
+            <p class="pronosticoTitle">PRONOSTICA</p>
+            <p class="pronosticoAnimalito">TU ANIMALITO</p>
+            <p class="pronosticoSuerte">MUCHA SUERTE</p>
+          </article>
+          <div class="col-sm-6 px-0 text-end">
+            <p class="birthday">CUMPLEA&Ntilde;OS / FECHA IMPORTANTE</p>
+          </div>
+          <div class="col-sm-12 pronosticosDiv">
+            <span class="pronosticoImgBorder"></span>
+            <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid">
+            <p class="textWarning">
+              
+            </p>
+          </div>
         </div>
         <div class="col-lg-4">
           <img src="assets/img/Texto_TarjetaDigital_LG_HD.png" alt="TarjetaDigital" class="img-fluid">
@@ -88,13 +102,13 @@
     </section>
 
     <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="assets/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <!-- Slick JS -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="assets/js/slick.min.js"></script>
 
     <!-- SCRIPTS -->
     <script type="text/javascript" src="assets/js/scripts.js"></script>

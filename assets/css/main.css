@@ -1,0 +1,62 @@
+html,body{
+	background: url(../img/bk.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover
+}
+nav{
+	display: flex;
+    justify-content: space-around
+}
+nav > span {
+	color: white;
+    padding: 0 9px;
+    width: 100%;
+}
+nav > span > a{
+	text-decoration: none;
+	color: white;
+	font-size: 15px;
+}
+/* .menuItem{
+	border-left: solid 1px white;
+	border-right: solid 1px white;
+} */
+.slogan{
+	bottom: 20px;
+}
+.itemResults{
+	width: 120px !important;
+	/* transition: 0.5s ease-in-out;
+	border-radius: 50%; */
+	text-align: center;
+	color: white;
+	/* margin: 20px 0; */
+}
+/* .itemResults:hover > img {
+	background: #00f2ff;
+	box-shadow: 0 0 15px #00f2ff;
+	border-radius: 50%;
+} */
+.slick-slider, .slick-track, .slick-list{
+	height: 150px;
+}
+.carouselAnimales{
+	height: 150px;
+}
+.itemsResultsDay{
+	color: white;
+	font-size: 12px;
+	text-align: center;
+	font-weight: 900;
+	margin: 12px 0px;
+}
+.resultsText{
+	font-size: 20px;
+	color: white;
+}
+.dateResultsFilter{
+	font-size: 12px;
+	color: white;
+}

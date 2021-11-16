@@ -90,3 +90,8 @@ p.pronosticoSuerte {
     align-items: center;
     flex-direction: column;
 }
+.textWarning{
+	font-size: 10px;
+	text-align: justify;
+	color: white;
+}

@@ -80,7 +80,7 @@
     <!-- Carrusel Resultados -->
 
     <!-- Seccion 3 -->
-    <section class="container">
+    <section class="container my-5">
       <div class="row">
         <div class="col-lg-4 row">
           <div class="col-sm-6"><span class="resultsText">RESULTADOS</span></div>
@@ -138,12 +138,31 @@
               </div>
               <div class="col-sm-12">
                 <img src="assets/img/LineaTituloInferior_LA_HD.png" class="img-fluid" alt="">
-                <p>TE GUSTARIA RECIBIR LOS RESULTADOS VIA WHATSAPP AL INSTANTE LAS 24/7?</p>
-                <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" class="img-fluid" alt="">
+                <p class="textRegister">TE GUSTARIA RECIBIR LOS RESULTADOS VIA WHATSAPP AL INSTANTE LAS 24/7?</p>
+                <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" class="img-fluid float-end" alt="">
               </div>
             </section>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="container my-5">
+      <div class="row">
+        <article class="col-lg-4">
+          <header>
+            <p>
+              CONTACTANOS
+            </p>
+          </header>
+        </article>
+        <article class="col-lg-4">
+2
+        </article>
+        <article class="col-lg-4">
+3
+        </article>
       </div>
     </section>
 

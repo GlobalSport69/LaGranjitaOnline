@@ -111,3 +111,14 @@ p.pronosticoSuerte {
 .btnSN {
     height: 40px;
 }
+.textRegister {
+    font-size: 10px;
+    color: white;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+.qr-img{
+	border: solid 2px aqua;
+	border-radius: 10px;
+	box-shadow: 0 0 5px aqua;
+}

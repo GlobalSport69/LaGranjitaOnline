@@ -122,3 +122,21 @@ p.pronosticoSuerte {
 	border-radius: 10px;
 	box-shadow: 0 0 5px aqua;
 }
+.borderBottomAqua{
+	border-bottom: solid 2px aqua;
+	box-shadow: 0 0 10px cyan;
+}
+
+.slide-arrow {
+	position: absolute;
+	top: 50%;
+	margin-top: -80px;
+  }
+  
+  .prev-arrow {
+	left: -40px;
+  }
+  
+  .next-arrow {
+	right: -40px;
+  }

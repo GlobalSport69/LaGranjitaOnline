@@ -39,7 +39,7 @@
     <header class="container">
       <section class="row">
         <div class="col-lg-3"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
-        <div class="col-lg-6 offset-lg-3 position-relative row p-0">
+        <div class="col-lg-6 offset-lg-3 position-relative row p-0 mb-1">
           <img src="assets/img/SLOGAN_Encabezado_LG_HD.png" alt="Slogan" class="img-fluid position-absolute p-0 slogan">
           <img src="assets/img/MenúContenido_Encabezado_LG_HD.png" alt="Menu" class="img-fluid position-absolute p-0 fixed-bottom">
           <!-- <div class="col-lg-12 position-absolute fixed-bottom p-0">
@@ -54,6 +54,7 @@
         </div>
       </section>
     </header>
+    <div class="borderBottomAqua"></div>
     <!-- Carrusel Resultados -->
     <section class="container my-5">
       <div class="row">
@@ -73,7 +74,7 @@
           </div>
         </div>
         <div class="col-lg-2 d-flex justify-content-center align-items-center">
-          <img src="assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png" alt="Alarma" class="img-fluid w-50">
+          <img src="assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png" alt="Alarma" class="img-fluid">
         </div>
       </div>
     </section>

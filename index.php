@@ -116,33 +116,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <article>
-            <header>
-              <span class="socialNetworkTitle">CADA SEGUNDO CUENTA</span>
-              <img src="assets/img/LineaTituloSuperior_LA_HD.png" class="img-fluid" alt="Barra Inferior">
-            </header>
-            <section class="row">
-              <div class="col-sm-5">
-                <p class="downloadCard">DESCARGA NUESTRA TARJETA DIGITAL</p>
-                <div class="position-relative">
-                  <img src="assets/img/CódigoQR_TarjetaDigital_LG_HD.png" class="img-fluid imgQr" alt="">
-                  <img src="assets/img/VentanaLíneaQR_LA_HD.png" class="img-fluid" alt="">
-                </div>
-                <p class="downloadCard">ESCANEA TU CODIGO</p>
-              </div>
-              <div class="col-sm-6 row">
-                <img src="assets/img/BotónFacebookOFF_TarjetaDigital_LG_HD.png" alt="Facebook Btn" class="img-fluid col-12 btnSN">
-                <img src="assets/img/BotónInstagramOFF_TarjetaDigital_LG_HD.png" alt="Instagram Btn" class="img-fluid col-12 btnSN">
-                <img src="assets/img/BotónTwitterOFF_TarjetaDigital_LG_HD.png" alt="Twitter Btn" class="img-fluid col-12 btnSN">
-                <img src="assets/img/BotónWhatsAppOFF_TarjetaDigital_LG_HD.png" alt="Whatsapp Btn" class="img-fluid col-12 btnSN">
-              </div>
-              <div class="col-sm-12">
-                <img src="assets/img/LineaTituloInferior_LA_HD.png" class="img-fluid" alt="">
-                <p class="textRegister">TE GUSTARIA RECIBIR LOS RESULTADOS VIA WHATSAPP AL INSTANTE LAS 24/7?</p>
-                <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" class="img-fluid float-end" alt="">
-              </div>
-            </section>
-          </article>
+          
         </div>
       </div>
     </section>

@@ -38,7 +38,7 @@
   <body>
     <header class="container">
       <section class="row">
-        <div class="col-lg-3"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid w-50"></div>
+        <div class="col-lg-3"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
         <div class="col-lg-6 offset-lg-3 position-relative row p-0 mb-1">
           <img src="assets/img/SLOGAN_Encabezado_LG_HD.png" alt="Slogan" class="img-fluid position-absolute p-0 slogan">
           <img src="assets/img/MenúContenido_Encabezado_LG_HD.png" alt="Menu" class="img-fluid position-absolute p-0 fixed-bottom">
@@ -74,14 +74,14 @@
           </div>
         </div>
         <div class="col-lg-2 d-flex justify-content-center align-items-center">
-          <img src="assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png" alt="Alarma" class="img-fluid">
+          <img src="assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png" alt="Alarma" class="img-fluid w-50">
         </div>
       </div>
     </section>
     <!-- Carrusel Resultados -->
     <div class="lineAqua"></div>
     <!-- Seccion 3 -->
-    <section class="container d-flex section3">
+    <section class="container my-3 d-flex section3">
       <div class="borderLine"></div>
       <div class="item row">
         <div class="col-sm-6"><span class="resultsText">RESULTADOS</span></div>
@@ -150,7 +150,7 @@
       </div>
       <div class="borderLine"></div>
     </section>
-
+    <div class="lineAqua"></div>
     <!-- Section 4 -->
     <section class="container my-3">
       <div class="row">

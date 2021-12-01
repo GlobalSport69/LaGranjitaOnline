@@ -56,6 +56,11 @@ nav > span > a{
 	text-align: center;
 	font-weight: 900;
 	margin: 12px 0px;
+	padding: 0 5px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .dateResultsFilter{
 	font-size: 12px;
@@ -67,16 +72,16 @@ article.pronostico > p{
 	line-height: 16px;
 }
 p.pronosticoTitle {
-    letter-spacing: 5.3px;
+    letter-spacing: 4.3px;
 }
 p.pronosticoAnimalito {
-    letter-spacing: 3.25px;
+    letter-spacing: 2.45px;
 }
 p.pronosticoSuerte {
-    letter-spacing: 2.2px;
+    letter-spacing: 1.2px;
 }
 .birthday{
-	font-size: 9.75px;
+	font-size: 8px;
     color: white;
 }
 .pronosticoImgBorder{
@@ -102,9 +107,36 @@ p.pronosticoSuerte {
 	letter-spacing: 2px;
 }
 .imgQr{
-	position: absolute;
-	top: 50%; right: 50%;
-	transform: translate(50%,-50%);
+	display: flex;
+    flex-direction: column;
+    flex: 0 0 40%;
+}
+.sectionbtnSN{
+	flex: 0 0 50%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.subsectionQr{
+	display: flex;
+	justify-content: space-around;
+}
+.sectionbtnSN > img{
+	margin: 5px 0;
+	width: 100%;
+	height: 39px;
+}
+.topText{
+	color: white;
+    font-size: 11px;
+    text-align: center;
+	margin-bottom:10px
+}
+.bottomText{
+	color: white;
+    text-align: center;
+    font-size: 11px;
+	margin:10px 0
 }
 .downloadCard {
     font-size: 10px;
@@ -112,9 +144,6 @@ p.pronosticoSuerte {
     text-align: center;
     margin-bottom: 5px;
     letter-spacing: 1px;
-}
-.btnSN {
-    height: 40px;
 }
 .textRegister {
     font-size: 10px;
@@ -126,6 +155,10 @@ p.pronosticoSuerte {
 	border: solid 2px aqua;
 	border-radius: 10px;
 	box-shadow: 0 0 5px aqua;
+}
+.textWhatsapp{
+	color:white;
+	font-size: 11px;
 }
 .slide-arrow {
 	position: absolute;
@@ -154,4 +187,16 @@ p.pronosticoSuerte {
 	width: 0;
 	padding: 0;
 	margin: 0;
+	border-radius: 20px;
+}
+.qr > .title {
+    margin: 0;
+    color: white;
+    font-size: 25px;
+}
+.qr-img{
+    border: 3px solid aqua;
+    border-radius: 10px;
+    box-shadow: 0 0 5px aqua;
+	padding: 1px;
 }

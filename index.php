@@ -38,7 +38,7 @@
   <body>
     <header class="container">
       <section class="row">
-        <div class="col-lg-3"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
+        <div class="col-lg-3"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid w-50"></div>
         <div class="col-lg-6 offset-lg-3 position-relative row p-0 mb-1">
           <img src="assets/img/SLOGAN_Encabezado_LG_HD.png" alt="Slogan" class="img-fluid position-absolute p-0 slogan">
           <img src="assets/img/MenúContenido_Encabezado_LG_HD.png" alt="Menu" class="img-fluid position-absolute p-0 fixed-bottom">
@@ -119,7 +119,35 @@
         </div>
       </div>
       <div class="borderLine"></div>
-      <div class="item row"><h1>QR</h1></div>
+      <div class="item row">
+        <section class="qr">
+          <p class="title">CADA SEGUNDO CUENTA</p>
+          <img src="assets/img/linea_superior.png" alt="Linea Superior" class="img-fluid">
+
+          <div class="subsectionQr d-flex">
+            <div class="imgQr">
+              <span class="topText">
+                DESCARGA NUESTRA TARJETA DIGITAL
+              </span>
+              <img src="assets/img/QR.png" alt="QR Img" class="img-fluid qr-img">
+              <span class="bottomText">
+                ESCANEA TU CODIGO
+              </span>
+            </div>
+            <div class="sectionbtnSN">
+              <img src="assets/img/BotónFacebookOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+              <img src="assets/img/BotónInstagramOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+              <img src="assets/img/BotónTwitterOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+              <img src="assets/img/BotónWhatsAppOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+            </div>
+          </div>
+          <img src="assets/img/linea_inferior.png" alt="Linea Inferior" class="img-fluid">
+          <p class="mb-0 textWhatsapp">TE GUSTARIA RECIBIR TUS RESULTADOS VIA WHATSAPP AL INSTANTE LAS 24/7?</p>
+          <div class="mt-2">
+            <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end">
+          </div>
+        </section>
+      </div>
       <div class="borderLine"></div>
     </section>
 

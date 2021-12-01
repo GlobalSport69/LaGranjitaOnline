@@ -97,7 +97,7 @@ p.pronosticoSuerte {
     flex-direction: column;
 }
 .textWarning{
-	font-size: 10px;
+	font-size: 8px;
 	text-align: justify;
 	color: white;
 }
@@ -118,8 +118,8 @@ p.pronosticoSuerte {
 	flex-direction: column;
 }
 .subsectionQr{
-	display: flex;
 	justify-content: space-around;
+	margin:17px 0
 }
 .sectionbtnSN > img{
 	margin: 5px 0;

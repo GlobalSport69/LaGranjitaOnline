@@ -5,6 +5,11 @@ html,body{
 	-o-background-size: cover;
 	background-size: cover
 }
+.lineAqua{
+	width: 100%;
+    border: solid 1px rgb(0 255 255);
+    box-shadow: 0 0 2px cyan;
+}
 nav{
 	display: flex;
     justify-content: space-around
@@ -122,21 +127,31 @@ p.pronosticoSuerte {
 	border-radius: 10px;
 	box-shadow: 0 0 5px aqua;
 }
-.borderBottomAqua{
-	border-bottom: solid 2px aqua;
-	box-shadow: 0 0 10px cyan;
-}
-
 .slide-arrow {
 	position: absolute;
-	top: 50%;
-	margin-top: -80px;
-  }
-  
-  .prev-arrow {
+    margin-top: -75px;
+    top: 50%;
+}
+
+.prev-arrow {
 	left: -40px;
-  }
-  
-  .next-arrow {
+}
+
+.next-arrow {
 	right: -40px;
-  }
+}
+.section3{
+	flex-flow: row wrap;
+	justify-content: space-around;
+	margin-top: 15px;
+}
+.item{
+	flex:0 0 30%
+}
+.borderLine{
+	border:solid 1px rgb(4 90 110);;
+	box-shadow: 0 0 5px aqua;
+	width: 0;
+	padding: 0;
+	margin: 0;
+}

@@ -54,9 +54,9 @@
         </div>
       </section>
     </header>
-    <div class="borderBottomAqua"></div>
+    <div class="lineAqua"></div>
     <!-- Carrusel Resultados -->
-    <section class="container my-5">
+    <section class="container my-3">
       <div class="row">
         <div class="col-lg-10">
           <div class="carouselAnimales">
@@ -79,12 +79,12 @@
       </div>
     </section>
     <!-- Carrusel Resultados -->
-
+    <div class="lineAqua"></div>
     <!-- Seccion 3 -->
-    <section class="container my-5">
-      <div class="row">
-        <div class="col-lg-4 row">
-          <div class="col-sm-6"><span class="resultsText">RESULTADOS</span></div>
+    <section class="container d-flex section3">
+      <div class="borderLine"></div>
+      <div class="item row">
+        <div class="col-sm-6"><span class="resultsText">RESULTADOS</span></div>
           <div class="col-sm-6 text-end"><span class="dateResultsFilter">FECHA</span></div>
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/0.png" class="img-fluid">09:00 AM</div>
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/00.png" class="img-fluid">10:00 AM</div>
@@ -99,31 +99,32 @@
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/09.png" class="img-fluid">07:00 PM</div>
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/Alarma_OFF_ResultadosVarios_LG_HD.png" class="img-fluid"></div>
         </div>
-        <div class="col-lg-4 row d-flex">
-          <article class="col-sm-6 pronostico">
-            <p class="pronosticoTitle">PRONOSTICA</p>
-            <p class="pronosticoAnimalito">TU ANIMALITO</p>
-            <p class="pronosticoSuerte">MUCHA SUERTE</p>
-          </article>
-          <div class="col-sm-6 px-0 text-end">
-            <p class="birthday">CUMPLEA&Ntilde;OS / FECHA IMPORTANTE</p>
-          </div>
-          <div class="col-sm-12 pronosticosDiv">
-            <span class="pronosticoImgBorder my-3"></span>
-            <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3">
-            <p class="textWarning">
-              ATENCION ESTO ES SOLO UN PRONOSTICO. LA GRANJITA NO SE HACE RESPONSABLE DE LOS RESULTADOS PROPORCIONADOS. LA RULETA ES UN JUEGO 100% DE AZAR. VERIFICADA Y REGULADA POR LAS REGLAS DE ENVITE Y AZAR NACIONALES E INTERNACIONALES.
-            </p>
-          </div>
+      </div>
+      <div class="borderLine"></div>
+      <div class="item row d-flex">
+        <article class="col-sm-6 pronostico">
+          <p class="pronosticoTitle">PRONOSTICA</p>
+          <p class="pronosticoAnimalito">TU ANIMALITO</p>
+          <p class="pronosticoSuerte">MUCHA SUERTE</p>
+        </article>
+        <div class="col-sm-6 px-0 text-end">
+          <p class="birthday">CUMPLEA&Ntilde;OS / FECHA IMPORTANTE</p>
         </div>
-        <div class="col-lg-4">
-          
+        <div class="col-sm-12 pronosticosDiv">
+          <span class="pronosticoImgBorder my-3"></span>
+          <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3">
+          <p class="textWarning">
+              ATENCION ESTO ES SOLO UN PRONOSTICO. LA GRANJITA NO SE HACE RESPONSABLE DE LOS RESULTADOS PROPORCIONADOS. LA RULETA ES UN JUEGO 100% DE AZAR. VERIFICADA Y REGULADA POR LAS REGLAS DE ENVITE Y AZAR NACIONALES E INTERNACIONALES.
+          </p>
         </div>
       </div>
+      <div class="borderLine"></div>
+      <div class="item row"><h1>QR</h1></div>
+      <div class="borderLine"></div>
     </section>
 
     <!-- Section 4 -->
-    <section class="container my-5">
+    <section class="container my-3">
       <div class="row">
         <article class="col-lg-4">
           <header>

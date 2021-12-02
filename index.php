@@ -22,7 +22,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
+    <script src="https://kit.fontawesome.com/cb9a6efe1a.js" crossorigin="anonymous"></script>
 
     <!-- Bootstrap CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -152,22 +152,59 @@
     </section>
     <div class="lineAqua"></div>
     <!-- Section 4 -->
-    <section class="container my-3">
-      <div class="row">
-        <article class="col-lg-4">
-          <header>
+    <section class="container my-3 d-flex section3">
+      <div class="borderLine"></div>
+      <article class="item">
+        <header>
+          <p class="titleContact">
+            CONTACTANOS
+          </p>
+        </header>
+        <form action="#">
+          <section class="formContact">
+          <div class="mb-3">
+            <label for="name" class="form-label formLabel">Nombre & Apellido / Compa&ntilde;ia</label>
+            <input type="text" class="form-control formInput" id="name" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label formLabel">Correo Electronico</label>
+            <input type="email" class="form-control formInput" id="email" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="msg" class="form-label formLabel">Mensaje</label>
+            <textarea name="msg" cols="30" rows="5" class="form-control formInput" id="msg"></textarea>
+          </div>
+          </section>
+        </form>
+        <div class="d-flex">
+          <div class="infoContact">
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter-square"></i>
+            <span>
+              @lagranjitaofic
+            </span>
             <p>
-              CONTACTANOS
+              <i class="fab fa-whatsapp-square"></i>
+              <span>
+                +58 (424) 823-6730
+              </span>
             </p>
-          </header>
-        </article>
-        <article class="col-lg-4">
+          </div>
+          <div class="miniQr">
+            <img src="assets/img/QR.png" alt="" class="img-fluid">
+          </div>
+        </div>
+      </article>
+      <div class="borderLine"></div>
+      <article class="item">
 2
-        </article>
-        <article class="col-lg-4">
+      </article>
+      <div class="borderLine"></div>
+      <article class="item">
 3
-        </article>
-      </div>
+      </article>
+      <div class="borderLine"></div>
     </section>
 
     <!-- Jquery -->

@@ -81,7 +81,7 @@ p.pronosticoSuerte {
     letter-spacing: 1.2px;
 }
 .birthday{
-	font-size: 8px;
+	font-size: 8.5px;
     color: white;
 }
 .pronosticoImgBorder{
@@ -97,7 +97,7 @@ p.pronosticoSuerte {
     flex-direction: column;
 }
 .textWarning{
-	font-size: 8px;
+	font-size: 8.5px;
 	text-align: justify;
 	color: white;
 }
@@ -199,4 +199,54 @@ p.pronosticoSuerte {
     border-radius: 10px;
     box-shadow: 0 0 5px aqua;
 	padding: 1px;
+}
+.titleContact{
+	color: rgb(0 255 255);
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.formInput{
+	background: rgb(0 0 0 / 0%);
+    border: solid 1.25px rgb(0 255 255);
+    border-radius: 10px;
+    color: rgb(255 255 255);
+}
+.formLabel{
+	color: rgb(255 255 255);
+    letter-spacing: 1px;
+}
+.form-control:focus {
+    color: rgb(255 255 255) !important;
+    background-color: rgb(0 0 0 / 0%) !important;
+    border-color: rgb(0 255 255) !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.25rem rgb(5 101 118) !important;
+}
+.infoContact > i {
+    color: rgb(255 255 255);
+    font-size: 2rem;
+    margin: 0 2px;
+}
+.infoContact > p > i {
+    color: rgb(255 255 255);
+    font-size: 2rem;
+    margin: 0 2px;
+}
+.infoContact > span {
+    color: rgb(255 255 255);
+    font-size: 1.15rem;
+    letter-spacing: 0.75px;
+}
+.infoContact > P > span {
+    color: rgb(255 255 255);
+    font-size: 1.45rem;
+    margin: 0 2px;
+}
+.infoContact{
+	flex:0 0 80%
+}
+.miniQr{
+	flex: 0 0 20%;
 }

@@ -202,11 +202,36 @@
       </article>
       <div class="borderLine"></div>
       <article class="item">
-3
+        <header>
+          <p class="titleRegister">
+            ¿TE GUSTARIA <span class="work">TRABAJAR</span> CON <span class="us">NOSOTROS</span>?
+          </p>
+        </header>
+        <form action="#">
+          <section class="formContact">
+          <div class="mb-3">
+            <label for="name" class="form-label formLabel">Nombre & Apellido / Compa&ntilde;ia</label>
+            <input type="text" class="form-control formInput" id="name" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="dni" class="form-label formLabel">Cedula de Identidad / RIF</label>
+            <input type="text" class="form-control formInput" id="dni" name="dni">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label formLabel">N° telefonico</label>
+            <input type="text" class="form-control formInput" id="phone" name="phone">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label formLabel">Correo Electronico</label>
+            <input type="text" class="form-control formInput" id="email" name="email">
+          </div>
+          <div class="mb3"><img src="assets/img/BotónOFF_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid w-100"></div>
+          </section>
+        </form>
       </article>
       <div class="borderLine"></div>
     </section>
-
+    <div class="lineAqua"></div>
     <!-- Jquery -->
     <script src="assets/js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 

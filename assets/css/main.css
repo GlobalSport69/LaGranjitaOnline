@@ -263,3 +263,20 @@ p.titleRegister {
 .titleRegister > span.us {
     color: rgb(0 255 255);
 }
+.footer{
+	flex:0 0 50%
+}
+.copyright>p {
+    margin: 0;
+    color: rgb(255 255 255);
+    font-size: 16px;
+}
+
+.copyright {
+    padding: 25px;
+}
+.imgFooter {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}

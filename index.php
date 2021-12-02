@@ -198,7 +198,7 @@
       </article>
       <div class="borderLine"></div>
       <article class="item">
-2
+        2
       </article>
       <div class="borderLine"></div>
       <article class="item">
@@ -232,6 +232,21 @@
       <div class="borderLine"></div>
     </section>
     <div class="lineAqua"></div>
+    <footer class="container my-3">
+      <section class="section3 d-flex">
+        <div class="footer copyright">
+          <p>© 2017. Todos los derechos reservados.</p>
+          <p>Operadora GLOBAL Sport 69, C.A.</p>
+          <p>CI/RIF N° J-40955411-2</p>
+          <p>Registro Nacional de Loteria. N°: 05-0-000016-2021</p>
+        </div>
+        <div class="footer d-flex">
+          <div class="imgFooter"><img src="assets/img/Logo_LaGranjita_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
+          <div class="imgFooter"><img src="assets/img/Logo_LoteriaDeMargarita_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
+          <div class="imgFooter"><img src="assets/img/Logo_Conalot_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
+        </div>
+      </section>
+    </footer>
     <!-- Jquery -->
     <script src="assets/js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 

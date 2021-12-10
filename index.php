@@ -40,8 +40,7 @@
       <section class="row">
         <div class="col-lg-3"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
         <div class="col-lg-6 offset-lg-3 position-relative row p-0 mb-1">
-          <img src="assets/img/SLOGAN_Encabezado_LG_HD.png" alt="Slogan" class="img-fluid position-absolute p-0 slogan">
-          <img src="assets/img/MenúContenido_Encabezado_LG_HD.png" alt="Menu" class="img-fluid position-absolute p-0 fixed-bottom">
+          <span class="slogan">El Hogar de los ANIMALITOS</span>
           <!-- <div class="col-lg-12 position-absolute fixed-bottom p-0">
             <nav>
               <span><a href="javascript:void(0);" >INICIO</a></span>

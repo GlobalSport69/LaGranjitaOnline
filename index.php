@@ -41,15 +41,15 @@
         <div class="col-lg-3"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
         <div class="col-lg-6 offset-lg-3 position-relative row p-0 mb-1">
           <span class="slogan">El Hogar de los ANIMALITOS</span>
-          <!-- <div class="col-lg-12 position-absolute fixed-bottom p-0">
+          <div class="col-lg-12 position-absolute fixed-bottom p-0">
             <nav>
               <span><a href="javascript:void(0);" >INICIO</a></span>
-              <span><a href="javascript:void(0);" class="menuItem">PRONOSTICOS</a></span>
-              <span><a href="javascript:void(0);" class="menuItem">REGLAMENTOS</a></span>
-              <span><a href="javascript:void(0);" class="menuItem">CONTACTANOS</a></span>
+              <span class="menuItem1"><a href="javascript:void(0);">PRONOSTICOS</a></span>
+              <span class="menuItem2"><a href="javascript:void(0);">REGLAMENTOS</a></span>
+              <span class="menuItem3"><a href="javascript:void(0);">CONTACTANOS</a></span>
               <span><a href="javascript:void(0);" >REGISTRATE</a></span>
             </nav>
-          </div> -->
+          </div>
         </div>
       </section>
     </header>
@@ -84,7 +84,7 @@
       <div class="borderLine"></div>
       <div class="item row">
         <div class="col-sm-6"><span class="resultsText">RESULTADOS</span></div>
-          <div class="col-sm-6 text-end"><span class="dateResultsFilter">FECHA</span></div>
+          <div class="col-sm-6 text-end"><span class="dateResultsFilter">FECHA</span><input type="date" class="dateResultsInput" name="dateResultsInput" id="dateResultsInput" placeholder="Fecha"></div>
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/0.png" class="img-fluid">09:00 AM</div>
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/00.png" class="img-fluid">10:00 AM</div>
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/01.png" class="img-fluid">11:00 AM</div>

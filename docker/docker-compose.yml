@@ -18,7 +18,7 @@ services:
       context: ./php-apache
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "81:80"
     volumes:
       - ../:/var/www/html
     # links:

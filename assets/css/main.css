@@ -24,18 +24,31 @@ nav > span > a{
 	color: white;
 	font-size: 15px;
 }
-/* .menuItem{
+span.menuItem1{
+	border-left: solid 1px white;
+}
+span.menuItem2{
 	border-left: solid 1px white;
 	border-right: solid 1px white;
-} */
+}
+span.menuItem3{
+	border-right: solid 1px white;
+}
 .slogan{
-	font-size: 3rem;
+	font-size: 11vh;
     color: rgb(0 255 255);
     text-shadow: 0 0 5px cyan;
-    letter-spacing: 1.106px;
+    letter-spacing: 2.32px;
     font-weight: 200;
 	position:absolute;
 	bottom:20px
+}
+.dateResultsInput {
+    width: 125px;
+    background: transparent;
+    border: solid 1px aqua;
+    border-radius: 10px;
+    box-shadow: 0 0 5px aqua;
 }
 .itemResults{
 	width: 120px !important;

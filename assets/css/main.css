@@ -35,13 +35,28 @@ span.menuItem3{
 	border-right: solid 1px white;
 }
 .slogan{
-	font-size: 11vh;
+	font-size: 36px;
     color: rgb(0 255 255);
     text-shadow: 0 0 5px cyan;
-    letter-spacing: 2.32px;
-    font-weight: 200;
 	position:absolute;
-	bottom:20px
+	bottom:20px;
+    padding: 0;
+}
+.menuItems{
+    margin-bottom: 2px;
+}
+.menuItems > span {
+    color: white;
+    font-size: 13px;
+}
+.menuItems > span:first-child:before {
+    content: "";
+}
+.menuItems > span:last-child:after {
+    content: "";
+}
+.menuItems > span:before {
+    content: "|";
 }
 .dateResultsInput {
     width: 125px;

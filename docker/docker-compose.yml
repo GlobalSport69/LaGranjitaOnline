@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    container_name: docker-php
+    container_name: php
     build:
       context: ./php-apache
       dockerfile: Dockerfile

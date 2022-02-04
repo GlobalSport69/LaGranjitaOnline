@@ -31,6 +31,9 @@
     <!-- Slick CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
 
+    <!-- Bootstrap DatePicker CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/main.css" type="text/css">
 
@@ -43,13 +46,23 @@
         <div class="col-lg-6 offset-lg-3 position-relative row p-0 mb-1">
           <span class="slogan">El Hogar de los ANIMALITOS</span>
           <div class="col-lg-12 position-absolute fixed-bottom p-0">
-            <nav>
-              <span><a href="javascript:void(0);" >INICIO</a></span>
-              <span class="menuItem1"><a href="javascript:void(0);">PRONOSTICOS</a></span>
-              <span class="menuItem2"><a href="javascript:void(0);">REGLAMENTOS</a></span>
-              <span class="menuItem3"><a href="javascript:void(0);">CONTACTANOS</a></span>
-              <span><a href="javascript:void(0);" >REGISTRATE</a></span>
-            </nav>
+            <div class="menuItems">
+              <span>
+                  INICIO
+              </span>
+              <span>
+                    PRONÓSTICOS
+              </span>
+              <span>
+                    REGLAMENTOS
+              </span>
+              <span>
+                    CONTÁCTANOS
+              </span>
+              <span>
+                  REGISTRATE
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -85,7 +98,12 @@
       <div class="borderLine"></div>
       <div class="item row">
         <div class="col-sm-6"><span class="resultsText">RESULTADOS</span></div>
-          <div class="col-sm-6 text-end"><span class="dateResultsFilter">FECHA</span><input type="date" class="dateResultsInput" name="dateResultsInput" id="dateResultsInput" placeholder="Fecha"></div>
+          <div class="col-sm-6 text-end"><span class="dateResultsFilter">FECHA</span><div id="datepicker" class="input-group date" data-provide="datepicker">
+    <input type="text" class="form-control">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+</div></div>
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/0.png" class="img-fluid">09:00 AM</div>
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/00.png" class="img-fluid">10:00 AM</div>
           <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/01.png" class="img-fluid">11:00 AM</div>
@@ -240,7 +258,7 @@
           <p>CI/RIF N° J-40955411-2</p>
           <p>Registro Nacional de Loteria. N°: 05-0-000016-2021</p>
         </div>
-        <div class="footer d-flex">
+        <div class="footer d-flex justify-content-end">
           <div class="imgFooter"><img src="assets/img/Logo_LaGranjita_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
           <div class="imgFooter"><img src="assets/img/Logo_LoteriaDeMargarita_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
           <div class="imgFooter"><img src="assets/img/Logo_Conalot_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
@@ -256,6 +274,10 @@
     <!-- Slick JS -->
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
 
+    <!-- Bootstrap DatePicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.es.min.js" charset="UTF-8" integrity="sha512-5pjEAV8mgR98bRTcqwZ3An0MYSOleV04mwwYj2yw+7PBhFVf/0KcE+NEox0XrFiU5+x5t5qidmo5MgBkDD9hEw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <!-- SCRIPTS -->
     <script type="text/javascript" src="assets/js/scripts.js"></script>
   </body>

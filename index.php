@@ -73,17 +73,12 @@
       <div class="row">
         <div class="col-lg-10">
           <div class="carouselAnimales">
-            <div class="itemResults"><img src="assets/img/animalitos/0.png" class="img-fluid">09:00 AM</div>
-            <div class="itemResults"><img src="assets/img/animalitos/00.png" class="img-fluid">10:00 AM</div>
-            <div class="itemResults"><img src="assets/img/animalitos/01.png" class="img-fluid">11:00 AM</div>
-            <div class="itemResults"><img src="assets/img/animalitos/02.png" class="img-fluid">12:00 PM</div>
-            <div class="itemResults"><img src="assets/img/animalitos/03.png" class="img-fluid">01:00 PM</div>
-            <div class="itemResults"><img src="assets/img/animalitos/04.png" class="img-fluid">02:00 PM</div>
-            <div class="itemResults"><img src="assets/img/animalitos/05.png" class="img-fluid">03:00 PM</div>
-            <div class="itemResults"><img src="assets/img/animalitos/06.png" class="img-fluid">04:00 PM</div>
-            <div class="itemResults"><img src="assets/img/animalitos/07.png" class="img-fluid">05:00 PM</div>
-            <div class="itemResults"><img src="assets/img/animalitos/08.png" class="img-fluid">06:00 PM</div>
-            <div class="itemResults"><img src="assets/img/animalitos/09.png" class="img-fluid">07:00 PM</div>
+            <?php foreach (json_decode($json) as $key => $value):?>
+              <div class="itemResults">
+                <img src="assets/img/animalitos/<?= $value->result ?>.png" class="img-fluid">
+                <?= substr($value->lottery->name, 12) ?>
+              </div>
+            <?php endforeach?>
           </div>
         </div>
         <div class="col-lg-2 d-flex justify-content-center align-items-center">
@@ -104,18 +99,9 @@
         <span class="glyphicon glyphicon-th"></span>
     </div>
 </div></div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/0.png" class="img-fluid">09:00 AM</div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/00.png" class="img-fluid">10:00 AM</div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/01.png" class="img-fluid">11:00 AM</div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/02.png" class="img-fluid">12:00 PM</div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/03.png" class="img-fluid">01:00 PM</div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/04.png" class="img-fluid">02:00 PM</div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/05.png" class="img-fluid">03:00 PM</div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/06.png" class="img-fluid">04:00 PM</div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/07.png" class="img-fluid">05:00 PM</div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/08.png" class="img-fluid">06:00 PM</div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/09.png" class="img-fluid">07:00 PM</div>
-          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/Alarma_OFF_ResultadosVarios_LG_HD.png" class="img-fluid"></div>
+          <?php foreach (json_decode($json) as $key => $value):?>
+          <div class="col-sm-3 itemsResultsDay"><img src="assets/img/animalitos/<?= $value->result ?>.png" class="img-fluid"><?= substr($value->lottery->name, 12) ?></div>
+          <?php endforeach?>  
         </div>
       </div>
       <div class="borderLine"></div>

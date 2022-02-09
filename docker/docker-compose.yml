@@ -1,27 +1,11 @@
 version: '3'
 services:
-  # mysql:
-  #   image: mysql:5.7
-  #   container_name: docker-mysql
-  #   volumes:
-  #     # - ./db-dump:/docker-entrypoint-initdb.d
-  #     - dbdata:/var/lib/mysql
-  #   environment:
-  #     MYSQL_DATABASE: "api_caribe"
-  #     MYSQL_ROOT_PASSWORD: "123"
-  #   ports:
-  #     - "3306:3306"
-  #   restart: always
   web:
-    container_name: docker-php
+    container_name: php
     build:
       context: ./php-apache
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "81:80"
     volumes:
       - ../:/var/www/html
-    # links:
-    #   - mysql
-# volumes:
-#   dbdata:

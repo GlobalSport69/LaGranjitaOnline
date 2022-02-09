@@ -24,12 +24,46 @@ nav > span > a{
 	color: white;
 	font-size: 15px;
 }
-/* .menuItem{
+span.menuItem1{
+	border-left: solid 1px white;
+}
+span.menuItem2{
 	border-left: solid 1px white;
 	border-right: solid 1px white;
-} */
+}
+span.menuItem3{
+	border-right: solid 1px white;
+}
 .slogan{
-	bottom: 20px;
+	font-size: 36px;
+    color: rgb(0 255 255);
+    text-shadow: 0 0 5px cyan;
+	position:absolute;
+	bottom:20px;
+    padding: 0;
+}
+.menuItems{
+    margin-bottom: 2px;
+}
+.menuItems > span {
+    color: white;
+    font-size: 13px;
+}
+.menuItems > span:first-child:before {
+    content: "";
+}
+.menuItems > span:last-child:after {
+    content: "";
+}
+.menuItems > span:before {
+    content: "|";
+}
+.dateResultsInput {
+    width: 125px;
+    background: transparent;
+    border: solid 1px aqua;
+    border-radius: 10px;
+    box-shadow: 0 0 5px aqua;
 }
 .itemResults{
 	width: 120px !important;
@@ -56,6 +90,11 @@ nav > span > a{
 	text-align: center;
 	font-weight: 900;
 	margin: 12px 0px;
+	padding: 0 5px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .dateResultsFilter{
 	font-size: 12px;
@@ -67,16 +106,16 @@ article.pronostico > p{
 	line-height: 16px;
 }
 p.pronosticoTitle {
-    letter-spacing: 5.3px;
+    letter-spacing: 4.3px;
 }
 p.pronosticoAnimalito {
-    letter-spacing: 3.25px;
+    letter-spacing: 2.45px;
 }
 p.pronosticoSuerte {
-    letter-spacing: 2.2px;
+    letter-spacing: 1.2px;
 }
 .birthday{
-	font-size: 9.75px;
+	font-size: 8.5px;
     color: white;
 }
 .pronosticoImgBorder{
@@ -92,7 +131,7 @@ p.pronosticoSuerte {
     flex-direction: column;
 }
 .textWarning{
-	font-size: 10px;
+	font-size: 8.5px;
 	text-align: justify;
 	color: white;
 }
@@ -102,9 +141,36 @@ p.pronosticoSuerte {
 	letter-spacing: 2px;
 }
 .imgQr{
-	position: absolute;
-	top: 50%; right: 50%;
-	transform: translate(50%,-50%);
+	display: flex;
+    flex-direction: column;
+    flex: 0 0 40%;
+}
+.sectionbtnSN{
+	flex: 0 0 50%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.subsectionQr{
+	justify-content: space-around;
+	margin:17px 0
+}
+.sectionbtnSN > img{
+	margin: 5px 0;
+	width: 100%;
+	height: 39px;
+}
+.topText{
+	color: white;
+    font-size: 11px;
+    text-align: center;
+	margin-bottom:10px
+}
+.bottomText{
+	color: white;
+    text-align: center;
+    font-size: 11px;
+	margin:10px 0
 }
 .downloadCard {
     font-size: 10px;
@@ -112,9 +178,6 @@ p.pronosticoSuerte {
     text-align: center;
     margin-bottom: 5px;
     letter-spacing: 1px;
-}
-.btnSN {
-    height: 40px;
 }
 .textRegister {
     font-size: 10px;
@@ -126,6 +189,10 @@ p.pronosticoSuerte {
 	border: solid 2px aqua;
 	border-radius: 10px;
 	box-shadow: 0 0 5px aqua;
+}
+.textWhatsapp{
+	color:white;
+	font-size: 11px;
 }
 .slide-arrow {
 	position: absolute;
@@ -154,4 +221,116 @@ p.pronosticoSuerte {
 	width: 0;
 	padding: 0;
 	margin: 0;
+	border-radius: 20px;
 }
+.qr > .title {
+    margin: 0;
+    color: white;
+    font-size: 25px;
+}
+.qr-img{
+    border: 3px solid aqua;
+    border-radius: 10px;
+    box-shadow: 0 0 5px aqua;
+	padding: 1px;
+}
+.titleContact{
+	color: rgb(0 255 255);
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.formInput{
+	background: rgb(0 0 0 / 0%);
+    border: solid 1.25px rgb(0 255 255);
+    border-radius: 10px;
+    color: rgb(255 255 255);
+}
+.formLabel{
+	color: rgb(255 255 255);
+    letter-spacing: 1px;
+}
+.form-control:focus {
+    color: rgb(255 255 255) !important;
+    background-color: rgb(0 0 0 / 0%) !important;
+    border-color: rgb(0 255 255) !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.25rem rgb(5 101 118) !important;
+}
+.infoContact > i {
+    color: rgb(255 255 255);
+    font-size: 2rem;
+    margin: 0 2px;
+}
+.infoContact > p > i {
+    color: rgb(255 255 255);
+    font-size: 2rem;
+    margin: 0 2px;
+}
+.infoContact > span {
+    color: rgb(255 255 255);
+    font-size: 1.15rem;
+    letter-spacing: 0.75px;
+}
+.infoContact > P > span {
+    color: rgb(255 255 255);
+    font-size: 1.45rem;
+    margin: 0 2px;
+}
+.infoContact{
+	flex:0 0 80%
+}
+.miniQr{
+	flex: 0 0 20%;
+}
+p.titleRegister {
+    font-size: 20px;
+    text-align: center;
+    color: rgb(255 255 255);
+	letter-spacing: 2px;
+}
+.titleRegister > span.work {
+    color: rgb(0 255 255);
+    font-weight: 900;
+}
+.titleRegister > span.us {
+    color: rgb(0 255 255);
+}
+.footer{
+	flex:0 0 50%
+}
+.copyright>p {
+    margin: 0;
+    color: rgb(255 255 255);
+    font-size: 16px;
+}
+
+.copyright {
+    padding: 25px;
+}
+.imgFooter {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .example {background: red;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .example {background: green;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .example {background: blue;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .example {background: orange;}
+} 

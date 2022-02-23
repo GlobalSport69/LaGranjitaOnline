@@ -67,11 +67,12 @@ span.menuItem3{
 }
 .itemResults{
 	width: 120px !important;
+    height: 120px !important;
 	/* transition: 0.5s ease-in-out;
 	border-radius: 50%; */
 	text-align: center;
 	color: white;
-	/* margin: 20px 0; */
+	 /*margin: 20px 0 !important; */
 }
 /* .itemResults:hover > img {
 	background: #00f2ff;
@@ -95,6 +96,19 @@ span.menuItem3{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.resultImg{
+    width: 120px !important;
+    height: 120px !important;
+    border: solid 1px white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    margin: 0 10px;
+    margin: 20px 0 !important;
 }
 .dateResultsFilter{
 	font-size: 12px;

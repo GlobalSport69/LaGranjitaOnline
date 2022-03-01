@@ -247,8 +247,8 @@ let obtenerLoterias = () => {
             console.log(data.data, 'data');
             console.log(data.data[data.data.length -1], 'ultimo');*/
             printAllAnmilas(data.loterias);
-            printLastAnimal(data.data[data.data.length -1]);
             registro = data.data;
+            printLastAnimal(data.data[data.data.length -1]);
         }
 
     });
@@ -259,18 +259,24 @@ let printLastAnimal = (data) => {
     //Encuentra los nodos del DOM de todas las loterias
     let DomLot = document.querySelectorAll('.slick-track')[0].children;
     console.log(DomLot, 'DomLot');
-    let pause = false;
     //Bucle por hacer
-    firstElementChild
+    for (let index = 0; index < DomLot.length; index++) {
+        console.log(DomLot[index], 'desde for');
+        console.log(DomLot[index].className, "className");
+        console.log(DomLot[index].innerHTML, 'innerhtml');
+    }
+    //firstElementChild
 
 }
 //Imprimir todos los resultados
 let printAllAnmilas = (data) => {
     document.querySelector(".slick-track").innerHTML = "";
     data.forEach(element => {
+        let horarioLoteria = element.lottery.name.slice(-8);
         let template = `<span class='resultImg'></span>`;
         if(element.result !== '' ) 
-            template = `<img src="assets/img/animalitos/${element.result}.png" class='img-fluid img-animate'/>`;
+            template = `<img src="assets/img/animalitos/${element.result}.png" class='img-fluid img-animate'/>
+            <span class='loteriaHora'>${horarioLoteria}</span>`;
         
         let variable = `<div class='itemResults slick-slide '>
             ${template}

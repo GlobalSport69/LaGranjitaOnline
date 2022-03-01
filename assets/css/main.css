@@ -73,7 +73,25 @@ span.menuItem3{
 	text-align: center;
 	color: white;
 	 /*margin: 20px 0 !important; */
+     transition: all ease 1500ms;
 }
+.itemResults:hover {
+
+}
+.itemResults {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    animation: 3s 3 spin;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
 /* .itemResults:hover > img {
 	background: #00f2ff;
 	box-shadow: 0 0 15px #00f2ff;
@@ -108,7 +126,7 @@ span.menuItem3{
     color: white;
     font-size: 30px;
     margin: 0 10px;
-    margin: 20px 0 !important;
+    margin: 0px 0px !important;
 }
 .dateResultsFilter{
 	font-size: 12px;

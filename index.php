@@ -88,7 +88,7 @@
         <!-- Carrusel Resultados -->
         <section class="container my-3">
           <div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
               <div class="carouselAnimales">
                 <!-- 
                   <div class="itemResults">
@@ -107,9 +107,10 @@
                  -->
               </div>
             </div>
+            <!--
             <div class="col-lg-2 d-flex justify-content-center align-items-center">
               <img src="assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png" alt="Alarma" class="img-fluid w-50">
-            </div>
+            </div>-->
           </div>
         </section>
         <!-- Carrusel Resultados -->

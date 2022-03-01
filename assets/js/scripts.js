@@ -1,6 +1,6 @@
 $(document).ready(()=>{
 	$('.carouselAnimales').slick({
-		infinite: true,
+		infinite: false,
 	 	slidesToShow: 7,
 	 	slidesToScroll: 1,
 		prevArrow: '<img src="/assets/img/arrow-right.png" class="slide-arrow prev-arrow" />',

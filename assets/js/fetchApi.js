@@ -1,4 +1,3 @@
-'use strict'
 let now = new Date();
 now = now.toISOString().substring(0,10);
 let registro = [];

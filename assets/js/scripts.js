@@ -1,5 +1,5 @@
 $(document).ready(()=>{
-	$('.carouselAnimales').slick({
+	/* $('.carouselAnimales').slick({
 		infinite: false,
 	 	slidesToShow: 7,
 	 	slidesToScroll: 1,
@@ -9,5 +9,5 @@ $(document).ready(()=>{
 	})
 	$('#datepicker').datepicker({
 		language: 'es'
-	});
+	}); */
 })

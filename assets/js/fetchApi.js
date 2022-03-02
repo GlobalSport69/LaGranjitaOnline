@@ -1,3 +1,4 @@
+'use strict'
 let now = new Date();
 now = now.toISOString().substring(0,10);
 let registro = [];
@@ -234,20 +235,20 @@ let obtenerLoterias = () => {
         console.log(data.loterias, 'data.loterias');
 
         if(registro.length == 0){
-            document.querySelector(".slick-track").innerHTML = "";
+            document.querySelector(".carouselAnimales").innerHTML = "";
             registro = data.data;
-            console.log('llenando primer registro ...');
+            console.log('llenando primer registro ...', registro.length, data.data.length);
             //muestra los animalitos
             printAllAnmilas(data.loterias);
-        } else if(registro.length !== data.data.length){
-            document.querySelector(".slick-track").innerHTML = "";
-           /* console.log("Cambio detectado");
+        } else if(registro.length == data.data.length){
+            document.querySelector(".carouselAnimales").innerHTML = "";
+            /* console.log("Cambio detectado");
             console.log(data.registro , 'registro');
             console.log(data.data, 'data');
-            console.log(data.data[data.data.length -1], 'ultimo');*/
+            console.log(data.data[data.data.length -1], 'ultimo'); */
             printAllAnmilas(data.loterias);
-            registro = data.data;
             printLastAnimal(data.data[data.data.length -1]);
+            registro = data.data;
         }
 
     });
@@ -256,31 +257,20 @@ let obtenerLoterias = () => {
 let printLastAnimal = (data) => {
     console.log(data, 'Ultimo registro');
     //Encuentra los nodos del DOM de todas las loterias
-    let DomLot = document.querySelectorAll('.slick-track')[0].children;
+    let DomLot = document.querySelectorAll('.carouselAnimales')[0].children;
     console.log(DomLot, 'DomLot');
-    //Bucle por hacer
-    for (let index = 0; index < DomLot.length; index++) {
-        console.log(DomLot[index], 'desde for');
-        console.log(DomLot[index].className, "className");
-        console.log(DomLot[index].innerHTML, 'innerhtml');
-    }
-    //firstElementChild
 
 }
 //Imprimir todos los resultados
 let printAllAnmilas = (data) => {
-    document.querySelector(".slick-track").innerHTML = "";
+    document.querySelector(".carouselAnimales").innerHTML = "";
     data.forEach(element => {
-        let horarioLoteria = element.lottery.name.slice(-8);
         let template = `<span class='resultImg'></span>`;
         if(element.result !== '' ) 
-            template = `<img src="assets/img/animalitos/${element.result}.png" class='img-fluid img-animate'/>
-            <span class='loteriaHora'>${horarioLoteria}</span>`;
+            template = `<img src="assets/img/animalitos/${element.result}.png" class='img-fluid img-animate'/>`;
         
-        let variable = `<div class='itemResults slick-slide '>
-            ${template}
-        </div>`;
-        $('.carouselAnimales').slick('slickAdd',variable );
+        let variable = `<div class='itemResults'>${template}</div>`;
+        document.querySelector(".carouselAnimales").innerHTML += variable;
     });
 }
 obtenerLoterias();

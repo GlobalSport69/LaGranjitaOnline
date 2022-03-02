@@ -90,27 +90,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="carouselAnimales">
-                <!-- 
-                  <div class="itemResults">
-                    <img src="assets/img/animalitos/14-PALOMA.png" class="img-fluid">
-                  </div>
-                  <div class="itemResults">
-                    <img src="assets/img/animalitos/14-PALOMA.png" class="img-fluid">
-                  </div>
-                  <div class="itemResults">
-                    <img src="assets/img/animalitos/14-PALOMA.png" class="img-fluid">
-                  </div>
-                
-                <div class="itemResults">
-                   <span class='resultImg'></span>
-                </div>
-                 -->
               </div>
             </div>
-            <!--
-            <div class="col-lg-2 d-flex justify-content-center align-items-center">
-              <img src="assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png" alt="Alarma" class="img-fluid w-50">
-            </div>-->
           </div>
         </section>
         <!-- Carrusel Resultados -->

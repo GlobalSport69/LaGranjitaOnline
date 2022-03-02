@@ -66,22 +66,35 @@ span.menuItem3{
     box-shadow: 0 0 5px aqua;
 }
 .itemResults{
-	width: 120px !important;
-    height: 120px !important;
-	/* transition: 0.5s ease-in-out;
-	border-radius: 50%; */
+    width: 101px !important;
+    height: 101px !important;
 	text-align: center;
 	color: white;
-	 /*margin: 20px 0 !important; */
-     transition: all ease 1500ms;
+    transition: all ease 1500ms;
 }
-.itemResults:hover {
-
-}
+/*
 .itemResults {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     animation: 3s 3 spin;
+  }*/
+  .img-animate {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    animation: 3s 3 spin; 
+    transition: all ease 1500ms;
+  }
+  .img-animate {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    animation: 3s 3 spin; 
+    transition: all ease 1500ms;
+  }
+  .img-animate {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    animation: 3s 3 spin; 
+    transition: all ease 1500ms;
   }
   @keyframes spin {
     0% {
@@ -101,7 +114,10 @@ span.menuItem3{
 	height: 150px;
 }
 .carouselAnimales{
-	height: 150px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-content: center;
 }
 .itemsResultsDay{
 	color: white;
@@ -116,8 +132,8 @@ span.menuItem3{
     flex-direction: column;
 }
 .resultImg{
-    width: 120px !important;
-    height: 120px !important;
+    width: 101px !important;
+    height: 101px !important;
     border: solid 1px white;
     border-radius: 50%;
     display: flex;
@@ -125,8 +141,10 @@ span.menuItem3{
     align-items: center;
     color: white;
     font-size: 30px;
-    margin: 0 10px;
     margin: 0px 0px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .dateResultsFilter{
 	font-size: 12px;

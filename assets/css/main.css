@@ -70,31 +70,14 @@ span.menuItem3{
     height: 101px !important;
 	text-align: center;
 	color: white;
-    transition: all ease 1500ms;
+    margin-bottom: 12px;
+    /*transition: all ease 1500ms;*/
 }
-/*
-.itemResults {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    animation: 3s 3 spin;
-  }*/
   .img-animate {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    animation: 3s 3 spin; 
-    transition: all ease 1500ms;
-  }
-  .img-animate {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    animation: 3s 3 spin; 
-    transition: all ease 1500ms;
-  }
-  .img-animate {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    animation: 3s 3 spin; 
-    transition: all ease 1500ms;
+    animation: spin 3s 3 ; 
+    transition: all ease 1200ms;
   }
   @keyframes spin {
     0% {

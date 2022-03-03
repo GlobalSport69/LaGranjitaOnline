@@ -237,16 +237,16 @@ let obtenerLoterias = () => {
         if(registro.length == 0){
             document.querySelector(".carouselAnimales").innerHTML = "";
             registro = data.data;
-            console.log('llenando primer registro ...', registro.length, data.data.length);
+            //console.log('llenando primer registro ...', registro.length, data.data.length);
             //muestra los animalitos
             printAllAnmilas(data.loterias);
-        } else if(registro.length == data.data.length){
-            document.querySelector(".carouselAnimales").innerHTML = "";
+        } else if(registro.length !== data.data.length){
+            //document.querySelector(".carouselAnimales").innerHTML = "";
             /* console.log("Cambio detectado");
             console.log(data.registro , 'registro');
             console.log(data.data, 'data');
             console.log(data.data[data.data.length -1], 'ultimo'); */
-            printAllAnmilas(data.loterias);
+            //printAllAnmilas(data.loterias);
             printLastAnimal(data.data[data.data.length -1]);
             registro = data.data;
         }
@@ -258,20 +258,34 @@ let printLastAnimal = (data) => {
     console.log(data, 'Ultimo registro');
     //Encuentra los nodos del DOM de todas las loterias
     let DomLot = document.querySelectorAll('.carouselAnimales')[0].children;
-    console.log(DomLot, 'DomLot');
+    
+    /*console.log(DomLot, 'DomLot');*/
+    for (const element in DomLot) {
+    console.log(`${element}:${DomLot[element].innerHTML}`);
+        if(DomLot[element].innerHTML == `<span class="resultImg"></span>`){
+            console.log("Se encontro un espacio reemplazable");
+            let horarioLott = data.lottery.name.slice(-8);
+            console.log(DomLot[element], 'buscar gorrsad');
+            DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" class='img-fluid img-animate'/>
+            <span class="mt-3 mb-3">${horarioLott}</span>`;
+            break;
+        }
+    }
 
 }
 //Imprimir todos los resultados
 let printAllAnmilas = (data) => {
     document.querySelector(".carouselAnimales").innerHTML = "";
     data.forEach(element => {
+        let horarioLott = element.lottery.name.slice(-8);
         let template = `<span class='resultImg'></span>`;
         if(element.result !== '' ) 
-            template = `<img src="assets/img/animalitos/${element.result}.png" class='img-fluid img-animate'/>`;
+            template = `<img src="assets/img/animalitos/${element.result}.png" class='img-fluid img-animate'/><span>${horarioLott}</span>`;
         
         let variable = `<div class='itemResults'>${template}</div>`;
         document.querySelector(".carouselAnimales").innerHTML += variable;
     });
+
 }
 obtenerLoterias();
 // itervalo para mostrar animalitos

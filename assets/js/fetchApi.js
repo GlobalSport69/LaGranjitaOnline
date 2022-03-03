@@ -197,81 +197,56 @@ const getLotteries = () => {
     .then(response => response.json())
     .then(data => {
           var loterias = loteries;
-          //agrega data al registro en caso de ser la primera llamada a la api
-          /*if (registro.length == 0) {
-            registro = data;
-            console.log('llenando primer registro ...');
-          }
-          //comparar arreglo anterior con actual
-         /* else if(registro.length !== data.length){
-            console.log("Cambio detectado");
-            console.log(registro , 'registro');
-            console.log(data, 'data');
-            console.log(data[data.length -1], 'ultimo');
-            registro = data;
-              
-          }*/
-          //crea listado completo para el dia. (no lleno)
+          //Crea listado completo para las loterias del dia.
           for (let index = 0; index <= 11; index++) {
               if(data[index]) loterias[index] = data[index];
           }
-          //console.log(loterias);
           let response = {
             loterias: loterias,
-            //registro: registro,
             data: data
           };
           return response;
-      });
-      
+      }); 
 };
-
-//Imprimir animalitos ganadores
+//Mostrar animalitos ganadores
 let obtenerLoterias = () => {
+    //Call a la api
     return getLotteries().then(data=>{
-        //document.querySelector(".slick-list").innerHTML = "";
-        console.log(data, 'data');
-        //console.log(data.registro.length, 'data.registro.length');
-        console.log(data.loterias, 'data.loterias');
-
+        //En caso de no tener animalitos en el listado.
         if(registro.length == 0){
             document.querySelector(".carouselAnimales").innerHTML = "";
             registro = data.data;
-            //console.log('llenando primer registro ...', registro.length, data.data.length);
-            //muestra los animalitos
+            //muestra todos los animalitos en lo que va del dia.
             printAllAnmilas(data.loterias);
+        //Si encuentra un cambio o una nueva loteria imprime animal individual.
         } else if(registro.length !== data.data.length){
-            //document.querySelector(".carouselAnimales").innerHTML = "";
-            /* console.log("Cambio detectado");
-            console.log(data.registro , 'registro');
-            console.log(data.data, 'data');
-            console.log(data.data[data.data.length -1], 'ultimo'); */
-            //printAllAnmilas(data.loterias);
             printLastAnimal(data.data[data.data.length -1]);
             registro = data.data;
         }
-
     });
 }; 
 //Reemplazar e imprimir ultimo resultado
 let printLastAnimal = (data) => {
-    console.log(data, 'Ultimo registro');
     //Encuentra los nodos del DOM de todas las loterias
     let DomLot = document.querySelectorAll('.carouselAnimales')[0].children;
-    
-    /*console.log(DomLot, 'DomLot');*/
     for (const element in DomLot) {
     console.log(`${element}:${DomLot[element].innerHTML}`);
         if(DomLot[element].innerHTML == `<span class="resultImg"></span>`){
             console.log("Se encontro un espacio reemplazable");
             let horarioLott = data.lottery.name.slice(-8);
+            let codAnimal = data.result.split("-",1)[0];
             console.log(DomLot[element], 'buscar gorrsad');
-            DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" class='img-fluid img-animate'/>
+            DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" onclick='playAudio(${codAnimal})' class='img-fluid img-animate'/>
             <span class="mt-3 mb-3">${horarioLott}</span>`;
             break;
         }
     }
 
+}
+//Play animal Audio
+function playAudio(audioName) {
+    var audio = new Audio(`assets/sounds/${audioName}.mp3`);
+    audio.play();
 }
 //Imprimir todos los resultados
 let printAllAnmilas = (data) => {
@@ -279,8 +254,10 @@ let printAllAnmilas = (data) => {
     data.forEach(element => {
         let horarioLott = element.lottery.name.slice(-8);
         let template = `<span class='resultImg'></span>`;
+        let codAnimal = element.result.split("-",1)[0];
         if(element.result !== '' ) 
-            template = `<img src="assets/img/animalitos/${element.result}.png" class='img-fluid img-animate'/><span>${horarioLott}</span>`;
+            template = `<img src="assets/img/animalitos/${element.result}.png" onclick='playAudio(${codAnimal})' class='img-fluid img-animate'/>
+            <span>${horarioLott}</span>`;
         
         let variable = `<div class='itemResults'>${template}</div>`;
         document.querySelector(".carouselAnimales").innerHTML += variable;

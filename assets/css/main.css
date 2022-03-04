@@ -73,6 +73,14 @@ span.menuItem3{
     margin-bottom: 12px;
     /*transition: all ease 1500ms;*/
 }
+.itemResultsD {
+    display: flex;
+    flex: 0 0 25%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    margin: 15px 0;
+}
   .img-animate {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -102,17 +110,16 @@ span.menuItem3{
     flex-wrap: nowrap;
     align-content: center;
 }
-.itemsResultsDay{
-	color: white;
-	font-size: 12px;
-	text-align: center;
-	font-weight: 900;
-	margin: 12px 0px;
-	padding: 0 5px;
-	display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.itemsResultsDay {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 900;
+    margin: 12px 0px;
+    padding: 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 .resultImg{
     width: 101px !important;
@@ -128,6 +135,10 @@ span.menuItem3{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.resultImgD{
+    width: 81px !important;
+    height: 81px !important;
 }
 .dateResultsFilter{
 	font-size: 12px;

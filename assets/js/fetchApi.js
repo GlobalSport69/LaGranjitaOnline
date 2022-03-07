@@ -80,7 +80,6 @@ function startShowingMessage() {
         obtenerLoterias();
     }, 10000)
   }
-
 //DAtapicker onChange
 function handler(e){
 
@@ -131,10 +130,24 @@ function printAnimalsDate(data){
         document.querySelector(".itemsResultsDay").innerHTML += variable;
     });
 }
+//recorrer nombres 
+function getNameFiles(){
+    const aleatorio = fileNames[Math.floor(Math.random() * fileNames.length)];
+    printRandomAnimal(aleatorio);
+    }
 
+let printRandomAnimal = (animalName) => {
+    let divRandomAnimal = document.querySelector('.pronosticosDiv');
+    let ElementoOriginal = document.querySelectorAll('.pronosticosDiv')[0].childNodes[1];
+    let randomAnimalDOM = document.createElement('img');
+    randomAnimalDOM.setAttribute('src', `assets/img/animalitos/${animalName}`);
+    randomAnimalDOM.classList.add('pronosticoImgAnimal','img-animate');
+    divRandomAnimal.replaceChild(randomAnimalDOM, ElementoOriginal);
+}
 let now = new Date();
 now = now.toISOString().substring(0,10);
 let registro = [];
+document.querySelector('.dateInput').setAttribute("max", now);
 const loteries = [
     {
         "result": "",
@@ -513,7 +526,49 @@ const loteries2 = [
         }
     }
 ];
-
+let  fileNames = 
+['0-DELFIN.png',
+'00-BALLENA.png',
+'1-CARNERO.png',
+'10-TIGRE.png',
+'11-GATO.png',
+'12-CABALLO.png',
+'13-MONO.png',
+'14-PALOMA.png',
+'15-ZORRO.png',
+'16-OSO.png',
+'17-PAVO.png',
+'18-BURRO.png',
+'19-CHIVO.png',
+'2-TORO.png',
+'20-COCHINO.png',
+'21-GALLO.png',
+'22-CAMELLO.png',
+'23-CEBRA.png',
+'24-IGUANA.png',
+'25-GALLINA.png',
+'26-VACA.png',
+'27-PERRO.png',
+'28-ZAMURO.png',
+'29-ELEFANTE.png',
+'3-CIEMPIES.png',
+'30-CAIMAN.png',
+'31-LAPA.png',
+'32-ARDILLA.png',
+'33-PESCADO.png',
+'34-VENADO.png',
+'35-JIRAFA.png',
+'36-CULEBRA.png',
+'4-ALACRAN.png',
+'5-LEON.png',
+'6-RANA.png',
+'7-PERICO.png',
+'8-RATON.png',
+'9-AGUILA.png'];
 obtenerLoterias();
 startShowingMessage();
 handler(now);
+
+
+
+

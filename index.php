@@ -53,8 +53,8 @@
 
   <!-- SCRIPTS -->
 
-  <script type="text/javascript" src="assets/js/fetchApi.js"></script>
-  <script type="text/javascript" src="assets/js/scripts.js"></script>
+  <script type="text/javascript" src="assets/js/fetchApi.js" defer></script>
+  <script type="text/javascript" src="assets/js/scripts.js" ></script>
   <title>La Granjita Online</title>
 </head>
 
@@ -104,24 +104,22 @@
     <div class="item row">
       <div class="col-sm-12 text-left mb-3"><span class="resultsText">RESULTADOS</span></div>
       <div class="col-sm-12 text-left "><span class="dateResultsFilter">FECHA</span>
-        <input type="date" name="" id="inputSearch" onchange="handler(event);">
+        <input type="date"  class="dateInput" id="inputSearch" onchange="handler(event);">
       </div>
       <div class="col-sm-3 itemsResultsDay"></div>
     </div>
     </div>
     <div class="borderLine"></div>
     <div class="item row d-flex">
-      <article class="col-sm-6 pronostico">
+      <article class="col-sm-12 pronostico text-center">
         <p class="pronosticoTitle">PRONOSTICA</p>
         <p class="pronosticoAnimalito">TU ANIMALITO</p>
         <p class="pronosticoSuerte">MUCHA SUERTE</p>
       </article>
-      <div class="col-sm-6 px-0 text-end">
-        <p class="birthday">CUMPLEA&Ntilde;OS / FECHA IMPORTANTE</p>
-      </div>
       <div class="col-sm-12 pronosticosDiv">
         <span class="pronosticoImgBorder my-3"></span>
-        <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3">
+        
+        <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3" onclick="getNameFiles()">
         <p class="textWarning">
           ATENCION ESTO ES SOLO UN PRONOSTICO. LA GRANJITA NO SE HACE RESPONSABLE DE LOS RESULTADOS PROPORCIONADOS. LA RULETA ES UN JUEGO 100% DE AZAR. VERIFICADA Y REGULADA POR LAS REGLAS DE ENVITE Y AZAR NACIONALES E INTERNACIONALES.
         </p>

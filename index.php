@@ -118,8 +118,12 @@
       </article>
       <div class="col-sm-12 pronosticosDiv">
         <span class="pronosticoImgBorder my-3"></span>
+
+        <div class="btnLuck">
+          <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3" onclick="getNameFiles()">
+          <img src="assets/img/BotónDameSuerteON_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3" onclick="getNameFiles()">
+        </div>
         
-        <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3" onclick="getNameFiles()">
         <p class="textWarning">
           ATENCION ESTO ES SOLO UN PRONOSTICO. LA GRANJITA NO SE HACE RESPONSABLE DE LOS RESULTADOS PROPORCIONADOS. LA RULETA ES UN JUEGO 100% DE AZAR. VERIFICADA Y REGULADA POR LAS REGLAS DE ENVITE Y AZAR NACIONALES E INTERNACIONALES.
         </p>

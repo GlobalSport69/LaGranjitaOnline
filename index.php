@@ -54,11 +54,41 @@
   <!-- SCRIPTS -->
 
   <script type="text/javascript" src="assets/js/fetchApi.js" defer></script>
-  <script type="text/javascript" src="assets/js/scripts.js" ></script>
+  <script type="text/javascript" src="assets/js/scripts.js"></script>
   <title>La Granjita Online</title>
 </head>
 
 <body>
+  <!--    Made by Erik Terwan    -->
+  <!--   24th of November 2015   -->
+  <!--        MIT License        -->
+<!--
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a href="#">
+          <li>Home</li>
+        </a>
+        <a href="#">
+          <li>About</li>
+        </a>
+        <a href="#">
+          <li>Info</li>
+        </a>
+        <a href="#">
+          <li>Contact</li>
+        </a>
+        <a href="https://erikterwan.com/" target="_blank">
+          <li>Show me more</li>
+        </a>
+      </ul>
+    </div>
+  </nav>
+-->
   <header class="container">
     <section class="row">
       <div class="col-lg-3"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
@@ -89,13 +119,19 @@
   <div class="lineAqua"></div>
   <!-- Carrusel Resultados -->
   <section class="container my-3">
-    <div class="row">
+    <div class="row animalslist1">
       <div class="col-lg-12">
         <div class="carouselAnimales">
         </div>
       </div>
     </div>
+    <div class="row animalslist2">
+      <div class="col-lg-12">
+        <div class="carouselAnimalsSlider" style="color: white;"></div>
+      </div>
+    </div>
   </section>
+
   <!-- Carrusel Resultados -->
   <div class="lineAqua"></div>
   <!-- Seccion 3 -->
@@ -104,7 +140,7 @@
     <div class="item row">
       <div class="col-sm-12 text-left mb-3"><span class="resultsText">RESULTADOS</span></div>
       <div class="col-sm-12 text-left "><span class="dateResultsFilter">FECHA</span>
-        <input type="date"  class="dateInput" id="inputSearch" onchange="handler(event);">
+        <input type="date" class="dateInput" id="inputSearch" onchange="handler(event);">
       </div>
       <div class="col-sm-3 itemsResultsDay"></div>
     </div>
@@ -123,7 +159,7 @@
           <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3" onclick="getNameFiles()">
           <img src="assets/img/BotónDameSuerteON_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3" onclick="getNameFiles()">
         </div>
-        
+
         <p class="textWarning">
           ATENCION ESTO ES SOLO UN PRONOSTICO. LA GRANJITA NO SE HACE RESPONSABLE DE LOS RESULTADOS PROPORCIONADOS. LA RULETA ES UN JUEGO 100% DE AZAR. VERIFICADA Y REGULADA POR LAS REGLAS DE ENVITE Y AZAR NACIONALES E INTERNACIONALES.
         </p>
@@ -146,16 +182,30 @@
             </span>
           </div>
           <div class="sectionbtnSN">
-            <img src="assets/img/BotónFacebookOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
-            <img src="assets/img/BotónInstagramOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
-            <img src="assets/img/BotónTwitterOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
-            <img src="assets/img/BotónWhatsAppOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+            <div class="btnLuck">
+              <img src="assets/img/BotónFacebookOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+              <img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+            </div>
+            <div class="btnLuck">
+              <img src="assets/img/BotónInstagramOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+              <img src="assets/img/BotónInstagramON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+            </div>
+            <div class="btnLuck">
+              <img src="assets/img/BotónTwitterOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+              <img src="assets/img/BotónTwitterON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+            </div>
+            <div class="btnLuck">
+              <img src="assets/img/BotónWhatsAppOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+              <img src="assets/img/BotónWhatsAppON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+            </div>
           </div>
         </div>
         <img src="assets/img/linea_inferior.png" alt="Linea Inferior" class="img-fluid">
         <p class="mb-0 textWhatsapp">TE GUSTARIA RECIBIR TUS RESULTADOS VIA WHATSAPP AL INSTANTE LAS 24/7?</p>
-        <div class="mt-2">
+        <div class="mt-2 btnLuck">
           <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end">
+          <img src="assets/img/BotónRegístrateON_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end">
+
         </div>
       </section>
     </div>
@@ -236,7 +286,10 @@
             <label for="email" class="form-label formLabel">Correo Electronico</label>
             <input type="text" class="form-control formInput" id="email" name="email">
           </div>
-          <div class="mb3"><img src="assets/img/BotónOFF_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid w-100"></div>
+          <div class="mb3 btnLuck">
+            <img src="assets/img/BotónOFF_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid w-100">
+            <img src="assets/img/BotónON_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid w-100">
+          </div>
         </section>
       </form>
     </article>

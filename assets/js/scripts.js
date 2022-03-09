@@ -1,12 +1,25 @@
 $(document).ready(()=>{
-	 /*$('.carouselAnimales').slick({
-		infinite: false,
-	 	slidesToShow: 7,
+    $('.carouselAnimalsSlider').slick({
+        infinite: false,
+	 	slidesToShow: 6,
 	 	slidesToScroll: 1,
+		edgeFriction: 11,
 		prevArrow: '<img src="/assets/img/arrow-right.png" class="slide-arrow prev-arrow" />',
 		nextArrow: '<img src="/assets/img/arrow-left.png" class="slide-arrow next-arrow" />',
-		
-	})*/
+		responsive: [
+			{
+			  breakpoint: 992,
+			  settings: {
+				slidesToShow: 4,
+				slidesToScroll: 1
+			  }
+			}
+			// You can unslick at a given breakpoint now by adding:
+			// settings: "unslick"
+			// instead of a settings object
+		  ]
+    });
+
 	$('#datepicker').datepicker({
 		language: 'es'
 	});

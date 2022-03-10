@@ -3,12 +3,21 @@ html,body{
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover
+	background-size: cover;
+    overflow-x: hidden;
 }
 .lineAqua{
 	width: 100%;
     border: solid 1px rgb(0 255 255);
     box-shadow: 0 0 2px cyan;
+}
+.lineAqua-responsive {
+    width: 100%;
+    border: solid 1px rgb(0 255 255);
+    box-shadow: 0 0 2px cyan;
+    display: none;
+    margin-bottom: 16px;
+    margin-top: 8px;
 }
 nav{
 	display: flex;
@@ -389,12 +398,44 @@ p.titleRegister {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .example {background: blue;}
+@media only screen and (max-width: 768px) {
+    .lineAqua-responsive{
+        display: block;
+    }
 } 
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (max-width: 1024px) {
+  .animalslist1 {
+    display: none;
+  }
+  .animalslist2 {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+  .infoContact {
+    flex: 0 0 66%;
+  }
+  .text-simple {
+      font-size: 16px !important;
+  }
+  section .lineAqua {
+    display: none;
+    margin-bottom: 16px;
+  }
+  footer .section {
+    padding: 8px;
+  }
+  .img-responsive {
+    max-width: 136px !important;
+  }
+}
+
 .animalslist2 {
     display: none;
 }
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 1024px) {
   .animalslist1 {
@@ -403,14 +444,44 @@ p.titleRegister {
   .animalslist2 {
     display: block;
   }
+  .btn-img-fluid {
+    max-width: 258px !important;
+  }
 }
-@media only screen and (max-width: 1199px) {
-    .img-fluid{
-        max-width: 101px !important;
+@media only screen and (max-width: 768px){
+    .item {
+        flex: 0 0 70%;
+    }
+    .borderLine {
+        display: none;
+    }
+    section .lineAqua {
+        display: block;
+    }
+    .btn-img-fluid {
+        max-width: 258px !important;
     }
 }
-
-
+@media only screen and (max-width: 425px){
+    .footer {
+        flex: 0 0 100%;
+    }
+    .footer-content {
+        padding: 12px;
+    text-align: center;
+    }
+    .img-responsive {
+        max-width: 100px !important;
+    }
+    .btn-img-fluid {
+        max-width: 258px !important;
+    }
+}
+@media only screen and (max-width: 375px){
+    .itemResultsD {
+        flex: 0 0 50%;
+    }
+}
 
 /*Estilos para reemplazar imagenes */ 
 .btnLuck{

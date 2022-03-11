@@ -59,60 +59,69 @@
 </head>
 
 <body>
-  <!--    Made by Erik Terwan    -->
-  <!--   24th of November 2015   -->
-  <!--        MIT License        -->
-<!--
-  <nav role="navigation">
-    <div id="menuToggle">
-      <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
-      <ul id="menu">
-        <a href="#">
-          <li>Home</li>
-        </a>
-        <a href="#">
-          <li>About</li>
-        </a>
-        <a href="#">
-          <li>Info</li>
-        </a>
-        <a href="#">
-          <li>Contact</li>
-        </a>
-        <a href="https://erikterwan.com/" target="_blank">
-          <li>Show me more</li>
-        </a>
-      </ul>
-    </div>
-  </nav>
--->
+
   <header class="container">
-    <section class="row">
-      <div class="col-lg-3"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
-      <div class="col-lg-6 offset-lg-3 position-relative row p-0 mb-1">
-        <span class="slogan">El Hogar de los ANIMALITOS</span>
-        <div class="col-lg-12 position-absolute fixed-bottom p-0">
-          <div class="menuItems">
-            <span>
-              INICIO
-            </span>
-            <span>
-              PRONÓSTICOS
-            </span>
-            <span>
-              REGLAMENTOS
-            </span>
-            <span>
-              CONTÁCTANOS
-            </span>
-            <span>
-              REGISTRATE
-            </span>
-          </div>
+    <!--    Made by Erik Terwan    -->
+    <!--   24th of November 2015   -->
+    <!--        MIT License        -->
+
+<!--<nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <a href="#">
+              <li>Home</li>
+            </a>
+            <a href="#">
+              <li>About</li>
+            </a>
+            <a href="#">
+              <li>Info</li>
+            </a>
+            <a href="#">
+              <li>Contact</li>
+            </a>
+            <a href="https://erikterwan.com/" target="_blank">
+              <li>Show me more</li>
+            </a>
+          </ul>
         </div>
+      </nav>
+      -->
+    <section class="row">
+    <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <a href="#">
+              <li>INICIO</li>
+            </a>
+            <a href="#">
+              <li>PRONOSTICOS</li>
+            </a>
+            <a href="#">
+              <li>REGLAMENTOS</li>
+            </a>
+            <a href="#">
+              <li>CONTACTANOS</li>
+            </a>
+            <a href="#">
+              <li>REGISTRATE</li>
+            </a>
+          </ul>
+        </div>
+      </nav>
+      <!---->
+      <div class="col-lg-3 img-menu"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
+      <div class="col-lg-9 position-relative row p-0 mb-1 title-menu">
+        <span class="slogan">El Hogar de los ANIMALITOS</span>
+        
       </div>
     </section>
   </header>
@@ -166,7 +175,7 @@
         </p>
       </div>
     </div>
-    
+
     <div class="borderLine"></div>
     <div class="lineAqua-responsive"></div>
     <div class="item row">
@@ -174,8 +183,8 @@
         <p class="title">CADA SEGUNDO CUENTA</p>
         <img src="assets/img/linea_superior.png" alt="Linea Superior" class="img-fluid">
 
-        <div class="subsectionQr d-flex">
-          <div class="imgQr">
+        <div class="subsectionQr d-flex responsive-contentColumn">
+          <div class="imgQr ">
             <span class="topText">
               DESCARGA NUESTRA TARJETA DIGITAL
             </span>
@@ -216,7 +225,7 @@
   <div class="lineAqua"></div>
   <!-- Section 4 -->
   <section class="container my-3 d-flex section3">
-    <div class="borderLine"></div>    
+    <div class="borderLine"></div>
     <article class="item">
       <header>
         <p class="titleContact">
@@ -247,7 +256,7 @@
           <span class="text-simple">
             @lagranjitaofic
           </span>
-          <p >
+          <p>
             <i class="fab fa-whatsapp-square"></i>
             <span class="text-simple">
               +58 (424) 823-6730
@@ -255,7 +264,7 @@
           </p>
         </div>
         <div class="miniQr">
-          <img src="assets/img/QR.png" alt="" class="img-fluid" style="max-width: 100px;">
+          <img src="assets/img/QR.png" alt="" class="img-fluid img-qr-large" style="max-width: 100px;">
         </div>
       </div>
     </article>

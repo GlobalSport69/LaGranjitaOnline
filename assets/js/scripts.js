@@ -3,14 +3,28 @@ $(document).ready(()=>{
         infinite: false,
 	 	slidesToShow: 6,
 	 	slidesToScroll: 1,
-		edgeFriction: 11,
+		edgeFriction: 5,
 		prevArrow: '<img src="/assets/img/arrow-right.png" class="slide-arrow prev-arrow" />',
 		nextArrow: '<img src="/assets/img/arrow-left.png" class="slide-arrow next-arrow" />',
 		responsive: [
 			{
-			  breakpoint: 992,
+			  breakpoint: 1024,
 			  settings: {
-				slidesToShow: 4,
+				slidesToShow: 3,
+				slidesToScroll: 3
+			  }
+			},
+			{
+			  breakpoint: 600,
+			  settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+			  }
+			},
+			{
+			  breakpoint: 480,
+			  settings: {
+				slidesToShow: 1,
 				slidesToScroll: 1
 			  }
 			}

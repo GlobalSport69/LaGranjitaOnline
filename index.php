@@ -60,7 +60,7 @@
 
 <body>
 
-  <header class="container">
+  <header class="container" id="inicio">
     <!--    Made by Erik Terwan    -->
     <!--   24th of November 2015   -->
     <!--        MIT License        -->
@@ -94,24 +94,24 @@
     <section class="row">
     <nav role="navigation">
         <div id="menuToggle">
-          <input type="checkbox" />
+          <input type="checkbox" id="burguerCheck" />
           <span></span>
           <span></span>
           <span></span>
           <ul id="menu">
-            <a href="#">
+            <a href="javascript:void(0);"  onclick="ancla('inicio')">
               <li>INICIO</li>
             </a>
-            <a href="#">
+            <a href="javascript:void(0);" onclick="ancla('pronostico')">
               <li>PRONOSTICOS</li>
             </a>
-            <a href="#">
+            <a href="javascript:void(0);" id="reglamentos"  onclick="ancla('reglamentos')">
               <li>REGLAMENTOS</li>
             </a>
-            <a href="#">
+            <a href="javascript:void(0);"  onclick="ancla('contactanos')">
               <li>CONTACTANOS</li>
             </a>
-            <a href="#">
+            <a href="javascript:void(0);"  onclick="ancla('registrate')">
               <li>REGISTRATE</li>
             </a>
           </ul>
@@ -156,7 +156,7 @@
     </div>
     <div class="borderLine"></div>
     <div class="lineAqua-responsive"></div>
-    <div class="item row d-flex">
+    <div class="item row d-flex"  id="pronostico">
       <article class="col-sm-12 pronostico text-center">
         <p class="pronosticoTitle">PRONOSTICA</p>
         <p class="pronosticoAnimalito">TU ANIMALITO</p>
@@ -179,7 +179,7 @@
     <div class="borderLine"></div>
     <div class="lineAqua-responsive"></div>
     <div class="item row">
-      <section class="qr">
+      <section class="qr" id="registrate">
         <p class="title">CADA SEGUNDO CUENTA</p>
         <img src="assets/img/linea_superior.png" alt="Linea Superior" class="img-fluid">
 
@@ -226,7 +226,7 @@
   <!-- Section 4 -->
   <section class="container my-3 d-flex section3">
     <div class="borderLine"></div>
-    <article class="item">
+    <article class="item" id="contactanos">
       <header>
         <p class="titleContact">
           CONTACTANOS

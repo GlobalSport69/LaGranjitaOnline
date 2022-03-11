@@ -1,5 +1,11 @@
 'use strict'
-
+//funcion ancla para el menu
+function ancla(element) {
+    document.getElementById('burguerCheck').checked = false;
+    document.getElementById(element).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
 //Fetch de la api
 const getLotteries = () => {
     return fetch(`http://api-preprod.caribeapuesta.com/loteries/results3?since='${now}'&product=1`)

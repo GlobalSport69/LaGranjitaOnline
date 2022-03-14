@@ -8,7 +8,7 @@ function ancla(element) {
 }
 //Fetch de la api
 const getLotteries = () => {
-    return fetch(`http://api-preprod.caribeapuesta.com/loteries/results3?since='${now}'&product=1`)
+    return fetch(`https://ws-dev.caribeapuesta.com/loteries/results3?since='${now}'&product=1`)
     .then(response => response.json())
     .then(data => {
           let loterias = loteries;

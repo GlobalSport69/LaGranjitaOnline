@@ -116,10 +116,10 @@ function startShowingMessage() {
 //DAtapicker onChange
 function handler(e){
 
-    let url = `http://api-preprod.caribeapuesta.com/loteries/results3?since='${now}'&product=1`;
+    let url = `https://ws-dev.caribeapuesta.com/loteries/results3?since='${now}'&product=1`;
 
     if(typeof(e) !== 'string') {
-        url = `http://api-preprod.caribeapuesta.com/loteries/results3?since='${e.target.value}'&product=1`;
+        url = `https://ws-dev.caribeapuesta.com/loteries/results3?since='${e.target.value}'&product=1`;
     }
 
     console.log(url, 'url');

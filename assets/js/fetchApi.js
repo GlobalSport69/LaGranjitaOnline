@@ -8,7 +8,7 @@ function ancla(element) {
 }
 //Fetch de la api
 const getLotteries = () => {
-    return fetch(`http://api-preprod.caribeapuesta.com/loteries/results3?since='${now}'&product=1`)
+    return fetch(`https://ws-dev.caribeapuesta.com/loteries/results3?since='${now}'&product=1`)
     .then(response => response.json())
     .then(data => {
           let loterias = loteries;
@@ -116,10 +116,10 @@ function startShowingMessage() {
 //DAtapicker onChange
 function handler(e){
 
-    let url = `http://api-preprod.caribeapuesta.com/loteries/results3?since='${now}'&product=1`;
+    let url = `https://ws-dev.caribeapuesta.com/loteries/results3?since='${now}'&product=1`;
 
     if(typeof(e) !== 'string') {
-        url = `http://api-preprod.caribeapuesta.com/loteries/results3?since='${e.target.value}'&product=1`;
+        url = `https://ws-dev.caribeapuesta.com/loteries/results3?since='${e.target.value}'&product=1`;
     }
 
     console.log(url, 'url');

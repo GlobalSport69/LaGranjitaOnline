@@ -496,6 +496,9 @@ p.titleRegister {
     }
 }
 @media only screen and (max-width: 425px){
+    .subsectionQr {
+        flex-direction: column;
+    }
     .footer {
         flex: 0 0 100%;
     }
@@ -504,7 +507,7 @@ p.titleRegister {
     text-align: center;
     }
     .img-responsive {
-        max-width: 100px !important;
+        max-width: 160px !important;
     }
     .btn-img-fluid {
         max-width: 258px !important;
@@ -514,6 +517,10 @@ p.titleRegister {
     }
     #menu {
         width: 107vw !important;
+    }
+    .qr-img {
+        width: 60%;
+        margin: 0 auto;
     }
 }
 @media only screen and (max-width: 375px){

@@ -55,7 +55,7 @@ let printLastAnimalSlider = (data) => {
             let horarioLott = data.lottery.name.slice(-8);
             let codAnimal = data.result.split("-",1)[0];
             console.log(DomLot[element], 'buscar gorrsad');
-            DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" onclick='playAudio(${codAnimal})' class='img-fluid img-animate'/>
+            DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
             <span class="mt-3 mb-3">${horarioLott}</span>`;
             break;
         }
@@ -75,7 +75,7 @@ let printLastAnimal = (data) => {
             console.log("Se encontro un espacio reemplazable");
             let codAnimal = data.result.split("-",1)[0];
             console.log(DomLot[element], 'buscar gorrsad');
-            DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" onclick='playAudio(${codAnimal})' class='img-fluid img-animate'/>
+            DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
             <span class="mt-3 mb-3">${horarioLott}</span>`;
             break;
         }
@@ -84,6 +84,7 @@ let printLastAnimal = (data) => {
 }
 //Play animal Audio
 function playAudio(audioName) {
+    console.log(audioName);
     var audio = new Audio(`assets/sounds/${audioName}.mp3`);
     console.log(audioName, 'audioName');
     audio.play();
@@ -97,7 +98,7 @@ let printAllAnmilas = (data) => {
         let template = `<span class='resultImg'></span><span class="mt-3 mb-3">${horarioLott}</span>`;
         let codAnimal = element.result.split("-",1)[0];
         if(element.result !== '' ) 
-            template = `<img src="assets/img/animalitos/${element.result}.png" onclick='playAudio(${codAnimal})' class='img-fluid img-animate'/>
+            template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
             <span>${horarioLott}</span>`;
         
         let variable = `<div class='itemResults'>${template}</div>`;
@@ -156,7 +157,7 @@ function printAnimalsDate(data){
         let template = `<span class='resultImgD resultImg'></span><span>${horarioLott}</span>`;
         let codAnimal = element.result.split("-",1)[0];
         if(element.result !== '' ) 
-            template = `<img src="assets/img/animalitos/${element.result}.png" onclick='playAudio(${codAnimal})' class='img-fluidAnimals'/>
+            template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluidAnimals'/>
             <span>${horarioLott}</span>`;
         
         let variable = `<div class='itemResultsD'>${template}</div>`;

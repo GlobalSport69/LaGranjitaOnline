@@ -1,0 +1,22 @@
+name: autopull
+on:
+  push:
+    branches: [main]
+
+jobs: 
+  job_one:  
+    name: Deploy
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Auto Pull Origin main
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSHKEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /var/www/html
+            git status
+            git pull origin main
+            git log -1

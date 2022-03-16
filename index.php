@@ -61,36 +61,6 @@
 <body>
 
   <header class="container" id="inicio">
-    <!--    Made by Erik Terwan    -->
-    <!--   24th of November 2015   -->
-    <!--        MIT License        -->
-
-<!--<nav role="navigation">
-        <div id="menuToggle">
-          <input type="checkbox" />
-          <span></span>
-          <span></span>
-          <span></span>
-          <ul id="menu">
-            <a href="#">
-              <li>Home</li>
-            </a>
-            <a href="#">
-              <li>About</li>
-            </a>
-            <a href="#">
-              <li>Info</li>
-            </a>
-            <a href="#">
-              <li>Contact</li>
-            </a>
-            <a href="https://erikterwan.com/" target="_blank">
-              <li>Show me more</li>
-            </a>
-          </ul>
-        </div>
-      </nav>
-      -->
     <section class="row">
     <nav role="navigation">
         <div id="menuToggle">
@@ -195,29 +165,34 @@
           </div>
           <div class="sectionbtnSN">
             <div class="btnLuck">
-              <img src="assets/img/BotónFacebookOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
-              <img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
+              <img src="assets/img/BotónInstagramOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
+              <img rel="noopener noreferrer" onclick="changeLink(`https://www.instagram.com/lagranjitaofic/?hl=es`)"  src="assets/img/BotónInstagramON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
             </div>
             <div class="btnLuck">
-              <img src="assets/img/BotónInstagramOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
-              <img src="assets/img/BotónInstagramON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
+              <img src="assets/img/BotónTwitterOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
+              <img rel="noopener noreferrer" onclick='changeLink("https://twitter.com/lagranjitaofic?lang=es")' src="assets/img/BotónTwitterON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
             </div>
-            <div class="btnLuck">
-              <img src="assets/img/BotónTwitterOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
-              <img src="assets/img/BotónTwitterON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
-            </div>
-            <div class="btnLuck">
+            <!--
+              <div class="btnLuck">
               <img src="assets/img/BotónWhatsAppOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
               <img src="assets/img/BotónWhatsAppON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
             </div>
+            <div class="btnLuck">
+              <img src="assets/img/BotónFacebookOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
+              <img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
+            </div>
+            -->
+            
           </div>
         </div>
-        <img src="assets/img/linea_inferior.png" alt="Linea Inferior" class="img-fluid">
+        <!--
+<img src="assets/img/linea_inferior.png" alt="Linea Inferior" class="img-fluid">
         <p class="mb-0 textWhatsapp">TE GUSTARIA RECIBIR TUS RESULTADOS VIA WHATSAPP AL INSTANTE LAS 24/7?</p>
         <div class="mt-2 btnLuck">
           <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive">
           <img src="assets/img/BotónRegístrateON_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive">
         </div>
+        -->
       </section>
     </div>
     <div class="borderLine"></div>
@@ -246,25 +221,29 @@
             <label for="msg" class="form-label formLabel">Mensaje</label>
             <textarea name="msg" cols="30" rows="5" class="form-control formInput" id="msg"></textarea>
           </div>
+          <div class="m-2 btnLuck">
+            <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+            <img src="assets/img/BotónRegístrateON_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+          </div>
         </section>
       </form>
       <div class="d-flex">
         <div class="infoContact">
-          <i class="fab fa-facebook-square"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter-square"></i>
+          <!--<i class="fab fa-facebook-square"></i>-->
+          <i rel="noopener noreferrer" onclick="changeLink(`https://www.instagram.com/lagranjitaofic/?hl=es`)" class="fab fa-instagram pointer"></i>
+          <i rel="noopener noreferrer" onclick="changeLink(`https://twitter.com/lagranjitaofic?lang=es`)" class="fab fa-twitter-square pointer"></i>
           <span class="text-simple">
             @lagranjitaofic
           </span>
           <p>
-            <i class="fab fa-whatsapp-square"></i>
+            <a onclick="changeLink('https://api.whatsapp.com/send?phone=584248236730')" class="fab fa-whatsapp-square aWhatsapp"></a>
             <span class="text-simple">
               +58 (424) 823-6730
             </span>
           </p>
         </div>
         <div class="miniQr">
-          <img src="assets/img/QR.png" alt="" class="img-fluid img-qr-large" style="max-width: 100px;">
+          <img src="assets/img/QR.png" alt="" class="img-fluid img-qr-large" >
         </div>
       </div>
     </article>
@@ -299,8 +278,8 @@
             <input type="text" class="form-control formInput" id="email" name="email">
           </div>
           <div class="my-5 btnLuck">
-            <img src="assets/img/BotónOFF_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid btn-img-fluid w-100">
-            <img src="assets/img/BotónON_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid btn-img-fluid w-100">
+            <img src="assets/img/BotónOFF_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid btn-img-fluid w-100 pointer">
+            <img src="assets/img/BotónON_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid btn-img-fluid w-100 pointer">
           </div>
         </section>
       </form>

@@ -1,4 +1,9 @@
 'use strict'
+let baseUrl = 'https://ws-dev.caribeapuesta.com/loteries/';
+//Funcion redirect url
+function changeLink(url){
+    window.open(url, '_blank');
+}
 //funcion ancla para el menu
 function ancla(element) {
     document.getElementById('burguerCheck').checked = false;
@@ -8,7 +13,7 @@ function ancla(element) {
 }
 //Fetch de la api
 const getLotteries = () => {
-    return fetch(`https://ws-dev.caribeapuesta.com/loteries/results3?since='${now}'&product=1`)
+    return fetch(`${baseUrl}results3?since='${now}'&product=1`)
     .then(response => response.json())
     .then(data => {
           let loterias = loteries;
@@ -117,10 +122,10 @@ function startShowingMessage() {
 //DAtapicker onChange
 function handler(e){
 
-    let url = `https://ws-dev.caribeapuesta.com/loteries/results3?since='${now}'&product=1`;
+    let url = `${baseUrl}results3?since='${now}'&product=1`;
 
     if(typeof(e) !== 'string') {
-        url = `https://ws-dev.caribeapuesta.com/loteries/results3?since='${e.target.value}'&product=1`;
+        url = `${baseUrl}results3?since='${e.target.value}'&product=1`;
     }
 
     console.log(url, 'url');

@@ -11,10 +11,10 @@ jobs:
       - name: Auto Pull Origin main
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSHKEY }}
-          port: ${{ secrets.PORT }}
+          host: beta.lagranjitaonline.com
+          username: admin
+          key: ${{ secrets.KEY }}
+          port: 22
           script: |
             cd /var/www/html
             git status

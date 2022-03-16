@@ -230,7 +230,8 @@ p.pronosticoSuerte {
 }
 .subsectionQr{
 	justify-content: space-around;
-	margin:17px 0
+	margin:17px 0;
+    align-items: center !important;
 }
 .sectionbtnSN > img{
 	margin: 5px 0;
@@ -356,7 +357,7 @@ p.pronosticoSuerte {
     margin: 0 2px;
 }
 .infoContact{
-	flex:0 0 80%
+	flex:0 0 75%
 }
 .miniQr{
 	flex: 0 0 20%;
@@ -391,6 +392,21 @@ p.titleRegister {
     justify-content: start;
     align-items: center;
 }
+.pointer {
+    cursor: pointer;
+}
+.aWhatsapp{
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    cursor: pointer;
+}
+.aWhatsapp:hover{
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -420,7 +436,7 @@ p.titleRegister {
     margin: auto;
   }
   .infoContact {
-    flex: 0 0 66%;
+    flex: 0 0 70%;
   }
   .text-simple {
       font-size: 16px !important;
@@ -552,6 +568,9 @@ p.titleRegister {
     #menu {
         width: 110vw !important;
     }
+    .infoContact {
+        flex: 0 0 84%;
+    }
 }
 @media only screen and (max-width: 320px){
     .qr > .title {
@@ -563,6 +582,12 @@ p.titleRegister {
     .footer {
         display: flex !important;
     flex-direction: column;
+    }
+    .infoContact {
+      flex: 0 0 80%;
+    }
+    .text-simple {
+        font-size: 11px !important;
     }
 
 }

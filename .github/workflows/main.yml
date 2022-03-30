@@ -1,0 +1,21 @@
+name: autopull
+on:
+  push:
+    branches: [dev]
+
+jobs: 
+  job_one:  
+    name: Deploy
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Auto Pull Origin Dev Loteria
+        uses: appleboy/ssh-action@master
+        with:
+          host: 51.222.127.11
+          username: developer
+          port: 3522
+          script: |
+            cd /var/www/beta.lagranjitaonline.com
+            git status
+            git pull origin dev
+            git log -1

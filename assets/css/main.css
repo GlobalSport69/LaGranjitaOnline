@@ -407,7 +407,49 @@ p.titleRegister {
     text-decoration: none;
     cursor: pointer;
 }
-
+/*Reglamentos*/
+.text-rules {
+    color: white;
+    padding: 16px 8px;
+    text-align: justify;
+    margin: 14px;
+    font-size: 16px;
+}
+.rules-text-container{
+    height: 450px;
+    overflow-y: scroll;
+}
+.rules-text-container::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+.rules-controls{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 19%;
+    margin: 21px 70px;
+}
+  
+  .rules-text-container::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid aqua;  /* creates padding around scroll thumb */
+    box-shadow: 0 0 2px cyan;
+  }
+  
+  .rules-text-container::-webkit-scrollbar-thumb {
+    background-color: aqua;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid transparent;  /* creates padding around scroll thumb */
+  }
+.title-rules{
+    color: rgb(0 255 255);
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .example {background: red;}

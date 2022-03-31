@@ -594,5 +594,38 @@ startShowingMessage();
 handler(now);
 
 
+function imprimir(url) {
+    window.open(url, '_blank');
+}/*
+function zoom(option){
+    var text =  document.querySelector('.text-rules').style.fontSize;
+    if(option === 'in'){
+        text  = document.querySelector('.text-rules').style.fontSize ;
+        console.log(text);
+    }
+}*/
+const getFontSize = () =>
+  parseFloat(getComputedStyle(document.documentElement)
+    .getPropertyValue('--font-size'));
 
+    const fontUp = () => {
+        // escuchamos los clicks del elemento
+        document.querySelector('#font-up').addEventListener('click', () => {
+          // obtenemos el valor de la variable CSS
+          let fontSize = getFontSize()
+          // aumentamos el valor de esa variable en 1.1
+          document.documentElement
+            .style.setProperty('--font-size', `${fontSize * 1.1}`)
+        })
+      }
+      const fontDown = element => {
+        // escuchamos los clicks del elemento
+        element.addEventListener('click', () => {
+          // obtenemos el valor de la variable CSS
+          let fontSize = getFontSize()
+          // disminuimos el valor de esa variable en 0.9
+          document.documentElement
+            .style.setProperty('--font-size', `${fontSize * 0.9}`)
+        })
+      }
 

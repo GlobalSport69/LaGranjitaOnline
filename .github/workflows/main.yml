@@ -1,4 +1,4 @@
-name: autopull
+name: CI/CD LaGranjita DEV
 on:
   push:
     branches: [dev]
@@ -8,13 +8,13 @@ jobs:
     name: Deploy
     runs-on: ubuntu-18.04
     steps:
-      - name: Auto Pull Origin Dev Loteria
+      - name: Auto Pull LaGranjita DEV
         uses: appleboy/ssh-action@master
         with:
-          host: 51.222.127.11
-          username: developer
-          port: 3522
-          password: TRG@GEsQKAq9DNYCGj!zKH3gQ?Qf$Mobf!4tMyAJ
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USR_NAME }}
+          port: ${{ secrets.PORT }}
+          password: ${{ secrets.PASSWD }}
           script: |
             cd /var/www/beta.lagranjitaonline.com
             git status

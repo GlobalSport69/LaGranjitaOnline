@@ -99,18 +99,23 @@
   <!-- Carrusel Resultados -->
   <section class="container my-3">
     <div class="row animalslist1">
-      <div class="col-lg-12">
+      <div class="col-lg-8">
         <div class="carouselAnimales">
         </div>
       </div>
     </div>
     <div class="row animalslist2">
-      <div class="col-lg-12">
+      <div class="col-lg-9 col-md-9 col-sm-9">
         <div class="carouselAnimalsSlider" style="color: white;"></div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 Alarm-container">
+        <div class="Alarm">
+          <img class="alarmImg" src="assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png" alt="" class="img-fluid img-responsive">
+          <!--<img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">-->
+        </div>
       </div>
     </div>
   </section>
-
   <!-- Carrusel Resultados -->
   <div class="lineAqua"></div>
   <!-- Seccion 3 -->
@@ -310,6 +315,26 @@
     <div class="borderLine"></div>
   </section>
   <div class="lineAqua"></div>
+  <!--Modal-->
+  <!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="assets/img/logo.png" alt="" class="col-5">
+        <h5 class="modal-title col-5" id="exampleModalLabel">Advertencia</h5>
+        <button type="button" class="btn-close col-2" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Este es un sitio web de resultados de apuestas, debe ser mayor de edad para poder entrar.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Confirmo, tengo +18 años</button>
+      </div>
+    </div>
+  </div>
+</div>
   <footer class="container my-3">
     <section class="section3 d-flex">
       <div class="row footer-content">

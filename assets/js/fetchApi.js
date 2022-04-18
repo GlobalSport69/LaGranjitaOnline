@@ -1,4 +1,10 @@
 'use strict'
+$( document ).ready(function() {
+    console.log( "ready!" );
+    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
+    myModal.toggle();
+});
+
 let baseUrl = 'https://ws-dev.caribeapuesta.com/loteries/';
 //Funcion redirect url
 function changeLink(url){
@@ -50,32 +56,108 @@ let obtenerLoterias = () => {
 //Reemplazar e imprimir ultimo resultado en el slider
 let printLastAnimalSlider = (data) => {
     //Encuentra los nodos del DOM de todas las loterias
+    let alarm = document.querySelector('.alarmImg');
     let DomLot = document.querySelectorAll('.slick-track')[0].children;
+    var audioAlarma = new Audio(`assets/sounds/Alarma3.mp3`);
     let horarioLott = data.lottery.name.slice(-8);
-
+    var audio;
+    var cod;
+    var codAnimal;
     for (const element in DomLot) {
         if(DomLot[element].innerHTML == `<span class="resultImg"></span><span class="mt-3 mb-3">${horarioLott}</span>`){
             let horarioLott = data.lottery.name.slice(-8);
             let codAnimal = data.result.split("-",1)[0];
+            alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
+            alarm.classList.add("test")
+            audioAlarma.play();
+
+            setTimeout(() => {
+
+            //test promesa
+            console.log('entramos al timeout');
+            codAnimal = data.result.split("-",1)[0];
+            //playAudio(codAnimal);
+            console.log(codAnimal, 'codigo animal');
+            cod = codAnimal;
+            console.log(cod);
+            alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';
+            alarm.classList.remove("test");
             DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
             <span class="mt-3 mb-3">${horarioLott}</span>`;
+            audio = new Audio(`assets/sounds/${cod}.mp3`);
+            audio.play(); 
+            }, 11000);
+            
             break;
         }
     }
 
 }
+
+//funcion de animacion alarma
+/*
+let alarmAnimate = () => {
+    let alarm = document.querySelector('.alarmImg');
+    alarm.classList.add('alarmAnimate');
+    console.log('hola');
+    alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
+    setTimeout(() => {
+        console.log('hola2');
+        alarm.src = "assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png";
+        var audio = new Audio(`assets/sounds/Alarma.mp3`);
+        audio.play();
+    }, 60000);
+}*/
+/*
+let alarmaAnimate = new Promise((resolve, reject) => {
+    let alarm = document.querySelector('.alarmImg');
+    //alarm.classList.add('alarmAnimate');
+    console.log('hola');
+    alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
+    setTimeout(() => {
+        console.log('hola2');
+        alarm.src = "assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png";  
+    }, 60000);
+    resolve('termina Alarma');
+});*/
+
 //Reemplazar e imprimir ultimo resultado 
 let printLastAnimal = (data) => {
     //Encuentra los nodos del DOM de todas las loterias
+    console.log(data, 'data');
+    let alarm = document.querySelector('.alarmImg');
     let DomLot = document.querySelectorAll('.carouselAnimales')[0].children;
+    var audioAlarma = new Audio(`assets/sounds/Alarma2.mp3`);
     let horarioLott = data.lottery.name.slice(-8);
+    var audio;
+    var cod;
+    var codAnimal;
     for (const element in DomLot) {
         if(DomLot[element].innerHTML == `<span class="resultImg"></span><span class="mt-3 mb-3">${horarioLott}</span>`){
-            let codAnimal = data.result.split("-",1)[0];
+            
+        //alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
+           // for(let i = 0; i > 3; i++){
+               // audioAlarma.play();
+          //  }
+            setTimeout(() => {
+                 //test promesa
+            console.log('entramos al timeout');
+            codAnimal = data.result.split("-",1)[0];
+            //playAudio(codAnimal);
+            console.log(codAnimal, 'codigo animal');
+            cod = codAnimal;
+            console.log(cod);
+           /* audio = new Audio(`assets/sounds/${cod}.mp3`);
+            audio.play(); */
+            }, 60000);
+            
             DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
             <span class="mt-3 mb-3">${horarioLott}</span>`;
             break;
         }
+        //console.log(cod);
+        /*var audio = new Audio(`assets/sounds/${cod}.mp3`);
+        audio.play();*/
     }
 
 }
@@ -84,23 +166,37 @@ function playAudio(audioName) {
     var audio = new Audio(`assets/sounds/${audioName}.mp3`);
     audio.play();
 }
-//Imprimir todos los resultados
+//Imprimir todos los resultados/*
 let printAllAnmilas = (data) => {
     document.querySelector(".carouselAnimales").innerHTML = "";
     document.querySelector('.slick-track').innerHTML = "";
+    let alarm = document.querySelector('.alarmImg');
+    var audioAlarma = new Audio(`assets/sounds/Alarma3.mp3`);
+    var audio;
+    var option = 0;
     data.forEach(element => {
         let horarioLott = element.lottery.name.slice(-8);
         let template = `<span class='resultImg'></span><span class="mt-3 mb-3">${horarioLott}</span>`;
         let codAnimal = element.result.split("-",1)[0];
-        if(element.result !== '' ) 
-            template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
-            <span>${horarioLott}</span>`;
         
-        let variable = `<div class='itemResults'>${template}</div>`;
-        document.querySelector(".carouselAnimales").innerHTML += variable;
-        $('.carouselAnimalsSlider').slick('slickAdd',variable);
+        if(element.result !== '' ) {
+            //alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
+            audio = new Audio(`assets/sounds/${codAnimal}.mp3`); 
+            //audioAlarma.play();
+            template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+                <span>${horarioLott}</span>`;
+        } 
+            //https://admin-dev.caribeapuesta.com/loteries/results/2/2022-04-18
+            // console.log(template, 'template final');
+            let variable = `<div class='itemResults'>${template}</div>`;
+            //document.querySelector(".carouselAnimales").innerHTML += variable;
+            $('.carouselAnimalsSlider').slick('slickAdd',variable);
     });
 
+    if(audio){
+        audio.play();
+    };
+    
 }
 // itervalo para mostrar animalitos
 function startShowingMessage() {
@@ -228,7 +324,7 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 2,
-            "name": "LA GRANJITA  12:00 AM",
+            "name": "LA GRANJITA  12:00 PM",
             "hour": "2022-02-11T12:00:00-04:00",
             "type": "ANIMALES"
         },
@@ -245,7 +341,7 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 2,
-            "name": "LA GRANJITA  01:00 PM",
+            "name": "LA GRANJITA  1:00 PM",
             "hour": "2022-02-11T13:00:00-04:00",
             "type": "ANIMALES"
         },
@@ -262,7 +358,7 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 2,
-            "name": "LA GRANJITA  02:00 PM",
+            "name": "LA GRANJITA  2:00 PM",
             "hour": "2022-02-11T14:00:00-04:00",
             "type": "ANIMALES"
         },
@@ -279,7 +375,7 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 2,
-            "name": "LA GRANJITA  03:00 PM",
+            "name": "LA GRANJITA  3:00 PM",
             "hour": "2022-02-11T15:00:00-04:00",
             "type": "ANIMALES"
         },
@@ -296,7 +392,7 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 2,
-            "name": "LA GRANJITA  04:00 PM",
+            "name": "LA GRANJITA  4:00 PM",
             "hour": "2022-02-11T16:00:00-04:00",
             "type": "ANIMALES"
         },
@@ -313,7 +409,7 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 2,
-            "name": "LA GRANJITA  05:00 PM",
+            "name": "LA GRANJITA  5:00 PM",
             "hour": "2022-02-11T17:00:00-04:00",
             "type": "ANIMALES"
         },
@@ -330,7 +426,7 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 2,
-            "name": "LA GRANJITA  06:00 PM",
+            "name": "LA GRANJITA  6:00 PM",
             "hour": "2022-02-11T18:00:00-04:00",
             "type": "ANIMALES"
         },
@@ -347,7 +443,7 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 2,
-            "name": "LA GRANJITA  07:00 PM",
+            "name": "LA GRANJITA  7:00 PM",
             "hour": "2022-02-11T19:00:00-04:00",
             "type": "ANIMALES"
         },
@@ -417,7 +513,7 @@ const loteries2 = [
         "result": "",
         "lottery": {
             "id": 2,
-            "name": "LA GRANJITA  12:00 AM",
+            "name": "LA GRANJITA  12:00 PM",
             "hour": "2022-02-11T12:00:00-04:00",
             "type": "ANIMALES"
         },

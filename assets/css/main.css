@@ -450,6 +450,19 @@ p.titleRegister {
     letter-spacing: 2px;
     font-size: 12px;
 }
+.img-qr-large {
+    max-width: 84px !important
+}
+
+/*Oculta el listado simple de*/
+.animalslist1 {
+    display: none;
+}
+.Alarm-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .example {background: red;}
@@ -493,13 +506,6 @@ p.titleRegister {
   .img-responsive {
     max-width: 136px !important;
   }
-}
-
-.animalslist2 {
-    display: none;
-}
-.img-qr-large {
-    max-width: 84px !important
 }
 @media (min-width: 1024px) { 
  nav {
@@ -802,3 +808,24 @@ p.titleRegister {
 {
   transform: none;
 }
+
+  .test{
+    -webkit-animation: tiembla 0.1s infinite;
+  }
+  @-webkit-keyframes tiembla{
+    0%  { -webkit-transform:rotateZ(-5deg); }
+    50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
+    100%{ -webkit-transform:rotateZ( 5deg); }
+    0%  { -webkit-transform:rotateZ(-5deg); }
+    50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
+    100%{ -webkit-transform:rotateZ( 5deg); }
+  }
+
+ .modal-content {
+    background-size: cover;
+    background-image: url(../img/bk.jpg);
+    color: white
+  }
+  .btn-close {
+      color: aqua !important;
+  }

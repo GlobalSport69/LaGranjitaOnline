@@ -3,16 +3,29 @@ html,body{
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover
+	background-size: cover;
+    overflow-x: hidden;
 }
 .lineAqua{
 	width: 100%;
     border: solid 1px rgb(0 255 255);
     box-shadow: 0 0 2px cyan;
 }
+.lineAqua-responsive {
+    width: 100%;
+    border: solid 1px rgb(0 255 255);
+    box-shadow: 0 0 2px cyan;
+    display: none;
+    margin-bottom: 16px;
+    margin-top: 8px;
+}
 nav{
-	display: flex;
-    justify-content: space-around
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+    z-index: 999;
+    left: -40px;
+    top: -28px;
 }
 nav > span {
 	color: white;
@@ -34,13 +47,14 @@ span.menuItem2{
 span.menuItem3{
 	border-right: solid 1px white;
 }
-.slogan{
-	font-size: 36px;
+.slogan {
+    font-size: 35px;
     color: rgb(0 255 255);
     text-shadow: 0 0 5px cyan;
-	position:absolute;
-	bottom:20px;
+    position: absolute;
+    bottom: 20px;
     padding: 0;
+    text-align: right;
 }
 .menuItems{
     margin-bottom: 2px;
@@ -216,7 +230,8 @@ p.pronosticoSuerte {
 }
 .subsectionQr{
 	justify-content: space-around;
-	margin:17px 0
+	margin:17px 0;
+    align-items: center !important;
 }
 .sectionbtnSN > img{
 	margin: 5px 0;
@@ -342,7 +357,7 @@ p.pronosticoSuerte {
     margin: 0 2px;
 }
 .infoContact{
-	flex:0 0 80%
+	flex:0 0 75%
 }
 .miniQr{
 	flex: 0 0 20%;
@@ -377,7 +392,64 @@ p.titleRegister {
     justify-content: start;
     align-items: center;
 }
-
+.pointer {
+    cursor: pointer;
+}
+.aWhatsapp{
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    cursor: pointer;
+}
+.aWhatsapp:hover{
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*Reglamentos*/
+.text-rules {
+    color: white;
+    padding: 16px 8px;
+    text-align: justify;
+    margin: 14px;
+    font-size: 16px;
+}
+.rules-text-container{
+    height: 450px;
+    overflow-y: scroll;
+}
+.rules-text-container::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+.rules-controls{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 19%;
+    margin: 21px 70px;
+}
+  
+  .rules-text-container::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid aqua;  /* creates padding around scroll thumb */
+    box-shadow: 0 0 2px cyan;
+  }
+  
+  .rules-text-container::-webkit-scrollbar-thumb {
+    background-color: aqua;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid transparent;  /* creates padding around scroll thumb */
+  }
+.title-rules{
+    color: rgb(0 255 255);
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .example {background: red;}
@@ -389,11 +461,50 @@ p.titleRegister {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .example {background: blue;}
+@media only screen and (max-width: 768px) {
+    .lineAqua-responsive{
+        display: block;
+    }
 } 
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (max-width: 1024px) {
+  .animalslist1 {
+    display: none;
+  }
+  .animalslist2 {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+  .infoContact {
+    flex: 0 0 70%;
+  }
+  .text-simple {
+      font-size: 16px !important;
+  }
+  section .lineAqua {
+    display: none;
+    margin-bottom: 16px;
+  }
+  footer .section {
+    padding: 8px;
+  }
+  .img-responsive {
+    max-width: 136px !important;
+  }
+}
+
 .animalslist2 {
     display: none;
+}
+.img-qr-large {
+    max-width: 84px !important
+}
+@media (min-width: 1024px) { 
+ nav {
+     display: none;
+ }
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 1024px) {
@@ -403,14 +514,125 @@ p.titleRegister {
   .animalslist2 {
     display: block;
   }
+  .btn-img-fluid {
+    max-width: 258px !important;
+  }
 }
-@media only screen and (max-width: 1199px) {
-    .img-fluid{
-        max-width: 101px !important;
+@media only screen and (max-width: 768px){
+    .item {
+        flex: 0 0 70%;
+    }
+    .borderLine {
+        display: none;
+    }
+    section .lineAqua {
+        display: block;
+    }
+    .btn-img-fluid {
+        max-width: 378px !important;
+    }
+    .topText {
+        font-size: 13px;
+    }
+    .textWhatsapp {
+        font-size: 13px;
+    }
+    .textWarning {
+        font-size: 13px;
+    }
+    .title-menu {
+        display: none;
+    }
+    .img-menu {
+        text-align: center;
+    }
+    .text-left,.title {
+        text-align: center;
+    }
+    .resultsText {
+        text-align: center;
     }
 }
+@media only screen and (max-width: 425px){
+    .subsectionQr {
+        flex-direction: column;
+    }
+    .footer {
+        flex: 0 0 100%;
+    }
+    .footer-content {
+        padding: 12px;
+    text-align: center;
+    }
+    .img-responsive {
+        max-width: 160px !important;
+    }
+    .btn-img-fluid {
+        max-width: 258px !important;
+    }
+    #menu li {
+        font-size: 24px !important;
+    }
+    #menu {
+        width: 107vw !important;
+    }
+    .qr-img {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 375px){
+    .itemResultsD {
+        flex: 0 0 50%;
+    }
+    .topText {
+        font-size: 10px;
+    }
+    .textWhatsapp {
+        font-size: 12px;
+    }
+    .formLabel {
+        font-size: 12px;
+    }
+    .responsive-contentColumn {
+        flex-direction: column !important;
+    }
+    .qr-img {
+        width: 57%;
+        margin: 0 auto;
+    }
+    .topText {
+        font-size: 16px;
+    }
+    .img-responsive {
+        max-width: 160px !important;
+    }
+    #menu {
+        width: 110vw !important;
+    }
+    .infoContact {
+        flex: 0 0 84%;
+    }
+}
+@media only screen and (max-width: 320px){
+    .qr > .title {
+        font-size: 20px;
+    }
+    .imgFooter {
+        justify-content: center;
+    }
+    .footer {
+        display: flex !important;
+    flex-direction: column;
+    }
+    .infoContact {
+      flex: 0 0 80%;
+    }
+    .text-simple {
+        font-size: 11px !important;
+    }
 
-
+}
 
 /*Estilos para reemplazar imagenes */ 
 .btnLuck{
@@ -457,14 +679,14 @@ p.titleRegister {
 #menuToggle a
 {
   text-decoration: none;
-  color: #232323;
-  
+  color: #f8f9fa;
+  text-align: center;
   transition: color 0.3s ease;
 }
 
 #menuToggle a:hover
 {
-  color: tomato;
+  color: Aqua;
 }
 
 
@@ -476,7 +698,7 @@ p.titleRegister {
   position: absolute;
   top: -7px;
   left: -5px;
-  
+  background: aqua;
   cursor: pointer;
   
   opacity: 0; /* hide this */
@@ -491,12 +713,12 @@ p.titleRegister {
 #menuToggle span
 {
   display: block;
-  width: 33px;
-  height: 4px;
+  width: 46px;
+  height: 7px; 
   margin-bottom: 5px;
   position: relative;
   
-  background: #cdcdcd;
+  background: aqua;
   border-radius: 3px;
   
   z-index: 1;
@@ -526,7 +748,7 @@ p.titleRegister {
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
+  background: aqua;
 }
 
 /*
@@ -543,7 +765,7 @@ p.titleRegister {
  */
 #menuToggle input:checked ~ span:nth-last-child(2)
 {
-  transform: rotate(-45deg) translate(0, -1px);
+  transform: rotate(-45deg) translate(-2px, -1px);
 }
 
 /*
@@ -552,27 +774,25 @@ p.titleRegister {
  */
 #menu
 {
-  position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-  
-  background: #ededed;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-  
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    position: absolute;
+    width: 104vw;
+    height: 1004vw;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 150px;
+    background: url(../img/bk.jpg);;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    left: 0;
 }
 
 #menu li
 {
   padding: 10px 0;
-  font-size: 22px;
+  font-size: 36px;
 }
 
 /*

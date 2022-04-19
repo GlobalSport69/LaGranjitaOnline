@@ -1,0 +1,22 @@
+name: CI/CD LaGranjita DEV
+on:
+  push:
+    branches: [dev]
+
+jobs: 
+  job_one:  
+    name: Deploy
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Auto Pull LaGranjita DEV
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USR_NAME }}
+          port: ${{ secrets.PORT }}
+          password: ${{ secrets.PASSWD }}
+          script: |
+            cd /var/www/beta.lagranjitaonline.com
+            git status
+            git pull origin dev
+            git log -1

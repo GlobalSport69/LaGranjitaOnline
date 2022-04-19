@@ -59,60 +59,39 @@
 </head>
 
 <body>
-  <!--    Made by Erik Terwan    -->
-  <!--   24th of November 2015   -->
-  <!--        MIT License        -->
-<!--
-  <nav role="navigation">
-    <div id="menuToggle">
-      <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
-      <ul id="menu">
-        <a href="#">
-          <li>Home</li>
-        </a>
-        <a href="#">
-          <li>About</li>
-        </a>
-        <a href="#">
-          <li>Info</li>
-        </a>
-        <a href="#">
-          <li>Contact</li>
-        </a>
-        <a href="https://erikterwan.com/" target="_blank">
-          <li>Show me more</li>
-        </a>
-      </ul>
-    </div>
-  </nav>
--->
-  <header class="container">
+
+  <header class="container" id="inicio">
     <section class="row">
-      <div class="col-lg-3"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
-      <div class="col-lg-6 offset-lg-3 position-relative row p-0 mb-1">
-        <span class="slogan">El Hogar de los ANIMALITOS</span>
-        <div class="col-lg-12 position-absolute fixed-bottom p-0">
-          <div class="menuItems">
-            <span>
-              INICIO
-            </span>
-            <span>
-              PRONÓSTICOS
-            </span>
-            <span>
-              REGLAMENTOS
-            </span>
-            <span>
-              CONTÁCTANOS
-            </span>
-            <span>
-              REGISTRATE
-            </span>
-          </div>
+    <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" id="burguerCheck" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <a href="javascript:void(0);"  onclick="ancla('inicio')">
+              <li>INICIO</li>
+            </a>
+            <a href="javascript:void(0);" onclick="ancla('pronostico')">
+              <li>PRONOSTICOS</li>
+            </a>
+            <a href="javascript:void(0);" id="reglamentos"  onclick="ancla('reglamentos')">
+              <li>REGLAMENTOS</li>
+            </a>
+            <a href="javascript:void(0);"  onclick="ancla('contactanos')">
+              <li>CONTACTANOS</li>
+            </a>
+            <a href="javascript:void(0);"  onclick="ancla('registrate')">
+              <li>REGISTRATE</li>
+            </a>
+          </ul>
         </div>
+      </nav>
+      <!---->
+      <div class="col-lg-3 img-menu"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
+      <div class="col-lg-9 position-relative row p-0 mb-1 title-menu">
+        <span class="slogan">El Hogar de los ANIMALITOS</span>
+        
       </div>
     </section>
   </header>
@@ -146,7 +125,8 @@
     </div>
     </div>
     <div class="borderLine"></div>
-    <div class="item row d-flex">
+    <div class="lineAqua-responsive"></div>
+    <div class="item row d-flex"  id="pronostico">
       <article class="col-sm-12 pronostico text-center">
         <p class="pronosticoTitle">PRONOSTICA</p>
         <p class="pronosticoAnimalito">TU ANIMALITO</p>
@@ -155,9 +135,9 @@
       <div class="col-sm-12 pronosticosDiv">
         <span class="pronosticoImgBorder my-3"></span>
 
-        <div class="btnLuck">
-          <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3" onclick="getNameFiles()">
-          <img src="assets/img/BotónDameSuerteON_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3" onclick="getNameFiles()">
+        <div class="btnLuck mb-5">
+          <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3 btn-img-fluid img-responsive" onclick="getNameFiles()">
+          <img src="assets/img/BotónDameSuerteON_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3 btn-img-fluid img-responsive" onclick="getNameFiles()">
         </div>
 
         <p class="textWarning">
@@ -165,14 +145,16 @@
         </p>
       </div>
     </div>
+
     <div class="borderLine"></div>
+    <div class="lineAqua-responsive"></div>
     <div class="item row">
-      <section class="qr">
+      <section class="qr" id="registrate">
         <p class="title">CADA SEGUNDO CUENTA</p>
         <img src="assets/img/linea_superior.png" alt="Linea Superior" class="img-fluid">
 
-        <div class="subsectionQr d-flex">
-          <div class="imgQr">
+        <div class="subsectionQr d-flex responsive-contentColumn">
+          <div class="imgQr ">
             <span class="topText">
               DESCARGA NUESTRA TARJETA DIGITAL
             </span>
@@ -183,30 +165,34 @@
           </div>
           <div class="sectionbtnSN">
             <div class="btnLuck">
-              <img src="assets/img/BotónFacebookOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
-              <img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+              <img src="assets/img/BotónInstagramOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
+              <img rel="noopener noreferrer" onclick="changeLink(`https://www.instagram.com/lagranjitaofic/?hl=es`)"  src="assets/img/BotónInstagramON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
             </div>
             <div class="btnLuck">
-              <img src="assets/img/BotónInstagramOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
-              <img src="assets/img/BotónInstagramON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+              <img src="assets/img/BotónTwitterOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
+              <img rel="noopener noreferrer" onclick='changeLink("https://twitter.com/lagranjitaofic?lang=es")' src="assets/img/BotónTwitterON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
+            </div>
+            <!--
+              <div class="btnLuck">
+              <img src="assets/img/BotónWhatsAppOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
+              <img src="assets/img/BotónWhatsAppON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
             </div>
             <div class="btnLuck">
-              <img src="assets/img/BotónTwitterOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
-              <img src="assets/img/BotónTwitterON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
+              <img src="assets/img/BotónFacebookOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
+              <img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
             </div>
-            <div class="btnLuck">
-              <img src="assets/img/BotónWhatsAppOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
-              <img src="assets/img/BotónWhatsAppON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid">
-            </div>
+            -->
+            
           </div>
         </div>
-        <img src="assets/img/linea_inferior.png" alt="Linea Inferior" class="img-fluid">
+        <!--
+<img src="assets/img/linea_inferior.png" alt="Linea Inferior" class="img-fluid">
         <p class="mb-0 textWhatsapp">TE GUSTARIA RECIBIR TUS RESULTADOS VIA WHATSAPP AL INSTANTE LAS 24/7?</p>
         <div class="mt-2 btnLuck">
-          <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end">
-          <img src="assets/img/BotónRegístrateON_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end">
-
+          <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive">
+          <img src="assets/img/BotónRegístrateON_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive">
         </div>
+        -->
       </section>
     </div>
     <div class="borderLine"></div>
@@ -215,7 +201,7 @@
   <!-- Section 4 -->
   <section class="container my-3 d-flex section3">
     <div class="borderLine"></div>
-    <article class="item">
+    <article class="item" id="contactanos">
       <header>
         <p class="titleContact">
           CONTACTANOS
@@ -235,31 +221,59 @@
             <label for="msg" class="form-label formLabel">Mensaje</label>
             <textarea name="msg" cols="30" rows="5" class="form-control formInput" id="msg"></textarea>
           </div>
+          <div class="m-2 btnLuck">
+            <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+            <img src="assets/img/BotónRegístrateON_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+          </div>
         </section>
       </form>
       <div class="d-flex">
         <div class="infoContact">
-          <i class="fab fa-facebook-square"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter-square"></i>
-          <span>
+          <!--<i class="fab fa-facebook-square"></i>-->
+          <i rel="noopener noreferrer" onclick="changeLink(`https://www.instagram.com/lagranjitaofic/?hl=es`)" class="fab fa-instagram pointer"></i>
+          <i rel="noopener noreferrer" onclick="changeLink(`https://twitter.com/lagranjitaofic?lang=es`)" class="fab fa-twitter-square pointer"></i>
+          <span class="text-simple">
             @lagranjitaofic
           </span>
           <p>
-            <i class="fab fa-whatsapp-square"></i>
-            <span>
+            <a onclick="changeLink('https://api.whatsapp.com/send?phone=584248236730')" class="fab fa-whatsapp-square aWhatsapp"></a>
+            <span class="text-simple">
               +58 (424) 823-6730
             </span>
           </p>
         </div>
         <div class="miniQr">
-          <img src="assets/img/QR.png" alt="" class="img-fluid">
+          <img src="assets/img/QR.png" alt="" class="img-fluid img-qr-large" >
         </div>
       </div>
     </article>
+    <div class="lineAqua-responsive"></div>
     <div class="borderLine"></div>
     <article class="item">
-      2
+      <header>
+        <p class="title-rules">
+          REGLAMENTO DEL JUEGO DE LA GRANJITA
+        </p>
+        <p></p>
+        <div class="rules-text-container">
+          <p class="text-rules">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore non, voluptas sunt inventore sed consequuntur voluptatem ut ratione optio laudantium cupiditate aperiam aspernatur doloribus dolorum doloremque aliquam. Itaque architecto quos adipisci excepturi libero omnis amet earum eos officia voluptatem explicabo nostrum in optio perspiciatis nulla unde perferendis inventore magni nisi odit, sapiente eligendi fugiat reprehenderit. Illum, nihil laborum natus ducimus ab quidem cupiditate, ipsam placeat ex sequi provident repudiandae adipisci, libero doloribus asperiores expedita tempora odio itaque. Similique perferendis quod tempora natus ipsa, autem sunt. Quod molestias rem sit repellendus tempore. Aliquid, dolore! Voluptates fugiat est doloremque cum eveniet repellendus pariatur omnis itaque sunt culpa commodi ad, animi placeat molestiae quidem sed ullam perspiciatis, ex libero. Numquam ullam iure, nisi quia delectus aliquid nihil odio commodi officia? Et nostrum, quis minus perferendis omnis aperiam voluptate explicabo sapiente labore voluptatibus dignissimos cum rerum veniam, ipsa qui odio eos modi laborum aliquid nisi eaque reprehenderit! Eius corrupti quasi doloremque sapiente distinctio, molestias aut reiciendis neque earum quod, tempora dicta vero exercitationem? Vero natus est iure temporibus facilis dicta culpa modi perspiciatis ducimus nobis accusamus incidunt architecto, porro mollitia, ab laboriosam laudantium inventore. Minus officiis odio esse dicta nulla necessitatibus ab quas, beatae dolorum consequuntur dolores corporis asperiores corrupti debitis animi delectus ratione architecto incidunt nesciunt repudiandae molestiae nam consequatur? A praesentium animi est ab laborum earum eum dignissimos atque, dolores debitis repellat necessitatibus voluptatem quasi suscipit esse aliquid, obcaecati sit maiores quae molestiae repudiandae magni eos, maxime ad? Fuga repellendus molestiae expedita.
+          </p>
+        </div>
+        <div class="rules-controls" style="color: white;">
+          <div class="col-md-4 btnLuck">
+            <img src="assets/img/IconoPrintOFF_Reglamentos_LG_HD.png" alt="Imprimir" onclick="imprimir(`https://loteria.caribeapuesta.com/files/REGLAMENTO_LA_GRANJITA.pdf`)" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+            <img src="assets/img/IconoPrintON_Reglamentos_LG_HD.png" alt="Imprimir" onclick="imprimir(`https://loteria.caribeapuesta.com/files/REGLAMENTO_LA_GRANJITA.pdf`)" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+          </div>
+          <div class="col-md-4 btnLuck">
+            <img src="assets/img/IconoZoomOUT_OFF_Reglamentos_LG_HD.png"  alt="zoomOut" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+            <img src="assets/img/IconoZoomOUT_ON_Reglamentos_LG_HD.png" id="font-down"  alt="zoomOut" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+          </div>
+          <div class="col-md-4 btnLuck">
+            <img src="assets/img/IconoZoomIN_OFF_Reglamentos_LG_HD.png"  alt="zoomIn" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+            <img src="assets/img/IconoZoomIN_ON_Reglamentos_LG_HD.png" id="font-up"  alt="zoomIn Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+          </div>
+        </div>
     </article>
     <div class="borderLine"></div>
     <article class="item">
@@ -286,9 +300,9 @@
             <label for="email" class="form-label formLabel">Correo Electronico</label>
             <input type="text" class="form-control formInput" id="email" name="email">
           </div>
-          <div class="mb3 btnLuck">
-            <img src="assets/img/BotónOFF_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid w-100">
-            <img src="assets/img/BotónON_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid w-100">
+          <div class="my-5 btnLuck">
+            <img src="assets/img/BotónOFF_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid btn-img-fluid w-100 pointer">
+            <img src="assets/img/BotónON_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid btn-img-fluid w-100 pointer">
           </div>
         </section>
       </form>
@@ -298,16 +312,18 @@
   <div class="lineAqua"></div>
   <footer class="container my-3">
     <section class="section3 d-flex">
-      <div class="footer copyright">
-        <p>© 2017. Todos los derechos reservados.</p>
-        <p>Operadora GLOBAL Sport 69, C.A.</p>
-        <p>CI/RIF N° J-40955411-2</p>
-        <p>Registro Nacional de Loteria. N°: 05-0-000016-2021</p>
-      </div>
-      <div class="footer d-flex justify-content-end">
-        <div class="imgFooter"><img src="assets/img/Logo_LaGranjita_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
-        <div class="imgFooter"><img src="assets/img/Logo_LoteriaDeMargarita_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
-        <div class="imgFooter"><img src="assets/img/Logo_Conalot_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
+      <div class="row footer-content">
+        <div class="footer copyright col-md-5 col-sm-12">
+          <p>© 2017. Todos los derechos reservados.</p>
+          <p>Operadora GLOBAL Sport 69, C.A.</p>
+          <p>CI/RIF N° J-40955411-2</p>
+          <p>Registro Nacional de Loteria. N°: 05-0-000016-2021</p>
+        </div>
+        <div class="footer d-flex justify-content-end col-md-7 col-sm-12">
+          <div class="imgFooter"><img src="assets/img/Logo_LaGranjita_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
+          <div class="imgFooter"><img src="assets/img/Logo_LoteriaDeMargarita_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
+          <div class="imgFooter"><img src="assets/img/Logo_Conalot_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
+        </div>
       </div>
     </section>
   </footer>

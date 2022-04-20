@@ -196,7 +196,9 @@ let printAllAnmilas = (data) => {
             console.log('primera loteria');
             alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
             if(data[1].lottery.result == ''){
+
                 console.log('tiene un dato por delante');
+
             }else if(data[1].lottery.result !== ''){
                 console.log('No tiene loteria por delante');
             }

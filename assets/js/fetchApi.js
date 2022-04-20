@@ -195,6 +195,11 @@ let printAllAnmilas = (data) => {
         if(element.lottery.id == 2 && element.result !== '') {
             console.log('primera loteria');
             alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
+            if(data[1].lottery.result == ''){
+                console.log('tiene una loteria por delante');
+            }else if(data[1].lottery.result !== ''){
+                console.log('No tiene loteria por delante');
+            }
             playAlertSound(`assets/sounds/Alarma3.mp3`)
                 .then(function() {
                 // Automatic playback started!

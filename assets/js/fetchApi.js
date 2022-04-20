@@ -166,31 +166,66 @@ function playAudio(audioName) {
     var audio = new Audio(`assets/sounds/${audioName}.mp3`);
     audio.play();
 }
+
+function playAlertSound(url){
+    return new Promise(function(resolve, reject) { // return a promise
+        var audio = new Audio();                     // create audio wo/ src
+        audio.preload = "auto";                      // intend to play through
+        audio.autoplay = true;                       // autoplay when loaded
+        audio.onerror = reject;                      // on error, reject
+        audio.onended = resolve;                     // when done, resolve
+    
+        audio.src = url
+      });
+}
 //Imprimir todos los resultados/*
+var condition = true;
 let printAllAnmilas = (data) => {
     document.querySelector(".carouselAnimales").innerHTML = "";
     document.querySelector('.slick-track').innerHTML = "";
     let alarm = document.querySelector('.alarmImg');
     var audioAlarma = new Audio(`assets/sounds/Alarma3.mp3`);
     var audio;
-    var option = 0;
+    var primerAnimal = true;
+    console.log(data, 'data');
     data.forEach(element => {
         let horarioLott = element.lottery.name.slice(-8);
         let template = `<span class='resultImg'></span><span class="mt-3 mb-3">${horarioLott}</span>`;
         let codAnimal = element.result.split("-",1)[0];
-        
-        if(element.result !== '' ) {
+        if(element.lottery.id == 2 && element.result !== '') {
+            console.log('primera loteria');
+            alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
+            playAlertSound(`assets/sounds/Alarma3.mp3`)
+                .then(function() {
+                // Automatic playback started!
+                alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';   
+                console.log('termina de sonar');
+                template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+                <span>${horarioLott}</span>`;
+                let variable = `<div class='itemResults'>${template}</div>`;
+                $('.carouselAnimalsSlider').slick('slickAdd',variable, 0 ,  'addBefore');
+                }).catch(function(error) {
+                // Automatic playback failed.
+                // Show a UI element to let the user manually start playback.
+                console.log('error');
+                })
+        }else if(element.result !== '' && element.lottery.id > 2 ) {
             //alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
-            audio = new Audio(`assets/sounds/${codAnimal}.mp3`); 
-            //audioAlarma.play();
+            //audio = new Audio(`assets/sounds/${codAnimal}.mp3`); 
+            console.log(element.lottery.id, 'posicion');
             template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
                 <span>${horarioLott}</span>`;
-        } 
+            let variable = `<div class='itemResults'>${template}</div>`;
+                //document.querySelector(".carouselAnimales").innerHTML += variable;
+            $('.carouselAnimalsSlider').slick('slickAdd',variable);
+            audio = new Audio(`assets/sounds/${codAnimal}.mp3`); 
+        }else if(element.result == '' ){
             //https://admin-dev.caribeapuesta.com/loteries/results/2/2022-04-18
             // console.log(template, 'template final');
             let variable = `<div class='itemResults'>${template}</div>`;
             //document.querySelector(".carouselAnimales").innerHTML += variable;
             $('.carouselAnimalsSlider').slick('slickAdd',variable);
+        }
     });
 
     if(audio){
@@ -272,7 +307,7 @@ const loteries = [
     {
         "result": "",
         "lottery": {
-            "id": 2,
+            "id": 1,
             "name": "LA GRANJITA  9:00 AM",
             "hour": "2022-02-11T09:00:00-04:00",
             "type": "ANIMALES"
@@ -284,7 +319,8 @@ const loteries = [
         "brand": {
             "id": 2,
             "name": "LA GRANJITA"
-        }
+        },
+        "puesto": 1,
     },
     {
         "result": "",
@@ -301,12 +337,13 @@ const loteries = [
         "brand": {
             "id": 2,
             "name": "LA GRANJITA"
-        }
+        },
+        "puesto": 2,
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
+            "id": 3,
             "name": "LA GRANJITA  11:00 AM",
             "hour": "2022-02-11T11:00:00-04:00",
             "type": "ANIMALES"
@@ -318,12 +355,13 @@ const loteries = [
         "brand": {
             "id": 2,
             "name": "LA GRANJITA"
-        }
+        },
+        "puesto": 3,
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
+            "id": 4,
             "name": "LA GRANJITA  12:00 PM",
             "hour": "2022-02-11T12:00:00-04:00",
             "type": "ANIMALES"
@@ -335,12 +373,13 @@ const loteries = [
         "brand": {
             "id": 2,
             "name": "LA GRANJITA"
-        }
+        },
+        "puesto": 4,
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
+            "id": 5,
             "name": "LA GRANJITA  1:00 PM",
             "hour": "2022-02-11T13:00:00-04:00",
             "type": "ANIMALES"
@@ -352,12 +391,13 @@ const loteries = [
         "brand": {
             "id": 2,
             "name": "LA GRANJITA"
-        }
+        },
+        "puesto": 5,
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
+            "id": 6,
             "name": "LA GRANJITA  2:00 PM",
             "hour": "2022-02-11T14:00:00-04:00",
             "type": "ANIMALES"
@@ -369,12 +409,13 @@ const loteries = [
         "brand": {
             "id": 2,
             "name": "LA GRANJITA"
-        }
+        },
+        "puesto": 6,
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
+            "id": 7,
             "name": "LA GRANJITA  3:00 PM",
             "hour": "2022-02-11T15:00:00-04:00",
             "type": "ANIMALES"
@@ -386,12 +427,13 @@ const loteries = [
         "brand": {
             "id": 2,
             "name": "LA GRANJITA"
-        }
+        },
+        "puesto": 7,
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
+            "id": 8,
             "name": "LA GRANJITA  4:00 PM",
             "hour": "2022-02-11T16:00:00-04:00",
             "type": "ANIMALES"
@@ -403,12 +445,13 @@ const loteries = [
         "brand": {
             "id": 2,
             "name": "LA GRANJITA"
-        }
+        },
+        "puesto": 8,
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
+            "id": 9,
             "name": "LA GRANJITA  5:00 PM",
             "hour": "2022-02-11T17:00:00-04:00",
             "type": "ANIMALES"
@@ -420,12 +463,13 @@ const loteries = [
         "brand": {
             "id": 2,
             "name": "LA GRANJITA"
-        }
+        },
+        "puesto": 9,
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
+            "id": 10,
             "name": "LA GRANJITA  6:00 PM",
             "hour": "2022-02-11T18:00:00-04:00",
             "type": "ANIMALES"
@@ -437,12 +481,13 @@ const loteries = [
         "brand": {
             "id": 2,
             "name": "LA GRANJITA"
-        }
+        },
+        "puesto": 10,
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
+            "id":11,
             "name": "LA GRANJITA  7:00 PM",
             "hour": "2022-02-11T19:00:00-04:00",
             "type": "ANIMALES"
@@ -454,7 +499,8 @@ const loteries = [
         "brand": {
             "id": 2,
             "name": "LA GRANJITA"
-        }
+        },
+        "puesto": 11,
     }
 ];
 const loteries2 = [

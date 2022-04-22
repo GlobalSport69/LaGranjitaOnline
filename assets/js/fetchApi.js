@@ -194,15 +194,39 @@ let printAllAnmilas = (data) => {
         let codAnimal = element.result.split("-",1)[0];
         if(element.lottery.id == 2 && element.result !== '') {
             console.log('primera loteria');
-            alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
-            if(data[1].lottery.result == ''){
-
-                console.log('tiene un dato por delante');
-
-            }else if(data[1].lottery.result !== ''){
+            
+            if(data[1].result == '' || data[1].result == undefined){
+                console.log(data[1]);
+                console.log(data[1].result);
+                console.log('tiene una loteria por delante');
+                alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
+                playAlertSound(`assets/sounds/Alarma3.mp3`)
+                .then(function() {
+                // Automatic playback started!
+                alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';   
+                console.log('termina de sonar');
+                template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+                <span>${horarioLott}</span>`;
+                let variable = `<div class='itemResults'>${template}</div>`;
+                $('.carouselAnimalsSlider').slick('slickAdd',variable, 0 ,  'addBefore');
+                audio = new Audio(`assets/sounds/${codAnimal}.mp3`);
+                audio.play();
+                }).catch(function(error) {
+                // Automatic playback failed.
+                // Show a UI element to let the user manually start playback.
+                console.log('error');
+                })
+            }else if(data[1].result !== '' ){
+                console.log(data[1], '1');
+                console.log(data[1].result);
                 console.log('No tiene loteria por delante');
+                template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+                <span>${horarioLott}</span>`;
+                let variable = `<div class='itemResults'>${template}</div>`;
+                //document.querySelector(".carouselAnimales").innerHTML += variable;
+                $('.carouselAnimalsSlider').slick('slickAdd',variable);
             }
-            playAlertSound(`assets/sounds/Alarma3.mp3`)
+            /*playAlertSound(`assets/sounds/Alarma3.mp3`)
                 .then(function() {
                 // Automatic playback started!
                 alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';   
@@ -215,7 +239,7 @@ let printAllAnmilas = (data) => {
                 // Automatic playback failed.
                 // Show a UI element to let the user manually start playback.
                 console.log('error');
-                })
+                })*/
         }else if(element.result !== '' && element.lottery.id > 2 ) {
             //alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
             //audio = new Audio(`assets/sounds/${codAnimal}.mp3`); 

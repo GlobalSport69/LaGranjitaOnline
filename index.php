@@ -57,9 +57,8 @@
   <script type="text/javascript" src="assets/js/scripts.js"></script>
   <title>La Granjita Online</title>
 </head>
-
+<!--Un Comentario-->
 <body>
-
   <header class="container" id="inicio">
     <section class="row">
     <nav role="navigation">

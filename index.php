@@ -104,10 +104,10 @@
       </div>
     </div>
     <div class="row animalslist2">
-      <div class="col-lg-9 col-md-9 col-sm-9">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-9">
         <div class="carouselAnimalsSlider" style="color: white;"></div>
       </div>
-      <div class="col-lg-3 col-md-3 col-sm-3 Alarm-container">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-3 Alarm-container">
         <div class="Alarm">
           <img class="alarmImg" src="assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png" alt="" class="img-fluid img-responsive">
           <!--<img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">-->
@@ -211,7 +211,7 @@
           CONTACTANOS
         </p>
       </header>
-      <form action="#">
+      <form action="#" method="post" id="form-contact">
         <section class="formContact">
           <div class="mb-3">
             <label for="name" class="form-label formLabel">Nombre & Apellido / Compa&ntilde;ia</label>
@@ -227,7 +227,7 @@
           </div>
           <div class="m-2 btnLuck">
             <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
-            <img src="assets/img/BotónRegístrateON_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+            <img src="assets/img/BotónRegístrateON_TarjetaDigital_LG_HD.png" id='btn-submit-contact'alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
           </div>
         </section>
       </form>
@@ -259,10 +259,212 @@
           REGLAMENTO DEL JUEGO DE LA GRANJITA
         </p>
         <p></p>
-        <div class="rules-text-container">
-          <p class="text-rules">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore non, voluptas sunt inventore sed consequuntur voluptatem ut ratione optio laudantium cupiditate aperiam aspernatur doloribus dolorum doloremque aliquam. Itaque architecto quos adipisci excepturi libero omnis amet earum eos officia voluptatem explicabo nostrum in optio perspiciatis nulla unde perferendis inventore magni nisi odit, sapiente eligendi fugiat reprehenderit. Illum, nihil laborum natus ducimus ab quidem cupiditate, ipsam placeat ex sequi provident repudiandae adipisci, libero doloribus asperiores expedita tempora odio itaque. Similique perferendis quod tempora natus ipsa, autem sunt. Quod molestias rem sit repellendus tempore. Aliquid, dolore! Voluptates fugiat est doloremque cum eveniet repellendus pariatur omnis itaque sunt culpa commodi ad, animi placeat molestiae quidem sed ullam perspiciatis, ex libero. Numquam ullam iure, nisi quia delectus aliquid nihil odio commodi officia? Et nostrum, quis minus perferendis omnis aperiam voluptate explicabo sapiente labore voluptatibus dignissimos cum rerum veniam, ipsa qui odio eos modi laborum aliquid nisi eaque reprehenderit! Eius corrupti quasi doloremque sapiente distinctio, molestias aut reiciendis neque earum quod, tempora dicta vero exercitationem? Vero natus est iure temporibus facilis dicta culpa modi perspiciatis ducimus nobis accusamus incidunt architecto, porro mollitia, ab laboriosam laudantium inventore. Minus officiis odio esse dicta nulla necessitatibus ab quas, beatae dolorum consequuntur dolores corporis asperiores corrupti debitis animi delectus ratione architecto incidunt nesciunt repudiandae molestiae nam consequatur? A praesentium animi est ab laborum earum eum dignissimos atque, dolores debitis repellat necessitatibus voluptatem quasi suscipit esse aliquid, obcaecati sit maiores quae molestiae repudiandae magni eos, maxime ad? Fuga repellendus molestiae expedita.
+        <div class="rules-text-container"> <!--
+        <embed src="assets/Reglamento.pdf"  height="375"type="application/pdf">
+         -->
+        <p lang="es-ES" style="line-height: 103%; margin-left: 0.82in; margin-right: 0.44in; text-indent: 0.09in; margin-top: 0.15in">
+	        <p size="4" style="font-size: 16pt; text-align:center; color:white"><b>REGLAMENTO DEL JUEGO LA
+	        GRANJITA LOTERIA INTERNACIONAL DE MARGARITA</b>
           </p>
+          <p class='text-reglamento'>
+          El presente Reglamento tiene por objeto establecer las condiciones que regirán el
+          juego de lotería denominado <b>LA GRANJITA</b>, de la <b>Operadora GLOBAL SPORT
+          69, C.A.,</b> en lo sucesivo <b>“LA OPERADORA”</b> y autorizado por el <b>INSTITUTO
+          AUTONOMO NEOESPARTANO DE BENEFICENCIA PÚBLICA Y ASISTENCIA
+          SOCIAL DEL ESTADO NUEVA ESPARTA (INEBEN) “LOTERÍA
+          INTERNACIONAL DE MARGARITA”,</b>  en lo sucesivo <b>"LA LOTERÍA"</b>, cuyas
+          modalidades y características se especifican más adelante.
+          </p>
+          <p class="reglamento-subTitle" ><b>EL JUEGO</b></p>
+          <p class='text-reglamento'><span class="subrayado">REGLA 1:</span> <b>LA GRANJITA</b> es un juego de lotería con premios fijos, que consiste en
+            el sorteo o extracción al azar de una (1) figura de animal, de una máquina o
+            equipo de sorteo, de entre treinta y ocho (38) figuras de animales, a través de
+            sorteos realizados por máquinas o equipos de realización de sorteos de juegos de
+            lotería, propiedad de <b>“LA OPERADORA”</b> y de acuerdo a lo establecido en el
+            Artículo 14 de la Ley Nacional de Lotería. Las figuras de Animales, se identifican y
+            detallan en la tabla siguiente:
+          </p>
+          <!--
+          <table class="table table-bordered table-responsive-sm">
+            <thead>
+              <tr>
+                <th scope="col">Figura de Animal</th>
+                <th scope="col">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Perro</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Gato</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Caballo</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Cabra</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Cerdo</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Gallo</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Conejo</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Mono</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Rata</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Cabra</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>Cerdo</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Gallo</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Conejo</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>Mono</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Rata</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>Cabra</td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>Cerdo</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>Gallo</td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td>Conejo</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>Mono</td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td>Rata</td>
+              </tr>
+              <tr>
+                <td>22</td>
+                <td>Cabra</td>
+              </tr>
+              <tr>
+                <td>23</td>
+                <td>Cerdo</td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td>Gallo</td>
+              </tr>
+              <tr>
+                <td>25</td>
+                <td>Conejo</td>
+              </tr>
+              <tr>
+                <td>26</td>
+                <td>Mono</td>
+              </tr>
+              <tr>
+                <td>27</td>
+                <td>Rata</td>
+              </tr>
+              <tr>
+                <td>28</td>
+                <td>Cabra</td>
+              </tr>
+              <tr>
+                <td>29</td>
+                <td>Cerdo</td>
+              </tr>
+              <tr>
+                <td>30</td>
+                <td>Gallo</td>
+              </tr>
+              <tr>
+                <td>31</td>
+                <td>Conejo</td>
+              </tr>
+              <tr>
+                <td>32</td>
+                <td>Mono</td>
+              </tr>
+              <tr>
+                <td>33</td>
+                <td>Rata</td>
+              </tr>
+              <tr>
+                <td>34</td>
+                <td>Cabra</td>
+              </tr>
+              <tr>
+                <td>35</td>
+                <td>Cerdo</td>
+              </tr>
+              <tr>
+                <td>36</td>
+                <td>Gallo</td>
+              </tr>
+            </tbody>
+          </table>-->
+        </p>
+        <p class="text-rules">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore non,
+         voluptas sunt inventore sed consequuntur voluptatem ut ratione optio laudantium 
+         cupiditate aperiam aspernatur doloribus dolorum doloremque aliquam. Itaque architecto 
+         quos adipisci excepturi libero omnis amet earum eos officia voluptatem explicabo 
+         nostrum in optio perspiciatis nulla unde perferendis inventore magni nisi odit, 
+         sapiente eligendi fugiat reprehenderit. Illum, nihil laborum natus ducimus ab quidem 
+         cupiditate, ipsam placeat ex sequi provident repudiandae adipisci, libero doloribus 
+         asperiores expedita tempora odio itaque. Similique perferendis quod tempora natus ipsa, a
+         utem sunt. Quod molestias rem sit repellendus tempore. Aliquid, dolore! Voluptates fugiat 
+         est doloremque cum eveniet repellendus pariatur omnis itaque sunt culpa commodi ad, animi 
+         placeat molestiae quidem sed ullam perspiciatis, ex libero. Numquam ullam iure, nisi quia 
+         delectus aliquid nihil odio commodi officia? Et nostrum, quis minus perferendis omnis 
+         aperiam voluptate explicabo sapiente labore voluptatibus dignissimos cum rerum veniam, 
+         ipsa qui odio eos modi laborum aliquid nisi eaque reprehenderit! Eius corrupti quasi 
+         doloremque sapiente distinctio, molestias aut reiciendis neque earum quod, tempora 
+         dicta vero exercitationem? Vero natus est iure temporibus facilis dicta culpa modi 
+         perspiciatis ducimus nobis accusamus incidunt architecto, porro mollitia, ab laboriosam 
+         laudantium inventore. Minus officiis odio esse dicta nulla necessitatibus ab quas, beatae
+          dolorum consequuntur dolores corporis asperiores corrupti debitis animi delectus ratione 
+          architecto incidunt nesciunt repudiandae molestiae nam consequatur? A praesentium animi 
+          est ab laborum earum eum dignissimos atque, dolores debitis repellat necessitatibus 
+          voluptatem quasi suscipit esse aliquid, obcaecati sit maiores quae molestiae repudiandae 
+          magni eos, maxime ad? Fuga repellendus molestiae expedita.
+        </p>
         </div>
         <div class="rules-controls" style="color: white;">
           <div class="col-md-4 btnLuck">
@@ -271,11 +473,11 @@
           </div>
           <div class="col-md-4 btnLuck">
             <img src="assets/img/IconoZoomOUT_OFF_Reglamentos_LG_HD.png"  alt="zoomOut" class="img-fluid float-end btn-img-fluid img-responsive pointer">
-            <img src="assets/img/IconoZoomOUT_ON_Reglamentos_LG_HD.png" id="font-down"  alt="zoomOut" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+            <img src="assets/img/IconoZoomOUT_ON_Reglamentos_LG_HD.png" id="disminuir"  alt="zoomOut" class="img-fluid float-end btn-img-fluid img-responsive pointer">
           </div>
           <div class="col-md-4 btnLuck">
             <img src="assets/img/IconoZoomIN_OFF_Reglamentos_LG_HD.png"  alt="zoomIn" class="img-fluid float-end btn-img-fluid img-responsive pointer">
-            <img src="assets/img/IconoZoomIN_ON_Reglamentos_LG_HD.png" id="font-up"  alt="zoomIn Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+            <img src="assets/img/IconoZoomIN_ON_Reglamentos_LG_HD.png" id="aumentar"  alt="zoomIn Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
           </div>
         </div>
     </article>
@@ -286,7 +488,7 @@
           ¿TE GUSTARIA <span class="work">TRABAJAR</span> CON <span class="us">NOSOTROS</span>?
         </p>
       </header>
-      <form action="#">
+      <form action="#" method="post" id="form-job">
         <section class="formContact">
           <div class="mb-3">
             <label for="name" class="form-label formLabel">Nombre & Apellido / Compa&ntilde;ia</label>
@@ -306,7 +508,7 @@
           </div>
           <div class="my-5 btnLuck">
             <img src="assets/img/BotónOFF_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid btn-img-fluid w-100 pointer">
-            <img src="assets/img/BotónON_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid btn-img-fluid w-100 pointer">
+            <img src="assets/img/BotónON_TrabajaConNosotros_LG_HD.png" id="btn-submit-job" alt="Boton Trabaja" class="img-fluid btn-img-fluid w-100 pointer">
           </div>
         </section>
       </form>
@@ -317,19 +519,18 @@
   <!--Modal-->
   <!-- Button trigger modal -->
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <img src="assets/img/logo.png" alt="" class="col-5">
         <h5 class="modal-title col-5" id="exampleModalLabel">Advertencia</h5>
-        <button type="button" class="btn-close col-2" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         Este es un sitio web de resultados de apuestas, debe ser mayor de edad para poder entrar.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Confirmo, tengo +18 años</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirmo, tengo +18 años</button>
       </div>
     </div>
   </div>

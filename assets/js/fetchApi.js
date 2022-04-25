@@ -200,10 +200,12 @@ let printAllAnmilas = (data) => {
                 console.log(data[1].result);
                 console.log('tiene una loteria por delante');
                 alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
+                alarm.classList.add("test")
                 playAlertSound(`assets/sounds/Alarma3.mp3`)
                 .then(function() {
                 // Automatic playback started!
-                alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';   
+                alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';
+                alarm.classList.remove("test");  
                 console.log('termina de sonar');
                 template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
                 <span>${horarioLott}</span>`;
@@ -777,28 +779,40 @@ function zoom(option){
         console.log(text);
     }
 }*/
-const getFontSize = () =>
-  parseFloat(getComputedStyle(document.documentElement)
-    .getPropertyValue('--font-size'));
-
-    const fontUp = () => {
-        // escuchamos los clicks del elemento
-        document.querySelector('#font-up').addEventListener('click', () => {
-          // obtenemos el valor de la variable CSS
-          let fontSize = getFontSize()
-          // aumentamos el valor de esa variable en 1.1
-          document.documentElement
-            .style.setProperty('--font-size', `${fontSize * 1.1}`)
+      document.querySelector('#btn-submit-contact').addEventListener('click', () => {
+          let dirFile = '../controller/mailerContact.php';
+          console.log('hola');
+          fetch(dirFile, {
+            method: 'post',
+            body: new FormData(document.getElementById("form-contact")),
         })
-      }
-      const fontDown = element => {
-        // escuchamos los clicks del elemento
-        element.addEventListener('click', () => {
-          // obtenemos el valor de la variable CSS
-          let fontSize = getFontSize()
-          // disminuimos el valor de esa variable en 0.9
-          document.documentElement
-            .style.setProperty('--font-size', `${fontSize * 0.9}`)
-        })
-      }
+      });
+      document.querySelector('#btn-submit-job').addEventListener('click', () => {
+        let dirFile = '../controller/mailerJob.php';
+        fetch(dirFile, {
+          method: 'post',
+          body: new FormData(document.getElementById("form-job")),
+      })
+    });
+    var classes = ["f0", "f1", "f2", "f3", "f4"];
+    var classIndex = 2;
 
+    document.getElementById('aumentar').addEventListener('click', function() {
+        let previousClass = classIndex;
+        classIndex++;
+        classIndex = (classIndex == classes.length) ? classes.length - 1 : classIndex;
+        changeClass(previousClass, classIndex);
+    });
+    document.getElementById('disminuir').addEventListener('click', function () {
+        let previousClass = classIndex;
+        classIndex--;
+        classIndex = (classIndex < 0) ? 0 : classIndex;
+        changeClass(previousClass, classIndex);
+    });
+    function changeClass(previous, next) {
+        if(previous != next) {
+          var htmlElement = document.querySelector('.text-rules')
+          htmlElement.classList.remove(classes[previous]);
+          htmlElement.classList.add(classes[next]);
+        }
+    }

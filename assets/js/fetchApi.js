@@ -794,6 +794,7 @@ function zoom(option){
           body: new FormData(document.getElementById("form-job")),
       })
     });
+    
     var classes = ["f0", "f1", "f2", "f3", "f4"];
     var classIndex = 2;
 

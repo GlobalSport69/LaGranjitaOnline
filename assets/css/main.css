@@ -832,16 +832,24 @@ p.titleRegister {
   .text-rules {
     font-size: calc(var(--font-size) * 1em);
   }
+  .text-change {
+    font-size: calc(var(--font-size) * 1em);
+  }
   .text-reglamento {
     color: white;
     text-align: justify;
-    font-size: 0.9rem !important;
+    /*font-size: 0.9rem !important;*/
     padding: 0 12px;
   }
   .reglamento-subTitle {
-    font-size: 1.2rem;
+    /*font-size: 1.2rem;*/
     color: white;
     text-align: center;
+  }
+  .reglamento-LastTitle {
+    color: white;
+    text-align: center;
+    /*font-size: 0.9rem;*/
   }
   .subrayado {
       text-decoration: underline;
@@ -862,3 +870,18 @@ p.titleRegister {
   .f4 {
     font-size: 1.2rem;
   }
+  .table-rules {
+      color: white;
+  }
+  .table-container {
+      padding: 12px;
+  }
+  .rules-list {
+    color: white;
+}
+.rules-list li {
+    /*font-size: 0.9rem;*/
+    margin-bottom: 8px;
+    text-align: justify;
+    padding: 0px 27px;
+}

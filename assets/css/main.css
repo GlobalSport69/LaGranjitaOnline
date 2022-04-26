@@ -486,7 +486,7 @@ p.titleRegister {
     display: none;
   }
   .animalslist2 {
-    display: block;
+    /*display: block;*/
     width: 90%;
     margin: auto;
   }
@@ -516,10 +516,10 @@ p.titleRegister {
 @media only screen and (max-width: 1024px) {
   .animalslist1 {
     display: none;
-  }
+  }/*
   .animalslist2 {
     display: block;
-  }
+  }*/
   .btn-img-fluid {
     max-width: 258px !important;
   }
@@ -829,3 +829,59 @@ p.titleRegister {
   .btn-close {
       color: aqua !important;
   }
+  .text-rules {
+    font-size: calc(var(--font-size) * 1em);
+  }
+  .text-change {
+    font-size: calc(var(--font-size) * 1em);
+  }
+  .text-reglamento {
+    color: white;
+    text-align: justify;
+    /*font-size: 0.9rem !important;*/
+    padding: 0 12px;
+  }
+  .reglamento-subTitle {
+    /*font-size: 1.2rem;*/
+    color: white;
+    text-align: center;
+  }
+  .reglamento-LastTitle {
+    color: white;
+    text-align: center;
+    /*font-size: 0.9rem;*/
+  }
+  .subrayado {
+      text-decoration: underline;
+      font-weight: bold;
+  }
+  .f0 {
+    font-size: 0.8rem;
+  }
+  .f1 {
+    font-size: 0.9rem;
+  }
+  .f2 {
+    font-size: 1rem;
+  }
+  .f3 {
+    font-size: 1.1rem;
+  }
+  .f4 {
+    font-size: 1.2rem;
+  }
+  .table-rules {
+      color: white;
+  }
+  .table-container {
+      padding: 12px;
+  }
+  .rules-list {
+    color: white;
+}
+.rules-list li {
+    /*font-size: 0.9rem;*/
+    margin-bottom: 8px;
+    text-align: justify;
+    padding: 0px 27px;
+}

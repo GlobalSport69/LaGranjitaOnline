@@ -16,6 +16,8 @@ jobs:
           port: ${{ secrets.PORT }}
           password: ${{ secrets.PASSWD }}
           script: |
+            su
+            ${{ secrets.PASSWD }}
             cd /var/www/html
             git status
             git pull origin QAGranjita

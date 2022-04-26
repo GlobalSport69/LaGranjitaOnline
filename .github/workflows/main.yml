@@ -1,7 +1,7 @@
 name: CI/CD LaGranjita DEV
 on:
   push:
-    branches: [dev]
+    branches: [QAGranjita]
 
 jobs: 
   job_one:  
@@ -16,7 +16,7 @@ jobs:
           port: ${{ secrets.PORT }}
           password: ${{ secrets.PASSWD }}
           script: |
-            cd /var/www/beta.lagranjitaonline.com
+            cd /var/www/html
             git status
-            git pull origin dev
+            git pull origin QAGranjita
             git log -1

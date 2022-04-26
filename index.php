@@ -687,31 +687,6 @@
             <p class="reglamento-LastTitle"><b>SERVICIO AUTÓNOMO DE BENEFICENCIA GLOBAL SPORT 69, C.A. <br>
               PÚBLICA Y ASISTENCIA SOCIAL DEL ESTADO NUEVA ESPARTA <br>
               LOTERÍA INTERNACIONAL DE MARGARITA</b></p>
-          <p class="text-rules">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore non,
-            voluptas sunt inventore sed consequuntur voluptatem ut ratione optio laudantium
-            cupiditate aperiam aspernatur doloribus dolorum doloremque aliquam. Itaque architecto
-            quos adipisci excepturi libero omnis amet earum eos officia voluptatem explicabo
-            nostrum in optio perspiciatis nulla unde perferendis inventore magni nisi odit,
-            sapiente eligendi fugiat reprehenderit. Illum, nihil laborum natus ducimus ab quidem
-            cupiditate, ipsam placeat ex sequi provident repudiandae adipisci, libero doloribus
-            asperiores expedita tempora odio itaque. Similique perferendis quod tempora natus ipsa, a
-            utem sunt. Quod molestias rem sit repellendus tempore. Aliquid, dolore! Voluptates fugiat
-            est doloremque cum eveniet repellendus pariatur omnis itaque sunt culpa commodi ad, animi
-            placeat molestiae quidem sed ullam perspiciatis, ex libero. Numquam ullam iure, nisi quia
-            delectus aliquid nihil odio commodi officia? Et nostrum, quis minus perferendis omnis
-            aperiam voluptate explicabo sapiente labore voluptatibus dignissimos cum rerum veniam,
-            ipsa qui odio eos modi laborum aliquid nisi eaque reprehenderit! Eius corrupti quasi
-            doloremque sapiente distinctio, molestias aut reiciendis neque earum quod, tempora
-            dicta vero exercitationem? Vero natus est iure temporibus facilis dicta culpa modi
-            perspiciatis ducimus nobis accusamus incidunt architecto, porro mollitia, ab laboriosam
-            laudantium inventore. Minus officiis odio esse dicta nulla necessitatibus ab quas, beatae
-            dolorum consequuntur dolores corporis asperiores corrupti debitis animi delectus ratione
-            architecto incidunt nesciunt repudiandae molestiae nam consequatur? A praesentium animi
-            est ab laborum earum eum dignissimos atque, dolores debitis repellat necessitatibus
-            voluptatem quasi suscipit esse aliquid, obcaecati sit maiores quae molestiae repudiandae
-            magni eos, maxime ad? Fuga repellendus molestiae expedita.
-          </p>
         </div>
         <div class="rules-controls" style="color: white;">
           <div class="col-md-4 btnLuck">

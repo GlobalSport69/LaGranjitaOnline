@@ -5,7 +5,7 @@ $( document ).ready(function() {
     myModal.toggle();
 });
 
-let baseUrl = 'https://ws-dev.caribeapuesta.com/loteries/';
+let baseUrl = 'https://webservice.premierpluss.com/loteries/';
 //Funcion redirect url
 function changeLink(url){
     window.open(url, '_blank');
@@ -18,40 +18,37 @@ function ancla(element) {
     });
 }
 //Fetch de la api
-const getLotteries = () => {
-    return fetch(`${baseUrl}results3?since='${now}'&product=1`)
-    .then(response => response.json())
-    .then(data => {
-          let loterias = loteries;
-          //Crea listado completo para las loterias del dia.
-          for (let index = 0; index <= 11; index++) {
-              if(data[index]) loterias[index] = data[index];
-          }
-          let response = {
-            loterias: loterias,
-            data: data
-          };
-          return response;
-      }); 
+const getLotteries = async () => {
+    const response = await fetch(`${baseUrl}results3?since='${now}'&product=1`);
+    const data = await response.json();
+    let loterias = loteries;
+    //Crea listado completo para las loterias del dia.
+    for (let index = 0; index <= 11; index++) {
+        if (data[index])
+            loterias[index] = data[index];
+    }
+    let response_1 = {
+        loterias: loterias,
+        data: data
+    };
+    return response_1; 
 };
 //Mostrar animalitos ganadores
-let obtenerLoterias = () => {
+let obtenerLoterias = async () => {
     //Call a la api
-    return getLotteries().then(data=>{
-        //En caso de no tener animalitos en el listado.
-        if(registro.length == 0){
-            document.querySelector(".carouselAnimales").innerHTML = "";
-            document.querySelector('.slick-track').innerHTML = "";
-            registro = data.data;
-            //muestra todos los animalitos en lo que va del dia.
-            printAllAnmilas(data.loterias);
-        //Si encuentra un cambio o una nueva loteria imprime animal individual.
-        } else if(registro.length !== data.data.length){
-            printLastAnimal(data.data[data.data.length -1]);
-            printLastAnimalSlider(data.data[data.data.length -1]);
-            registro = data.data;
-        }
-    });
+    const data = await getLotteries();
+    //En caso de no tener animalitos en el listado.
+    if (registro.length == 0) {
+        document.querySelector(".carouselAnimales").innerHTML = "";
+        document.querySelector('.slick-track').innerHTML = "";
+        registro = data.data;
+        //muestra todos los animalitos en lo que va del dia.
+        printAllAnmilas(data.loterias);
+    } else if (registro.length !== data.data.length) {
+        printLastAnimal(data.data[data.data.length - 1]);
+        printLastAnimalSlider(data.data[data.data.length - 1]);
+        registro = data.data;
+    }
 }; 
 //Reemplazar e imprimir ultimo resultado en el slider
 let printLastAnimalSlider = (data) => {
@@ -94,33 +91,6 @@ let printLastAnimalSlider = (data) => {
 
 }
 
-//funcion de animacion alarma
-/*
-let alarmAnimate = () => {
-    let alarm = document.querySelector('.alarmImg');
-    alarm.classList.add('alarmAnimate');
-    console.log('hola');
-    alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
-    setTimeout(() => {
-        console.log('hola2');
-        alarm.src = "assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png";
-        var audio = new Audio(`assets/sounds/Alarma.mp3`);
-        audio.play();
-    }, 60000);
-}*/
-/*
-let alarmaAnimate = new Promise((resolve, reject) => {
-    let alarm = document.querySelector('.alarmImg');
-    //alarm.classList.add('alarmAnimate');
-    console.log('hola');
-    alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
-    setTimeout(() => {
-        console.log('hola2');
-        alarm.src = "assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png";  
-    }, 60000);
-    resolve('termina Alarma');
-});*/
-
 //Reemplazar e imprimir ultimo resultado 
 let printLastAnimal = (data) => {
     //Encuentra los nodos del DOM de todas las loterias
@@ -155,9 +125,6 @@ let printLastAnimal = (data) => {
             <span class="mt-3 mb-3">${horarioLott}</span>`;
             break;
         }
-        //console.log(cod);
-        /*var audio = new Audio(`assets/sounds/${cod}.mp3`);
-        audio.play();*/
     }
 
 }
@@ -228,20 +195,6 @@ let printAllAnmilas = (data) => {
                 //document.querySelector(".carouselAnimales").innerHTML += variable;
                 $('.carouselAnimalsSlider').slick('slickAdd',variable);
             }
-            /*playAlertSound(`assets/sounds/Alarma3.mp3`)
-                .then(function() {
-                // Automatic playback started!
-                alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';   
-                console.log('termina de sonar');
-                template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
-                <span>${horarioLott}</span>`;
-                let variable = `<div class='itemResults'>${template}</div>`;
-                $('.carouselAnimalsSlider').slick('slickAdd',variable, 0 ,  'addBefore');
-                }).catch(function(error) {
-                // Automatic playback failed.
-                // Show a UI element to let the user manually start playback.
-                console.log('error');
-                })*/
         }else if(element.result !== '' && element.lottery.id > 2 ) {
             //alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
             //audio = new Audio(`assets/sounds/${codAnimal}.mp3`); 
@@ -274,27 +227,26 @@ function startShowingMessage() {
     }, 10000)
   }
 //DAtapicker onChange
-function handler(e){
+async function handler(e){
 
     let url = `${baseUrl}results3?since='${now}'&product=1`;
 
     if(typeof(e) !== 'string') {
         url = `${baseUrl}results3?since='${e.target.value}'&product=1`;
     }
-    return fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        for (let index = 0; index <= 10; index++) {
-            if(data[index] == undefined) data.push({
+    const response = await fetch(url);
+    const data = await response.json();
+    for (let index = 0; index <= 10; index++) {
+        if (data[index] == undefined)
+            data.push({
                 result: '',
                 lottery: {
-                    name: fomartTimeShow(index + 9),                    
+                    name: fomartTimeShow(index + 9),
                 }
-            })
-        }
-        printAnimalsDate(data);
-        url = ``;
-    }); 
+            });
+    }
+    printAnimalsDate(data);
+    url = ``; 
 }
 //Format hour 12h w AM/PM
 function fomartTimeShow(h_24) {
@@ -771,7 +723,7 @@ handler(now);
 
 function imprimir(url) {
     window.open(url, '_blank');
-}/*
+}/* 
 function zoom(option){
     var text =  document.querySelector('.text-rules').style.fontSize;
     if(option === 'in'){

@@ -690,8 +690,8 @@
         </div>
         <div class="rules-controls" style="color: white;">
           <div class="col-md-4 btnLuck">
-            <img src="assets/img/IconoPrintOFF_Reglamentos_LG_HD.png" alt="Imprimir" onclick="imprimir(`https://loteria.caribeapuesta.com/files/REGLAMENTO_LA_GRANJITA.pdf`)" class="img-fluid float-end btn-img-fluid img-responsive pointer">
-            <img src="assets/img/IconoPrintON_Reglamentos_LG_HD.png" alt="Imprimir" onclick="imprimir(`https://loteria.caribeapuesta.com/files/REGLAMENTO_LA_GRANJITA.pdf`)" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+            <img src="assets/img/IconoPrintOFF_Reglamentos_LG_HD.png" alt="Imprimir" onclick="imprimir(`https://loteria.premierpluss.com/files/REGLAMENTO_LA_GRANJITA.pdf`)" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+            <img src="assets/img/IconoPrintON_Reglamentos_LG_HD.png" alt="Imprimir" onclick="imprimir(`https://loteria.premierpluss.com/files/REGLAMENTO_LA_GRANJITA.pdf`)" class="img-fluid float-end btn-img-fluid img-responsive pointer">
           </div>
           <div class="col-md-4 btnLuck">
             <img src="assets/img/IconoZoomOUT_OFF_Reglamentos_LG_HD.png" alt="zoomOut" class="img-fluid float-end btn-img-fluid img-responsive pointer">

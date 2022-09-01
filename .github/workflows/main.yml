@@ -1,7 +1,7 @@
 name: CI/CD LaGranjita DEV
 on:
   push:
-    branches: [QAGranjita]
+    branches: [main]
 
 jobs: 
   job_one:  
@@ -14,11 +14,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USR_NAME }}
           port: ${{ secrets.PORT }}
-          password: ${{ secrets.PASSWD }}
           script: |
-            su
-            ${{ secrets.PASSWD }}
             cd /var/www/html
             git status
-            git pull origin QAGranjita
+            git pull origin main
             git log -1

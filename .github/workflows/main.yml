@@ -1,4 +1,4 @@
-name: CI/CD LaGranjita DEV
+name: CI/CD LaGranjita
 on:
   push:
     branches: [main]
@@ -6,13 +6,14 @@ on:
 jobs: 
   job_one:  
     name: Deploy
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - name: Auto Pull LaGranjita DEV
+      - name: Auto Pull LaGranjita
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USR_NAME }}
+          password: ${{ secrets.PASS }}
           port: ${{ secrets.PORT }}
           script: |
             cd /var/www/lagranjita/public_html/

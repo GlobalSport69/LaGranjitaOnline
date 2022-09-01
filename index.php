@@ -163,7 +163,7 @@
             <span class="topText">
               DESCARGA NUESTRA TARJETA DIGITAL
             </span>
-            <img src="assets/img/QR.png" alt="QR Img" class="img-fluid qr-img">
+            <img src="assets/img/4cd9f305-9088-406a-b6c4-5c062198605a.jpg" alt="QR Img" class="img-fluid qr-img">
             <span class="bottomText">
               ESCANEA TU CODIGO
             </span>
@@ -248,7 +248,7 @@
           </p>
         </div>
         <div class="miniQr">
-          <img src="assets/img/QR.png" alt="" class="img-fluid img-qr-large">
+          <img src="assets/img/4cd9f305-9088-406a-b6c4-5c062198605a.jpg" alt="" class="img-fluid img-qr-large">
         </div>
       </div>
     </article>

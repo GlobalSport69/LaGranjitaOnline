@@ -15,7 +15,7 @@ jobs:
           username: ${{ secrets.USR_NAME }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /var/www/html
+            cd /var/www/lagranjita/public_html/
             git status
             git pull origin main
             git log -1

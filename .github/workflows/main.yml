@@ -15,6 +15,7 @@ jobs:
           username: ${{ secrets.USR_NAME }}
           password: ${{ secrets.PASS }}
           port: ${{ secrets.PORT }}
+          key: ${{ secrets.KEY }}
           script: |
             cd /var/www/lagranjita/public_html/
             git status

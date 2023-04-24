@@ -1,6 +1,6 @@
 'use strict'
 $( document ).ready(function() {
-    console.log( "ready!" );
+    //console.log( "ready!" );
     var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
     myModal.toggle();
 });
@@ -71,12 +71,12 @@ let printLastAnimalSlider = (data) => {
             setTimeout(() => {
 
             //test promesa
-            console.log('entramos al timeout');
+            //console.log('entramos al timeout');
             codAnimal = data.result.split("-",1)[0];
             //playAudio(codAnimal);
-            console.log(codAnimal, 'codigo animal');
+            //console.log(codAnimal, 'codigo animal');
             cod = codAnimal;
-            console.log(cod);
+            //console.log(cod);
             alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';
             alarm.classList.remove("test");
             DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
@@ -94,7 +94,7 @@ let printLastAnimalSlider = (data) => {
 //Reemplazar e imprimir ultimo resultado 
 let printLastAnimal = (data) => {
     //Encuentra los nodos del DOM de todas las loterias
-    console.log(data, 'data');
+    //console.log(data, 'data');
     let alarm = document.querySelector('.alarmImg');
     let DomLot = document.querySelectorAll('.carouselAnimales')[0].children;
     var audioAlarma = new Audio(`assets/sounds/Alarma2.mp3`);
@@ -111,12 +111,12 @@ let printLastAnimal = (data) => {
           //  }
             setTimeout(() => {
                  //test promesa
-            console.log('entramos al timeout');
+            //console.log('entramos al timeout');
             codAnimal = data.result.split("-",1)[0];
             //playAudio(codAnimal);
-            console.log(codAnimal, 'codigo animal');
+            //console.log(codAnimal, 'codigo animal');
             cod = codAnimal;
-            console.log(cod);
+            //console.log(cod);
            /* audio = new Audio(`assets/sounds/${cod}.mp3`);
             audio.play(); */
             }, 60000);
@@ -154,18 +154,18 @@ let printAllAnmilas = (data) => {
     var audioAlarma = new Audio(`assets/sounds/Alarma3.mp3`);
     var audio;
     var primerAnimal = true;
-    console.log(data, 'data');
+    //console.log(data, 'data');
     data.forEach(element => {
         let horarioLott = element.lottery.name.slice(-8);
         let template = `<span class='resultImg'></span><span class="mt-3 mb-3">${horarioLott}</span>`;
         let codAnimal = element.result.split("-",1)[0];
         if(element.lottery.id == 2 && element.result !== '') {
-            console.log('primera loteria');
+            //console.log('primera loteria');
             
             if(data[1].result == '' || data[1].result == undefined){
-                console.log(data[1]);
-                console.log(data[1].result);
-                console.log('tiene una loteria por delante');
+                //console.log(data[1]);
+                //console.log(data[1].result);
+                //console.log('tiene una loteria por delante');
                 alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
                 alarm.classList.add("test")
                 playAlertSound(`assets/sounds/Alarma3.mp3`)
@@ -173,7 +173,7 @@ let printAllAnmilas = (data) => {
                 // Automatic playback started!
                 alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';
                 alarm.classList.remove("test");  
-                console.log('termina de sonar');
+                //console.log('termina de sonar');
                 template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
                 <span>${horarioLott}</span>`;
                 let variable = `<div class='itemResults'>${template}</div>`;
@@ -183,12 +183,12 @@ let printAllAnmilas = (data) => {
                 }).catch(function(error) {
                 // Automatic playback failed.
                 // Show a UI element to let the user manually start playback.
-                console.log('error');
+                //console.log('error');
                 })
             }else if(data[1].result !== '' ){
-                console.log(data[1], '1');
-                console.log(data[1].result);
-                console.log('No tiene loteria por delante');
+                //console.log(data[1], '1');
+                //console.log(data[1].result);
+                //console.log('No tiene loteria por delante');
                 template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
                 <span>${horarioLott}</span>`;
                 let variable = `<div class='itemResults'>${template}</div>`;
@@ -198,7 +198,7 @@ let printAllAnmilas = (data) => {
         }else if(element.result !== '' && element.lottery.id > 2 ) {
             //alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
             //audio = new Audio(`assets/sounds/${codAnimal}.mp3`); 
-            console.log(element.lottery.id, 'posicion');
+            //console.log(element.lottery.id, 'posicion');
             template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
                 <span>${horarioLott}</span>`;
             let variable = `<div class='itemResults'>${template}</div>`;
@@ -207,7 +207,7 @@ let printAllAnmilas = (data) => {
             audio = new Audio(`assets/sounds/${codAnimal}.mp3`); 
         }else if(element.result == '' ){
             //https://admin-dev.caribeapuesta.com/loteries/results/2/2022-04-18
-            // console.log(template, 'template final');
+            // //console.log(template, 'template final');
             let variable = `<div class='itemResults'>${template}</div>`;
             //document.querySelector(".carouselAnimales").innerHTML += variable;
             $('.carouselAnimalsSlider').slick('slickAdd',variable);
@@ -728,12 +728,12 @@ function zoom(option){
     var text =  document.querySelector('.text-rules').style.fontSize;
     if(option === 'in'){
         text  = document.querySelector('.text-rules').style.fontSize ;
-        console.log(text);
+        //console.log(text);
     }
 }*/
       document.querySelector('#btn-submit-contact').addEventListener('click', () => {
           let dirFile = '../controller/mailerContact.php';
-          console.log('hola');
+          //console.log('hola');
           fetch(dirFile, {
             method: 'post',
             body: new FormData(document.getElementById("form-contact")),

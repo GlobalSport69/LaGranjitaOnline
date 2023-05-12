@@ -105,15 +105,15 @@
       </div>
     </div>
     <div class="row animalslist2">
-      <div class="col-12 col-sm-12 col-md-12 col-lg-9">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
         <div class="carouselAnimalsSlider" style="color: white;"></div>
       </div>
-      <div class="col-12 col-sm-12 col-md-12 col-lg-3 Alarm-container">
+      <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-3 Alarm-container">
         <div class="Alarm">
           <img class="alarmImg" src="assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png" alt="" class="img-fluid img-responsive">
-          <!--<img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">-->
+          <!--<img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
   <!-- Carrusel Resultados -->
@@ -126,7 +126,7 @@
       <div class="col-sm-12 text-left "><span class="dateResultsFilter">FECHA</span>
         <input type="date" class="dateInput" id="inputSearch" onchange="handler(event);">
       </div>
-      <div class="col-sm-3 itemsResultsDay"></div>
+      <div class="col-sm-4 itemsResultsDay"></div>
     </div>
     </div>
     <div class="borderLine"></div>
@@ -141,6 +141,7 @@
         <span class="pronosticoImgBorder my-3"></span>
 
         <div class="btnLuck mb-5">
+          <button class="btn-luck" onclick="getNameFiles()">DAME SUERTE</button>
           <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3 btn-img-fluid img-responsive" onclick="getNameFiles()">
           <img src="assets/img/BotónDameSuerteON_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3 btn-img-fluid img-responsive" onclick="getNameFiles()">
         </div>
@@ -177,27 +178,8 @@
               <img src="assets/img/BotónTwitterOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
               <img rel="noopener noreferrer" onclick='changeLink("https://twitter.com/lagranjitaofic?lang=es")' src="assets/img/BotónTwitterON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
             </div>
-            <!--
-              <div class="btnLuck">
-              <img src="assets/img/BotónWhatsAppOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
-              <img src="assets/img/BotónWhatsAppON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
-            </div>
-            <div class="btnLuck">
-              <img src="assets/img/BotónFacebookOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
-              <img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
-            </div>
-            -->
-
           </div>
         </div>
-        <!--
-<img src="assets/img/linea_inferior.png" alt="Linea Inferior" class="img-fluid">
-        <p class="mb-0 textWhatsapp">TE GUSTARIA RECIBIR TUS RESULTADOS VIA WHATSAPP AL INSTANTE LAS 24/7?</p>
-        <div class="mt-2 btnLuck">
-          <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive">
-          <img src="assets/img/BotónRegístrateON_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive">
-        </div>
-        -->
       </section>
     </div>
     <div class="borderLine"></div>

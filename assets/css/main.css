@@ -3,17 +3,22 @@
 }
 
 html,body{
-	background: url(../img/bk.jpg) no-repeat center center fixed; 
+	background: url(../img/bk1.png)center center no-repeat fixed;
+    overflow-x: hidden;
+    background-size: cover;
+}
+/* html,body{
+	background: url(../img/bkFull.png) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
     overflow-x: hidden;
-}
+} */
 .lineAqua{
 	width: 100%;
-    border: solid 1px var(--neon);
-    box-shadow: 0 0 2px cyan;
+	border: solid 1px rgb(255 255 1);
+	box-shadow: 0 0 5px black;
 }
 .lineAqua-responsive {
     width: 100%;
@@ -53,8 +58,8 @@ span.menuItem3{
 }
 .slogan {
     font-size: 35px;
-    color: var(--neon);
-    text-shadow: 0 0 5px cyan;
+    color: #ffff01;
+    text-shadow: 0 0 5px black;
     position: absolute;
     bottom: 20px;
     padding: 0;
@@ -84,8 +89,8 @@ span.menuItem3{
     box-shadow: 0 0 5px aqua;
 }
 .itemResults{
-    width: 101px !important;
-    height: 101px !important;
+    /* width: 101px !important;
+    height: 101px !important; */
 	text-align: center;
 	color: white;
     margin-bottom: 12px;
@@ -93,7 +98,7 @@ span.menuItem3{
 }
 .itemResultsD {
     display: flex;
-    flex: 0 0 25%;
+    flex: 0 0 33.33%;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
@@ -124,7 +129,7 @@ span.menuItem3{
 	border-radius: 50%;
 } */
 .slick-slider, .slick-track, .slick-list{
-	height: 150px;
+	height: 225px;
 }
 .carouselAnimales{
     display: flex;
@@ -200,9 +205,9 @@ p.pronosticoSuerte {
     border: solid 1px white;
     border-radius: 50%;
 }
-.pronosticoImgAnimal{ 
-    width: 200px;
-    height: 200px;
+.pronosticoImgAnimal{
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
 }
 .pronosticosDiv{
@@ -278,8 +283,9 @@ p.pronosticoSuerte {
 }
 .slide-arrow {
 	position: absolute;
-    margin-top: -75px;
-    top: 50%;
+	margin-top: -75px;
+	top: 50%;
+	display: none;
 }
 
 .prev-arrow {

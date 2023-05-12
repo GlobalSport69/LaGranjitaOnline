@@ -5,7 +5,7 @@ $( document ).ready(function() {
     myModal.toggle();
 });
 
-let baseUrl = 'https://webservice.premierpluss.com/loteries/';
+let baseUrl = 'http://ep.premierpluss.com/loteries/';
 //Funcion redirect url
 function changeLink(url){
     window.open(url, '_blank');
@@ -19,7 +19,7 @@ function ancla(element) {
 }
 //Fetch de la api
 const getLotteries = async () => {
-    const response = await fetch(`${baseUrl}results3?since='${now}'&product=1`);
+    const response = await fetch(`${baseUrl}results3?since='2023-05-10'&product=1`);
     const data = await response.json();
     let loterias = loteries;
     //Crea listado completo para las loterias del dia.
@@ -229,10 +229,10 @@ function startShowingMessage() {
 //DAtapicker onChange
 async function handler(e){
 
-    let url = `${baseUrl}results3?since='${now}'&product=1`;
+    let url = `${baseUrl}results3?since='2023-05-10'&product=1`;
 
     if(typeof(e) !== 'string') {
-        url = `${baseUrl}results3?since='${e.target.value}'&product=1`;
+        url = `${baseUrl}results3?since='2023-05-10'&product=1`;
     }
     const response = await fetch(url);
     const data = await response.json();

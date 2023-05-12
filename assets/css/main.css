@@ -1,5 +1,6 @@
 :root{
-    --neon: rgb(0, 255, 255)
+    --black: rgb(0, 0, 0);
+    --line: rgb(255, 255, 1);
 }
 
 html,body{
@@ -22,8 +23,8 @@ html,body{
 }
 .lineAqua-responsive {
     width: 100%;
-    border: solid 1px var(--neon);
-    box-shadow: 0 0 2px cyan;
+    border: solid 1px var(--black);
+    box-shadow: 0 0 2px rgb(255 255 1);
     display: none;
     margin-bottom: 16px;
     margin-top: 8px;
@@ -57,9 +58,9 @@ span.menuItem3{
 	border-right: solid 1px white;
 }
 .slogan {
-    font-size: 35px;
+    font-size: 45px;
     color: #ffff01;
-    text-shadow: 0 0 5px black;
+    text-shadow: 0px 4px 3px black;
     position: absolute;
     bottom: 20px;
     padding: 0;
@@ -96,9 +97,13 @@ span.menuItem3{
     margin-bottom: 12px;
     /*transition: all ease 1500ms;*/
 }
+.itemResults > span{
+    font-weight: 900;
+}
 .itemResultsD {
     display: flex;
-    flex: 0 0 33.33%;
+    flex-direction: column;
+    flex: 0 0 25%;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
@@ -149,8 +154,8 @@ span.menuItem3{
     width: 100%;
 }
 .resultImg{
-    width: 101px !important;
-    height: 101px !important;
+    width: 160px !important;
+    height: 160px !important;
     border: solid 1px white;
     border-radius: 50%;
     display: flex;
@@ -158,21 +163,21 @@ span.menuItem3{
     align-items: center;
     color: white;
     font-size: 30px;
-    margin: 0px 0px !important;
+    margin: 13px 0px !important;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .resultImgD{
-    width: 81px !important;
-    height: 81px !important;
+    width: 100px !important;
+    height: 100px !important;
 }
 .dateInput {
     border: unset;
     border-radius: 5px;
     background: transparent;
     color: white;
-    border-bottom: solid 1px aqua;
+    border-bottom: solid 1px rgb(255, 255, 1);
 }
 ::-webkit-calendar-picker-indicator {
     filter: invert(1);
@@ -222,9 +227,10 @@ p.pronosticoSuerte {
 	color: white;
 }
 .socialNetworkTitle, .resultsText{
-	font-size: 25px;
-	color: white;
-	letter-spacing: 2px;
+    font-size: 30px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 600;
 }
 .imgQr{
 	display: flex;
@@ -303,9 +309,15 @@ p.pronosticoSuerte {
 .item{
 	flex:0 0 30%
 }
+.item-70{
+    flex: 0 0 63%;
+}
+.Animals{
+    width: 65%;
+}
 .borderLine{
-	border:solid 1px rgb(4 90 110);;
-	box-shadow: 0 0 5px aqua;
+	border:solid 1px var(--line);
+	box-shadow: 0 0 5px black;
 	width: 0;
 	padding: 0;
 	margin: 0;
@@ -317,13 +329,13 @@ p.pronosticoSuerte {
     font-size: 25px;
 }
 .qr-img{
-    border: 3px solid aqua;
+    border: 3px solid var(--line);
     border-radius: 10px;
-    box-shadow: 0 0 5px aqua;
+    box-shadow: 0 0 5px black;
 	padding: 1px;
 }
 .titleContact{
-	color: var(--neon);
+	color: var(--line);
     font-size: 20px;
     text-align: center;
     font-weight: 700;
@@ -331,7 +343,7 @@ p.pronosticoSuerte {
 }
 .formInput{
 	background: rgb(0 0 0 / 0%);
-    border: solid 1.25px var(--neon);
+    border: solid 1.25px var(--black);
     border-radius: 10px;
     color: rgb(255 255 255);
 }
@@ -342,7 +354,7 @@ p.pronosticoSuerte {
 .form-control:focus {
     color: rgb(255 255 255) !important;
     background-color: rgb(0 0 0 / 0%) !important;
-    border-color: var(--neon) !important;
+    border-color: var(--black) !important;
     outline: 0 !important;
     box-shadow: 0 0 0 0.25rem rgb(5 101 118) !important;
 }
@@ -379,11 +391,11 @@ p.titleRegister {
 	letter-spacing: 2px;
 }
 .titleRegister > span.work {
-    color: var(--neon);
+    color: var(--line);
     font-weight: 900;
 }
 .titleRegister > span.us {
-    color: var(--neon);
+    color: var(--line);
 }
 .footer{
 	flex:0 0 50%
@@ -392,6 +404,9 @@ p.titleRegister {
     margin: 0;
     color: rgb(255 255 255);
     font-size: 16px;
+}
+#btn-submit-job{
+    width: 100%;
 }
 
 .copyright {
@@ -443,17 +458,17 @@ p.titleRegister {
   .rules-text-container::-webkit-scrollbar-track {
     background: transparent;        /* color of the tracking area */
     border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 1px solid aqua;  /* creates padding around scroll thumb */
-    box-shadow: 0 0 2px cyan;
+    border: 1px solid rgb(255 255 1);  /* creates padding around scroll thumb */
+    box-shadow: 0 0 2px rgb(255 255 1);
   }
   
   .rules-text-container::-webkit-scrollbar-thumb {
-    background-color: aqua;    /* color of the scroll thumb */
+    background-color: rgb(255 255 1);    /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 3px solid transparent;  /* creates padding around scroll thumb */
   }
 .title-rules{
-    color: var(--neon);
+    color: var(--line);
     font-size: 20px;
     text-align: center;
     font-weight: 700;
@@ -651,10 +666,77 @@ p.titleRegister {
 }
 
 /*Estilos para reemplazar imagenes */ 
+.custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #000;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+.btn-5 {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: rgb(255, 255, 1);
+    background: linear-gradient(0deg, rgba(255,255,0,1) 0%, rgba(251,255,2,1) 100%);
+  }
+  .btn-5:hover {
+    color: rgb(233, 233, 0);
+    background: transparent;
+     box-shadow:none;
+  }
+  .btn-5:before,
+  .btn-5:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: rgb(233, 233, 0);
+    box-shadow:
+     -1px -1px 5px 0px #fff,
+     7px 7px 20px 0px #0003,
+     4px 4px 5px 0px #0002;
+    transition:400ms ease all;
+  }
+  .btn-5:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .btn-5:hover:before,
+  .btn-5:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+
 .btnLuck{
     position: relative;
     width: 100%;
     height: 47px;
+}
+.reglamento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: rgb(255, 255, 1);
+    font-size: 22px;
 }
 .btnLuck > img{
     position: absolute;

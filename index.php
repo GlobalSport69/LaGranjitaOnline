@@ -121,9 +121,9 @@
   <!-- Seccion 3 -->
   <section class="container my-3 d-flex section3">
     <div class="borderLine"></div>
-    <div class="item row">
-      <div class="col-sm-12 text-left mb-3"><span class="resultsText">RESULTADOS</span></div>
-      <div class="col-sm-12 text-left "><span class="dateResultsFilter">FECHA</span>
+    <div class="item-70 row">
+      <div class="col-sm-12 text-center mb-3"><span class="resultsText">RESULTADOS</span></div>
+      <div class="col-sm-12 text-center "><span class="dateResultsFilter">FECHA</span>
         <input type="date" class="dateInput" id="inputSearch" onchange="handler(event);">
       </div>
       <div class="col-sm-4 itemsResultsDay"></div>
@@ -140,10 +140,8 @@
       <div class="col-sm-12 pronosticosDiv">
         <span class="pronosticoImgBorder my-3"></span>
 
-        <div class="btnLuck mb-5">
-          <button class="btn-luck" onclick="getNameFiles()">DAME SUERTE</button>
-          <img src="assets/img/BotónDameSuerteOFF_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3 btn-img-fluid img-responsive" onclick="getNameFiles()">
-          <img src="assets/img/BotónDameSuerteON_Pronósticos_LG_HD.png" alt="DameSuerte" class="img-fluid my-3 btn-img-fluid img-responsive" onclick="getNameFiles()">
+        <div class="btnLuck d-flex justify-content-center mb-5">
+          <button class="custom-btn btn-5" onclick="getNameFiles()">DAME SUERTE</button>
         </div>
 
         <p class="textWarning">
@@ -152,36 +150,6 @@
       </div>
     </div>
 
-    <div class="borderLine"></div>
-    <div class="lineAqua-responsive"></div>
-    <div class="item row">
-      <section class="qr" id="registrate">
-        <p class="title">CADA SEGUNDO CUENTA</p>
-        <img src="assets/img/linea_superior.png" alt="Linea Superior" class="img-fluid">
-
-        <div class="subsectionQr d-flex responsive-contentColumn">
-          <div class="imgQr ">
-            <span class="topText">
-              DESCARGA NUESTRA TARJETA DIGITAL
-            </span>
-            <img src="assets/img/4cd9f305-9088-406a-b6c4-5c062198605a.jpg" alt="QR Img" class="img-fluid qr-img">
-            <span class="bottomText">
-              ESCANEA TU CODIGO
-            </span>
-          </div>
-          <div class="sectionbtnSN">
-            <div class="btnLuck">
-              <img src="assets/img/BotónInstagramOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
-              <img rel="noopener noreferrer" onclick="changeLink(`https://www.instagram.com/lagranjitaofic/?hl=es`)" src="assets/img/BotónInstagramON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
-            </div>
-            <div class="btnLuck">
-              <img src="assets/img/BotónTwitterOFF_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
-              <img rel="noopener noreferrer" onclick='changeLink("https://twitter.com/lagranjitaofic?lang=es")' src="assets/img/BotónTwitterON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive pointer">
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
     <div class="borderLine"></div>
   </section>
   <div class="lineAqua"></div>
@@ -209,8 +177,7 @@
             <textarea name="msg" cols="30" rows="5" class="form-control formInput" id="msg"></textarea>
           </div>
           <div class="m-2 btnLuck">
-            <img src="assets/img/BotónRegístrateOFF_TarjetaDigital_LG_HD.png" alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
-            <img src="assets/img/BotónRegístrateON_TarjetaDigital_LG_HD.png" id='btn-submit-contact' alt="Boton Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+            <button class="custom-btn btn-5" type="button" id="btn-submit-contact">REGISTRATE</button>
           </div>
         </section>
       </form>
@@ -228,9 +195,6 @@
               +58 (424) 823-6730
             </span>
           </p>
-        </div>
-        <div class="miniQr">
-          <img src="assets/img/4cd9f305-9088-406a-b6c4-5c062198605a.jpg" alt="" class="img-fluid img-qr-large">
         </div>
       </div>
     </article>
@@ -671,17 +635,14 @@
               LOTERÍA INTERNACIONAL DE MARGARITA</b></p>
         </div>
         <div class="rules-controls" style="color: white;">
-          <div class="col-md-4 btnLuck">
-            <img src="assets/img/IconoPrintOFF_Reglamentos_LG_HD.png" alt="Imprimir" onclick="imprimir(`https://loteria.premierpluss.com/files/REGLAMENTO_LA_GRANJITA.pdf`)" class="img-fluid float-end btn-img-fluid img-responsive pointer">
-            <img src="assets/img/IconoPrintON_Reglamentos_LG_HD.png" alt="Imprimir" onclick="imprimir(`https://loteria.premierpluss.com/files/REGLAMENTO_LA_GRANJITA.pdf`)" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+          <div class="col-md-4 btnLuck reglamento">
+            <i class="fas fa-print" onclick="imprimir(`https://loteria.premierpluss.com/files/REGLAMENTO_LA_GRANJITA.pdf`)"></i>
           </div>
-          <div class="col-md-4 btnLuck">
-            <img src="assets/img/IconoZoomOUT_OFF_Reglamentos_LG_HD.png" alt="zoomOut" class="img-fluid float-end btn-img-fluid img-responsive pointer">
-            <img src="assets/img/IconoZoomOUT_ON_Reglamentos_LG_HD.png" id="disminuir" alt="zoomOut" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+          <div class="col-md-4 btnLuck reglamento">
+            <i class="fas fa-search-minus" id="disminuir" alt="zoomOut"></i>
           </div>
-          <div class="col-md-4 btnLuck">
-            <img src="assets/img/IconoZoomIN_OFF_Reglamentos_LG_HD.png" alt="zoomIn" class="img-fluid float-end btn-img-fluid img-responsive pointer">
-            <img src="assets/img/IconoZoomIN_ON_Reglamentos_LG_HD.png" id="aumentar" alt="zoomIn Registrate" class="img-fluid float-end btn-img-fluid img-responsive pointer">
+          <div class="col-md-4 btnLuck reglamento">
+            <i class="fas fa-search-plus" id="aumentar" alt="zoomIn"></i>
           </div>
         </div>
     </article>
@@ -711,8 +672,7 @@
             <input type="text" class="form-control formInput" id="email" name="email">
           </div>
           <div class="my-5 btnLuck">
-            <img src="assets/img/BotónOFF_TrabajaConNosotros_LG_HD.png" alt="Boton Trabaja" class="img-fluid btn-img-fluid w-100 pointer">
-            <img src="assets/img/BotónON_TrabajaConNosotros_LG_HD.png" id="btn-submit-job" alt="Boton Trabaja" class="img-fluid btn-img-fluid w-100 pointer">
+            <button class="custom-btn btn-5" id="btn-submit-job" >YO QUIERO SER PARTE DEL EQUIPO</button>
           </div>
         </section>
       </form>

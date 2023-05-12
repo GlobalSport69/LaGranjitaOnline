@@ -19,7 +19,7 @@ function ancla(element) {
 }
 //Fetch de la api
 const getLotteries = async () => {
-    const response = await fetch(`${baseUrl}results3?since='2023-05-10'&product=1`);
+    const response = await fetch(`${baseUrl}results3?since='${now}'&product=1`);
     const data = await response.json();
     let loterias = loteries;
     //Crea listado completo para las loterias del dia.
@@ -229,10 +229,10 @@ function startShowingMessage() {
 //DAtapicker onChange
 async function handler(e){
 
-    let url = `${baseUrl}results3?since='2023-05-10'&product=1`;
+    let url = `${baseUrl}results3?since='${now}'&product=1`;
 
     if(typeof(e) !== 'string') {
-        url = `${baseUrl}results3?since='2023-05-10'&product=1`;
+        url = `${baseUrl}results3?since='${now}'&product=1`;
     }
     const response = await fetch(url);
     const data = await response.json();
@@ -263,7 +263,7 @@ function printAnimalsDate(data){
         let template = `<span class='resultImgD resultImg'></span><span>${horarioLott}</span>`;
         let codAnimal = element.result.split("-",1)[0];
         if(element.result !== '' ) 
-            template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluidAnimals'/>
+            template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid Animals'/>
             <span>${horarioLott}</span>`;
         
         let variable = `<div class='itemResultsD'>${template}</div>`;

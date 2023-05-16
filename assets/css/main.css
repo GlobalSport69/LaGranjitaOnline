@@ -107,7 +107,7 @@ span.menuItem3{
 .itemResultsD {
     display: flex;
     flex-direction: column;
-    flex: 0 0 25%;
+    flex: 0 0 33.33%;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
@@ -120,10 +120,36 @@ span.menuItem3{
     transition: all ease 1200ms;
     width: 90%;
   }
+  .img-animate-no-results {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    animation: spin2 3s 3;
+    transition: all ease 1200ms;
+    width: 90%;
+}
+.img-animate-no-resultsD {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    animation: spin2 3s 3;
+    transition: all ease 1200ms;
+    width: 75%;
+}
   .img-fluidAnimals {
-      width: 81px;
+      width: 75%;
       margin: auto;
   }
+  @-moz-keyframes spin2 { 
+        100% { -moz-transform: rotate(360deg); } 
+    }
+    @-webkit-keyframes spin2 { 
+        100% { -webkit-transform: rotate(360deg); } 
+    }
+    @keyframes spin2 { 
+        100% { 
+            -webkit-transform: rotate(360deg); 
+            transform:rotate(360deg); 
+        } 
+    }
   @keyframes spin {
     0% {
       transform: rotateY(0deg);
@@ -149,7 +175,7 @@ span.menuItem3{
 }
 .itemsResultsDay {
     color: white;
-    font-size: 12px;
+    font-size: 18px;
     text-align: center;
     font-weight: 900;
     margin: 12px 0px;
@@ -174,8 +200,8 @@ span.menuItem3{
     align-items: center;
 }
 .resultImgD{
-    width: 100px !important;
-    height: 100px !important;
+    width: 134px !important;
+    height: 134px !important;
 }
 .dateInput {
     border: unset;
@@ -193,8 +219,7 @@ span.menuItem3{
 }
 article.pronostico > p{
 	margin: 0;
-	color: white;
-	line-height: 16px;
+    font-size: 35px;
 	color: #ffff01;
 	text-shadow: 0px 4px 3px black;
 }
@@ -212,8 +237,8 @@ p.pronosticoSuerte {
     color: white;
 }
 .pronosticoImgBorder{
-	width: 200px;
-    height: 200px;
+	width: 300px;
+    height: 300px;
     border: solid 1px white;
     border-radius: 50%;
 }
@@ -229,9 +254,11 @@ p.pronosticoSuerte {
     flex-direction: column;
 }
 .textWarning{
-	font-size: 8.5px;
-	text-align: justify;
-	color: white;
+    font-weight: 900;
+    font-size: 15px;
+    text-align: justify;
+    color: white;
+    text-shadow: 0 0 5px black;
 }
 .socialNetworkTitle, .resultsText{
     font-size: 30px;
@@ -460,8 +487,8 @@ p.titleRegister {
     display: flex;
     align-items: center;
     flex-direction: row;
-    width: 19%;
-    margin: 21px 70px;
+    margin: 20px 70px;
+    justify-content: space-between;
 }
   
   .rules-text-container::-webkit-scrollbar-track {
@@ -626,6 +653,9 @@ p.titleRegister {
         width: 60%;
         margin: 0 auto;
     }
+    .img-animate{
+        width: 50%;
+    }
 }
 @media only screen and (max-width: 375px){
     .itemResultsD {
@@ -746,9 +776,7 @@ p.titleRegister {
     height: 47px;
 }
 .reglamento{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     cursor: pointer;
     color: rgb(255, 255, 1);
     font-size: 22px;
@@ -901,7 +929,7 @@ p.titleRegister {
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     left: 0;
-    background-position: -90px 0;
+    background-position: -200px 0;
 }
 
 #menu li

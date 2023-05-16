@@ -91,7 +91,7 @@
       <div class="col-lg-3 img-menu"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
       <div class="col-lg-9 position-relative row p-0 mb-1 title-menu">
         <span class="slogan">El Hogar de los ANIMALITOS</span>
-
+        <span class="alarmImg"></span>
       </div>
     </section>
   </header>
@@ -176,7 +176,7 @@
             <label for="msg" class="form-label formLabel">Mensaje</label>
             <textarea name="msg" cols="30" rows="5" class="form-control formInput" id="msg"></textarea>
           </div>
-          <div class="m-2 btnLuck">
+          <div class="btnLuck m-0 p-0">
             <button class="custom-btn btn-5 w-100" type="button" id="btn-submit-contact">REGISTRATE</button>
           </div>
         </section>
@@ -635,13 +635,13 @@
               LOTERÍA INTERNACIONAL DE MARGARITA</b></p>
         </div>
         <div class="rules-controls" style="color: white;">
-          <div class="col-md-4 btnLuck reglamento">
+          <div class="col-md-4 reglamento">
             <i class="fas fa-print" onclick="imprimir(`https://loteria.premierpluss.com/files/REGLAMENTO_LA_GRANJITA.pdf`)"></i>
           </div>
-          <div class="col-md-4 btnLuck reglamento">
+          <div class="col-md-4 reglamento">
             <i class="fas fa-search-minus" id="disminuir" alt="zoomOut"></i>
           </div>
-          <div class="col-md-4 btnLuck reglamento">
+          <div class="col-md-4 reglamento">
             <i class="fas fa-search-plus" id="aumentar" alt="zoomIn"></i>
           </div>
         </div>

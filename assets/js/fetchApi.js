@@ -232,7 +232,7 @@ async function handler(e){
     let url = `${baseUrl}results3?since='${now}'&product=1`;
 
     if(typeof(e) !== 'string') {
-        url = `${baseUrl}results3?since='${now}'&product=1`;
+        url = `${baseUrl}results3?since='${e.target.value}'&product=1`;
     }
     const response = await fetch(url);
     const data = await response.json();

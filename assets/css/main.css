@@ -112,8 +112,9 @@ span.menuItem3{
   .img-animate {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    animation: spin 3s 3 ; 
+    animation: spin 3s 3;
     transition: all ease 1200ms;
+    width: 90%;
   }
   .img-fluidAnimals {
       width: 81px;
@@ -188,8 +189,10 @@ span.menuItem3{
 }
 article.pronostico > p{
 	margin: 0;
-    color: white;
+	color: white;
 	line-height: 16px;
+	color: #ffff01;
+	text-shadow: 0px 4px 3px black;
 }
 p.pronosticoTitle {
     letter-spacing: 4.3px;
@@ -231,6 +234,8 @@ p.pronosticoSuerte {
     color: white;
     letter-spacing: 2px;
     font-weight: 600;
+    color: #ffff01;
+    text-shadow: 0px 4px 3px black;
 }
 .imgQr{
 	display: flex;
@@ -291,15 +296,15 @@ p.pronosticoSuerte {
 	position: absolute;
 	margin-top: -75px;
 	top: 50%;
-	display: none;
+    width: 115px;
 }
 
 .prev-arrow {
-	left: -40px;
+	left: -95px;
 }
 
 .next-arrow {
-	right: -40px;
+	right: -95px;
 }
 .section3{
 	flex-flow: row wrap;
@@ -685,7 +690,7 @@ p.titleRegister {
     outline: none;
   }
 .btn-5 {
-    width: 130px;
+    width: 210px;
     height: 40px;
     line-height: 42px;
     padding: 0;
@@ -878,7 +883,7 @@ p.titleRegister {
     margin: -100px 0 0 -50px;
     padding: 50px;
     padding-top: 150px;
-    background: url(../img/bk.jpg);;
+    background: url(../img/bk1.png);;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
@@ -892,7 +897,11 @@ p.titleRegister {
   padding: 10px 0;
   font-size: 36px;
 }
-
+.modal-title{
+    color: #ffff01 !important;
+    text-shadow: 0 0 5px black !important;
+    font-size: 35px !important;
+}
 /*
  * And let's slide it in from the left
  */
@@ -914,8 +923,8 @@ p.titleRegister {
   }
 
  .modal-content {
-    background-size: cover;
-    background-image: url(../img/bk.jpg);
+    background-size: 100% 100%;
+    background-image: url(../img/bk1.png);
     color: white
   }
   .btn-close {

@@ -694,7 +694,7 @@
           Este es un sitio web de resultados de apuestas, debe ser mayor de edad para poder entrar.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirmo, tengo +18 años</button>
+          <button type="button" class="custom-btn btn-5" data-bs-dismiss="modal">Confirmo, tengo +18 años</button>
         </div>
       </div>
     </div>

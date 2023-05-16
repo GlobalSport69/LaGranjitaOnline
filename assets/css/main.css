@@ -852,7 +852,7 @@ p.titleRegister {
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: aqua;
+  background: #ffff01;
 }
 
 /*
@@ -891,6 +891,7 @@ p.titleRegister {
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     left: 0;
+    background-position: -90px 0;
 }
 
 #menu li

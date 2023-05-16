@@ -5,7 +5,7 @@ $( document ).ready(function() {
     myModal.toggle();
 });
 
-let baseUrl = 'http://ep.premierpluss.com/loteries/';
+let baseUrl = 'https://webservice.premierpluss.com/loteries/';
 //Funcion redirect url
 function changeLink(url){
     window.open(url, '_blank');

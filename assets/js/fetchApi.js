@@ -263,7 +263,7 @@ function printAnimalsDate(data){
         let template = `<span class='resultImgD resultImg'></span><span>${horarioLott}</span>`;
         let codAnimal = element.result.split("-",1)[0];
         if(element.result !== '' ) 
-            template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluidAnimals'/>
+            template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid Animals'/>
             <span>${horarioLott}</span>`;
         
         let variable = `<div class='itemResultsD'>${template}</div>`;

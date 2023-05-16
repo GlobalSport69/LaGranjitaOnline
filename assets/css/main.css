@@ -96,6 +96,10 @@ span.menuItem3{
 	color: white;
     margin-bottom: 12px;
     /*transition: all ease 1500ms;*/
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .itemResults > span{
     font-weight: 900;
@@ -582,11 +586,17 @@ p.titleRegister {
     .img-menu {
         text-align: center;
     }
+    .img-menu > img{
+        width: 50%;
+    }
     .text-left,.title {
         text-align: center;
     }
     .resultsText {
         text-align: center;
+    }
+    .item-70 {
+        flex: 0 0 85%;
     }
 }
 @media only screen and (max-width: 425px){

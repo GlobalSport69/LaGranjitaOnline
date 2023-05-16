@@ -177,7 +177,7 @@
             <textarea name="msg" cols="30" rows="5" class="form-control formInput" id="msg"></textarea>
           </div>
           <div class="m-2 btnLuck">
-            <button class="custom-btn btn-5" type="button" id="btn-submit-contact">REGISTRATE</button>
+            <button class="custom-btn btn-5 w-100" type="button" id="btn-submit-contact">REGISTRATE</button>
           </div>
         </section>
       </form>

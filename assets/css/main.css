@@ -453,6 +453,9 @@ p.titleRegister {
     justify-content: start;
     align-items: center;
 }
+.imgFooter > img {
+    width: 250px;
+}
 .pointer {
     cursor: pointer;
 }

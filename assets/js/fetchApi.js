@@ -6,7 +6,7 @@ $( document ).ready(function() {
 });
 
 let baseUrl = 'https://ep443.premierpluss.com/loteries/';
-//Funcion redirect url
+//Funcion redirect url prod
 function changeLink(url){
     window.open(url, '_blank');
 }

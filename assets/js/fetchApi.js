@@ -271,7 +271,7 @@ function startShowingMessage() {
     setInterval(async () => {
         
         obtenerLoterias();
-    }, 10000)
+    }, 60000)
   }
 //DAtapicker onChange
 function handler(e){

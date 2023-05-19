@@ -64,7 +64,7 @@ let printLastAnimalSlider = (data) => {
     var cod;
     var codAnimal;
     for (const element in DomLot) {
-        if(DomLot[element].innerHTML == `<img src="assets/img/circulo.png" class="img-fluid img-animate-no-results"><span class="mt-3 mb-3">${horarioLott}</span>`){
+        if(DomLot[element].innerHTML == `<img loading="lazy" src="assets/img/circulo.png" class="img-fluid img-animate-no-results"><span class="mt-3 mb-3">${horarioLott}</span>`){
             let horarioLott = data.lottery.name.slice(-8);
             let codAnimal = data.result.split("-",1)[0];
             alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
@@ -82,7 +82,7 @@ let printLastAnimalSlider = (data) => {
             //console.log(cod);
             alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';
             alarm.classList.remove("test");
-            DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+            DomLot[element].innerHTML =  `<img loading="lazy" src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
             <span class="mt-3 mb-3">${horarioLott}</span>`;
             audio = new Audio(`assets/sounds/${cod}.mp3`);
             audio.play(); 
@@ -133,7 +133,7 @@ let printLastAnimal = (data) => {
     var cod;
     var codAnimal;
     for (const element in DomLot) {
-        if(DomLot[element].innerHTML == `<img src="assets/img/circulo.png" class="img-fluid img-animate-no-results"><span class="mt-3 mb-3">${horarioLott}</span>`){
+        if(DomLot[element].innerHTML == `<img loading="lazy" src="assets/img/circulo.png" class="img-fluid img-animate-no-results"><span class="mt-3 mb-3">${horarioLott}</span>`){
             
         //alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
            // for(let i = 0; i > 3; i++){
@@ -151,7 +151,7 @@ let printLastAnimal = (data) => {
             audio.play(); */
             }, 60000);
             
-            DomLot[element].innerHTML =  `<img src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+            DomLot[element].innerHTML =  `<img loading="lazy" src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
             <span class="mt-3 mb-3">${horarioLott}</span>`;
             break;
         }
@@ -190,7 +190,7 @@ let printAllAnmilas = (data) => {
     //console.log(data, 'data');
     data.forEach(element => {
         let horarioLott = element.lottery.name.slice(-8);
-        let template = `<img src="assets/img/circulo.png" class="img-fluid img-animate-no-results"><span class="mt-3 mb-3">${horarioLott}</span>`;
+        let template = `<img loading="lazy" src="assets/img/circulo.png" class="img-fluid img-animate-no-results"><span class="mt-3 mb-3">${horarioLott}</span>`;
         let codAnimal = element.result.split("-",1)[0];
         if(element.lottery.id == 2 && element.result !== '') {
             //console.log('primera loteria');
@@ -207,7 +207,7 @@ let printAllAnmilas = (data) => {
                 alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';
                 alarm.classList.remove("test");  
                 //console.log('termina de sonar');
-                template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+                template = `<img loading="lazy" src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
                 <span>${horarioLott}</span>`;
                 let variable = `<div class='itemResults'>${template}</div>`;
                 $('.carouselAnimalsSlider').slick('slickAdd',variable, 0 ,  'addBefore');
@@ -222,7 +222,7 @@ let printAllAnmilas = (data) => {
                 //console.log(data[1], '1');
                 //console.log(data[1].result);
                 //console.log('No tiene loteria por delante');
-                template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+                template = `<img loading="lazy" src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
                 <span class="mt-3 mb-3">${horarioLott}</span>`;
                 let variable = `<div class='itemResults'>${template}</div>`;
                 //document.querySelector(".carouselAnimales").innerHTML += variable;
@@ -233,7 +233,7 @@ let printAllAnmilas = (data) => {
                 // Automatic playback started!
                 alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';   
                 //console.log('termina de sonar');
-                template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+                template = `<img loading="lazy" src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
                 <span>${horarioLott}</span>`;
                 let variable = `<div class='itemResults'>${template}</div>`;
                 $('.carouselAnimalsSlider').slick('slickAdd',variable, 0 ,  'addBefore');
@@ -246,7 +246,7 @@ let printAllAnmilas = (data) => {
             //alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
             //audio = new Audio(`assets/sounds/${codAnimal}.mp3`); 
             //console.log(element.lottery.id, 'posicion');
-            template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+            template = `<img loading="lazy" src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
                 <span class="mt-3 mb-3">${horarioLott}</span>`;
             let variable = `<div class='itemResults'>${template}</div>`;
                 //document.querySelector(".carouselAnimales").innerHTML += variable;
@@ -308,10 +308,10 @@ function printAnimalsDate(data){
     document.querySelector(".itemsResultsDay").innerHTML = "";
     data.forEach(element => {
         let horarioLott = element.lottery.name.slice(-8);
-        let template = `<img src="assets/img/circulo.png" class="img-fluid img-animate-no-resultsD"><span>${horarioLott}</span>`;
+        let template = `<img loading="lazy" src="assets/img/circulo.png" class="img-fluid img-animate-no-resultsD"><span>${horarioLott}</span>`;
         let codAnimal = element.result.split("-",1)[0];
         if(element.result !== '' ) 
-            template = `<img src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluidAnimals'/>
+            template = `<img loading="lazy" src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluidAnimals'/>
             <span>${horarioLott}</span>`;
         
         let variable = `<div class='itemResultsD'>${template}</div>`;

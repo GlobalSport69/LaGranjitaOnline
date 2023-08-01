@@ -111,7 +111,7 @@
       <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-3 Alarm-container">
         <div class="Alarm">
           <img class="alarmImg" src="assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png" alt="" class="img-fluid img-responsive">
-          <!--<img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
+           <img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
         </div>
       </div> -->
     </div>

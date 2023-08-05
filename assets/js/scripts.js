@@ -1,5 +1,5 @@
 $(document).ready(()=>{
-    $('.carouselAnimalsSlider').slick({
+    $('.carouselResults').slick({
         infinite: false,
 	 	slidesToShow: 7,
 	 	slidesToScroll: 1,

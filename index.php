@@ -148,7 +148,7 @@
   <div class="lineAqua"></div>
   <div class="container">
     <div class="row d-flex justify-content-center">
-      <div class="col-lg-3 img-menu"><img src="https://bucket-s3-images.s3.us-east-1.amazonaws.com/logo terminal-06.png" alt="terminal-logo" class="w-100 img-responsive"></div>
+      <div class="col-lg-3 img-menu"><img src="https://dryjjfcsfgp14.cloudfront.net/logo terminal-06.png" alt="terminal-logo" class="w-100 img-responsive"></div>
     </div>
   </div>
   <div class="lineAqua"></div>

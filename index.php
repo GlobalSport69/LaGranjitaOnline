@@ -240,7 +240,7 @@
           <p>
             <a onclick="changeLink('https://api.whatsapp.com/send?phone=584242229121')" class="fab fa-whatsapp-square aWhatsapp"></a>
             <span class="text-simple">
-              +58 (424) 222-9212
+              +58 (424) 222-9121
             </span>
           </p>
         </div>

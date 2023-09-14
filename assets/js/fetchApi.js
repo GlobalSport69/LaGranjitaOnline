@@ -6,7 +6,7 @@ $( document ).ready(function() {
 });
 
 let baseUrl = 'https://webservice.premierpluss.com/loteries/';
-let baseUrlS3 = 'https://bucket-s3-images.s3.us-east-1.amazonaws.com/';
+let baseUrlS3 = 'https://dryjjfcsfgp14.cloudfront.net/';
 //Funcion redirect url prod
 function changeLink(url){
     window.open(url, '_blank');

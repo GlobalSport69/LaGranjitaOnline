@@ -96,7 +96,7 @@
     </section>
   </header>
   <div class="lineAqua"></div>
-  <!-- Carrusel Resultados -->
+  <!-- Carrusel Resultados Animalitos -->
   <section class="container my-3">
     <div class="row animalslist1">
       <div class="col-lg-8">
@@ -106,17 +106,11 @@
     </div>
     <div class="row animalslist2">
       <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="carouselAnimalsSlider" style="color: white;"></div>
+        <div class="carouselAnimalsSlider carouselResults" style="color: white;"></div>
       </div>
-      <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-3 Alarm-container">
-        <div class="Alarm">
-          <img class="alarmImg" src="assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png" alt="" class="img-fluid img-responsive">
-           <img src="assets/img/BotónFacebookON_TarjetaDigital_LG_HD.png" alt="" class="img-fluid img-responsive">
-        </div>
-      </div> -->
     </div>
   </section>
-  <!-- Carrusel Resultados -->
+  <!-- Carrusel Resultados Animalitos -->
   <div class="lineAqua"></div>
   <!-- Seccion 3 -->
   <section class="container my-3 d-flex section3">
@@ -127,7 +121,6 @@
         <input type="date" class="dateInput" id="inputSearch" onchange="handler(event);">
       </div>
       <div class="col-sm-4 itemsResultsDay"></div>
-    </div>
     </div>
     <div class="borderLine"></div>
     <div class="lineAqua-responsive"></div>
@@ -150,6 +143,61 @@
       </div>
     </div>
 
+    <div class="borderLine"></div>
+  </section>
+  <div class="lineAqua"></div>
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-3 img-menu"><img src="https://bucket-s3-images.s3.us-east-1.amazonaws.com/logo terminal-06.png" alt="terminal-logo" class="w-100 img-responsive"></div>
+    </div>
+  </div>
+  <div class="lineAqua"></div>
+  <!-- Carrusel Resultados Termianles -->
+  <section class="container my-3">
+    <div class="row animalslist1">
+      <div class="col-lg-8">
+        <div class="carouselTerminales">
+        </div>
+      </div>
+    </div>
+    <div class="row animalslist2">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="carouselTerminalSlider carouselResults" style="color: white;"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Carrusel Resultados Termianles -->
+  <div class="lineAqua"></div>
+  <!-- Seccion 3 -->
+  <section class="container my-3 d-flex section3">
+    <div class="borderLine"></div>
+    <div class="item-70 row">
+      <div class="col-sm-12 text-center mb-3"><span class="resultsText">RESULTADOS</span></div>
+      <div class="col-sm-12 text-center "><span class="dateResultsFilter">FECHA</span>
+        <input type="date" class="dateInput" id="inputSearch" onchange="handlerTerminal(event);">
+      </div>
+      <div class="col-sm-4 itemsResultsDayTerminal"></div>
+    </div>
+    <div class="borderLine"></div>
+    <div class="lineAqua-responsive"></div>
+    <div class="item row d-flex" id="pronostico">
+      <article class="col-sm-12 pronostico text-center">
+        <p class="pronosticoTitle">PRONOSTICA</p>
+        <p class="pronosticoAnimalito">TU TERMINAL</p>
+        <p class="pronosticoSuerte">MUCHA SUERTE</p>
+      </article>
+      <div class="col-sm-12 pronosticosDivTerminal">
+        <img src="assets/img/circulo.png" class="img-fluid" alt="Pronostico">
+
+        <div class="btnLuck d-flex justify-content-center mb-5">
+          <button class="custom-btn btn-5" onclick="generateRandomNumber()">DAME SUERTE</button>
+        </div>
+
+        <p class="textWarning">
+          ATENCION ESTO ES SOLO UN PRONOSTICO. LA GRANJITA NO SE HACE RESPONSABLE DE LOS RESULTADOS PROPORCIONADOS. LA RULETA ES UN JUEGO 100% DE AZAR. VERIFICADA Y REGULADA POR LAS REGLAS DE ENVITE Y AZAR NACIONALES E INTERNACIONALES.
+        </p>
+      </div>
+    </div>
     <div class="borderLine"></div>
   </section>
   <div class="lineAqua"></div>

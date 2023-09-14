@@ -6,6 +6,7 @@ $( document ).ready(function() {
 });
 
 let baseUrl = 'https://webservice.premierpluss.com/loteries/';
+let baseUrlS3 = 'https://dryjjfcsfgp14.cloudfront.net/';
 //Funcion redirect url prod
 function changeLink(url){
     window.open(url, '_blank');
@@ -18,47 +19,97 @@ function ancla(element) {
     });
 }
 //Fetch de la api
-const getLotteries = () => {
-    return fetch(`${baseUrl}results3?since='${now}'&product=1`)
-    .then(response => response.json())
-    .then(data => {
-          let loterias = loteries;
-          //Crea listado completo para las loterias del dia.
-          for (let index = 0; index <= 11; index++) {
-              if(data[index]) loterias[index] = data[index];
-          }
-          let response = {
-            loterias: loterias,
-            data: data
-          };
-          return response;
-      }); 
+const getLotteries = async () => {
+    const response = await fetch(`${baseUrl}results3?since='${now}'&product=1`);
+    const data = await response.json();
+    let loterias = loteries;
+    //Crea listado completo para las loterias del dia.
+    for (let index = 0; index <= 112; index++) {
+        if (data[index]) loterias[index] = data[index];
+    }
+    let loteriesArr = {
+        loterias: loterias,
+        data: data
+    };
+    return loteriesArr;
 };
-//Mostrar animalitos ganadores
-let obtenerLoterias = () => {
-    //Call a la api
-    return getLotteries().then(data=>{
-        //En caso de no tener animalitos en el listado.
-        if(registro.length == 0){
-            document.querySelector(".carouselAnimales").innerHTML = "";
-            document.querySelector('.slick-track').innerHTML = "";
-            registro = data.data;
-            //muestra todos los animalitos en lo que va del dia.
-            printAllAnmilas(data.loterias);
-        //Si encuentra un cambio o una nueva loteria imprime animal individual.
-        } else if(registro.length !== data.data.length){
-            printLastAnimal(data.data[data.data.length -1]);
-            printLastAnimalSlider(data.data[data.data.length -1]);
-            registro = data.data;
-        }
-    });
+
+const getTerminales = async () => {
+    const response = await fetch(`${baseUrl}results3?since='${now}'&product=25`);
+    const data = await response.json();
+    let terminales = consTerminales;
+    //Crea listado completo para las loterias del dia.
+    for (let index = 0; index <= 112; index++) {
+        if (data[index]) terminales[index] = data[index];
+    }
+    let terminalsArr = {
+        terminales: terminales,
+        data: data
+    };
+    return terminalsArr;
+}
+let obtenerLoterias = async () => {
+    const data = await getLotteries();
+    if (registro.length == 0) {
+        document.querySelector(".carouselAnimales").innerHTML = "";
+        document.querySelector('.carouselAnimalsSlider .slick-track').innerHTML = "";
+        registro = data.data;
+        printAllAnmilas(data.loterias);
+    } else if (registro.length !== data.data.length) {
+        printLastAnimal(data.data[data.data.length - 1]);
+        printLastAnimalSlider(data.data[data.data.length - 1]);
+        registro = data.data;
+    }
+};
+
+let obtenerTerminales = async () => {
+    const data = await getTerminales();
+    if (registro_1.length == 0) {
+        document.querySelector(".carouselTerminales").innerHTML = "";
+        document.querySelector('.carouselTerminalSlider .slick-track').innerHTML = "";
+        registro_1 = data.data;
+        printAllTerminales(data.terminales);
+    } else if (registro_1.length !== data.data.length) {
+        printLastTerminal(data.data[data.data.length - 1]);
+        printLastTerminalSlider(data.data[data.data.length - 1]);
+        registro_1 = data.data;
+    }
 }; 
-//Reemplazar e imprimir ultimo resultado en el slider
 let printLastAnimalSlider = (data) => {
+    let alarm = document.querySelector('.alarmImg');
+    let DomLot = document.querySelectorAll('.carouselAnimalsSlider .slick-track')[0].children;
+    var audioAlarma = new Audio(`https://bucket-s3-images.s3.us-east-1.amazonaws.com/ruleta.mp3`);
+    let horarioLott = data.lottery.name.slice(-8);
+    var audio;
+    var cod;
+    for (const element in DomLot) {
+        if(DomLot[element].innerHTML == `<img loading="lazy" src="assets/img/circulo.png" class="img-fluid img-animate-no-results"><span class="mt-3 mb-3">${horarioLott}</span>`){
+            let horarioLott = data.lottery.name.slice(-8);
+            let codAnimal = data.result.split("-",1)[0];
+            alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
+            alarm.classList.add("test")
+            audioAlarma.play();
+            setTimeout(() => {
+                codAnimal = data.result.split("-",1)[0];
+                cod = codAnimal;
+                alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';
+                alarm.classList.remove("test");
+                DomLot[element].innerHTML =  `<img loading="lazy" src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+                <span class="mt-3 mb-3">${horarioLott}</span>`;
+                audio = new Audio(`assets/sounds/${cod}.mp3`);
+                audio.play(); 
+            }, 11000);
+            break;
+        }
+    }
+}
+
+
+let printLastTerminalSlider = (data) => {
     //Encuentra los nodos del DOM de todas las loterias
     let alarm = document.querySelector('.alarmImg');
-    let DomLot = document.querySelectorAll('.slick-track')[0].children;
-    var audioAlarma = new Audio(`assets/sounds/Alarma3.mp3`);
+    let DomLot = document.querySelectorAll('.carouselTerminalSlider .slick-track')[0].children;
+    var audioAlarma = new Audio(`https://bucket-s3-images.s3.us-east-1.amazonaws.com/ruleta.mp3`);
     let horarioLott = data.lottery.name.slice(-8);
     var audio;
     var cod;
@@ -82,7 +133,7 @@ let printLastAnimalSlider = (data) => {
             //console.log(cod);
             alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';
             alarm.classList.remove("test");
-            DomLot[element].innerHTML =  `<img loading="lazy" src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+            DomLot[element].innerHTML =  `<img loading="lazy" src="${baseUrlS3}${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
             <span class="mt-3 mb-3">${horarioLott}</span>`;
             audio = new Audio(`assets/sounds/${cod}.mp3`);
             audio.play(); 
@@ -94,37 +145,8 @@ let printLastAnimalSlider = (data) => {
 
 }
 
-//funcion de animacion alarma
-/*
-let alarmAnimate = () => {
-    let alarm = document.querySelector('.alarmImg');
-    alarm.classList.add('alarmAnimate');
-    //console.log('hola');
-    alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
-    setTimeout(() => {
-        //console.log('hola2');
-        alarm.src = "assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png";
-        var audio = new Audio(`assets/sounds/Alarma.mp3`);
-        audio.play();
-    }, 60000);
-}*/
-/*
-let alarmaAnimate = new Promise((resolve, reject) => {
-    let alarm = document.querySelector('.alarmImg');
-    //alarm.classList.add('alarmAnimate');
-    //console.log('hola');
-    alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
-    setTimeout(() => {
-        //console.log('hola2');
-        alarm.src = "assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png";  
-    }, 60000);
-    resolve('termina Alarma');
-});*/
-
 //Reemplazar e imprimir ultimo resultado 
 let printLastAnimal = (data) => {
-    //Encuentra los nodos del DOM de todas las loterias
-    //console.log(data, 'data');
     let alarm = document.querySelector('.alarmImg');
     let DomLot = document.querySelectorAll('.carouselAnimales')[0].children;
     var audioAlarma = new Audio(`assets/sounds/Alarma2.mp3`);
@@ -134,30 +156,37 @@ let printLastAnimal = (data) => {
     var codAnimal;
     for (const element in DomLot) {
         if(DomLot[element].innerHTML == `<img loading="lazy" src="assets/img/circulo.png" class="img-fluid img-animate-no-results"><span class="mt-3 mb-3">${horarioLott}</span>`){
-            
-        //alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
-           // for(let i = 0; i > 3; i++){
-               // audioAlarma.play();
-          //  }
             setTimeout(() => {
-                 //test promesa
-            //console.log('entramos al timeout');
             codAnimal = data.result.split("-",1)[0];
-            //playAudio(codAnimal);
-            //console.log(codAnimal, 'codigo animal');
             cod = codAnimal;
-            //console.log(cod);
-           /* audio = new Audio(`assets/sounds/${cod}.mp3`);
-            audio.play(); */
             }, 60000);
             
             DomLot[element].innerHTML =  `<img loading="lazy" src="assets/img/animalitos/${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
             <span class="mt-3 mb-3">${horarioLott}</span>`;
             break;
         }
-        ////console.log(cod);
-        /*var audio = new Audio(`assets/sounds/${cod}.mp3`);
-        audio.play();*/
+    }
+
+}
+
+let printLastTerminal = (data) => {
+    let alarm = document.querySelector('.alarmImg');
+    let DomLot = document.querySelectorAll('.carouselTerminales')[0].children;
+    let horarioLott = data.lottery.name.slice(-8);
+    var audio;
+    var cod;
+    var codAnimal;
+    for (const element in DomLot) {
+        if(DomLot[element].innerHTML == `<img loading="lazy" src="assets/img/circulo.png" class="img-fluid img-animate-no-results"><span class="mt-3 mb-3">${horarioLott}</span>`){
+            setTimeout(() => {
+            codAnimal = data.result.split("-",1)[0];
+            cod = codAnimal;
+            }, 60000);
+            
+            DomLot[element].innerHTML =  `<img loading="lazy" src="${baseUrlS3}${data.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+            <span class="mt-3 mb-3">${horarioLott}</span>`;
+            break;
+        }
     }
 
 }
@@ -178,13 +207,11 @@ function playAlertSound(url){
         audio.src = url
       });
 }
-//Imprimir todos los resultados/*
-var condition = true;
 let printAllAnmilas = (data) => {
     document.querySelector(".carouselAnimales").innerHTML = "";
-    document.querySelector('.slick-track').innerHTML = "";
+    document.querySelector('.carouselAnimalsSlider .slick-track').innerHTML = "";
     let alarm = document.querySelector('.alarmImg');
-    var audioAlarma = new Audio(`assets/sounds/Alarma3.mp3`);
+    var audioAlarma = new Audio(`https://bucket-s3-images.s3.us-east-1.amazonaws.com/ruleta.mp3`);
     var audio;
     var primerAnimal = true;
     //console.log(data, 'data');
@@ -201,7 +228,7 @@ let printAllAnmilas = (data) => {
                 //console.log('tiene una loteria por delante');
                 alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
                 alarm.classList.add("test")
-                playAlertSound(`assets/sounds/Alarma3.mp3`)
+                playAlertSound(`https://bucket-s3-images.s3.us-east-1.amazonaws.com/ruleta.mp3`)
                 .then(function() {
                 // Automatic playback started!
                 alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';
@@ -228,20 +255,6 @@ let printAllAnmilas = (data) => {
                 //document.querySelector(".carouselAnimales").innerHTML += variable;
                 $('.carouselAnimalsSlider').slick('slickAdd',variable);
             }
-            /*playAlertSound(`assets/sounds/Alarma3.mp3`)
-                .then(function() {
-                // Automatic playback started!
-                alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';   
-                //console.log('termina de sonar');
-                template = `<img loading="lazy" src="assets/img/animalitos/${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
-                <span>${horarioLott}</span>`;
-                let variable = `<div class='itemResults'>${template}</div>`;
-                $('.carouselAnimalsSlider').slick('slickAdd',variable, 0 ,  'addBefore');
-                }).catch(function(error) {
-                // Automatic playback failed.
-                // Show a UI element to let the user manually start playback.
-                //console.log('error');
-                })*/
         }else if(element.result !== '' && element.lottery.id > 2 ) {
             //alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
             //audio = new Audio(`assets/sounds/${codAnimal}.mp3`); 
@@ -260,6 +273,46 @@ let printAllAnmilas = (data) => {
             $('.carouselAnimalsSlider').slick('slickAdd',variable);
         }
     });
+    
+}
+
+
+let printAllTerminales = (data) => {
+    document.querySelector(".carouselTerminales").innerHTML = "";
+    document.querySelector('.carouselTerminalSlider .slick-track').innerHTML = "";
+    let alarm = document.querySelector('.alarmImg');
+    var audio;
+    data.forEach(element => {
+        let horarioLott = element.lottery.name.slice(-8);
+        let template = `<img loading="lazy" src="assets/img/circulo.png" class="img-fluid img-animate-no-results"><span class="mt-3 mb-3">${horarioLott}</span>`;
+        let codAnimal = element.result;
+        if(element.lottery.id == 240 && element.result !== '') {
+            if(data[1].result == '' || data[1].result == undefined){
+                playAlertSound(`https://bucket-s3-images.s3.us-east-1.amazonaws.com/ruleta.mp3`).then(function() {
+                    alarm.classList.remove("test");  
+                    template = `<img loading="lazy" src="${baseUrlS3}${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+                    <span>${horarioLott}</span>`;
+                    let variable = `<div class='itemResults'>${template}</div>`;
+                    $('.carouselTerminalSlider').slick('slickAdd',variable, 0 ,  'addBefore');
+                }).catch(function(error) {
+                    console.error('printAllTerminales', error)
+                })
+            }else if(data[1].result !== '' ){
+                template = `<img loading="lazy" src="${baseUrlS3}${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+                <span class="mt-3 mb-3">${horarioLott}</span>`;
+                let variable = `<div class='itemResults'>${template}</div>`;
+                $('.carouselTerminalSlider').slick('slickAdd',variable);
+            }
+        }else if(element.result !== '' && element.lottery.id > 240 ) {
+            template = `<img loading="lazy" src="${baseUrlS3}${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
+                <span class="mt-3 mb-3">${horarioLott}</span>`;
+            let variable = `<div class='itemResults'>${template}</div>`;
+            $('.carouselTerminalSlider').slick('slickAdd',variable);
+        }else if(element.result == '' ){
+            let variable = `<div class='itemResults'>${template}</div>`;
+            $('.carouselTerminalSlider').slick('slickAdd',variable);
+        }
+    });
 
     if(audio){
         audio.play();
@@ -271,30 +324,50 @@ function startShowingMessage() {
     setInterval(async () => {
         
         obtenerLoterias();
+        obtenerTerminales();
     }, 60000)
   }
 //DAtapicker onChange
-function handler(e){
+async function handler(e){
 
     let url = `${baseUrl}results3?since='${now}'&product=1`;
 
     if(typeof(e) !== 'string') {
         url = `${baseUrl}results3?since='${e.target.value}'&product=1`;
     }
-    return fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        for (let index = 0; index <= 10; index++) {
-            if(data[index] == undefined) data.push({
-                result: '',
-                lottery: {
-                    name: fomartTimeShow(index + 9),                    
-                }
-            })
-        }
-        printAnimalsDate(data);
-        url = ``;
-    }); 
+    const response = await fetch(url);
+    const data = await response.json();
+    for (let index = 0; index <= 11; index++) {
+        if (data[index] == undefined) data.push({
+            result: '',
+            lottery: {
+                name: fomartTimeShow(index + 8),
+            }
+        });
+    }
+    printAnimalsDate(data);
+    url = ``; 
+}
+
+async function handlerTerminal(e){
+
+    let url = `${baseUrl}results3?since='${now}'&product=25`;
+
+    if(typeof(e) !== 'string') {
+        url = `${baseUrl}results3?since='${e.target.value}'&product=25`;
+    }
+    const response = await fetch(url);
+    const data = await response.json();
+    for (let index = 0; index <= 11; index++) {
+        if (data[index] == undefined) data.push({
+            result: '',
+            lottery: {
+                name: fomartTimeShow(index + 8),
+            }
+        });
+    }
+    printTerminalsDate(data);
+    url = ``; 
 }
 //Format hour 12h w AM/PM
 function fomartTimeShow(h_24) {
@@ -318,11 +391,27 @@ function printAnimalsDate(data){
         document.querySelector(".itemsResultsDay").innerHTML += variable;
     });
 }
+
+function printTerminalsDate(data){
+    
+    document.querySelector(".itemsResultsDayTerminal").innerHTML = "";
+    data.forEach(element => {
+        let horarioLott = element.lottery.name.slice(-8);
+        let template = `<img loading="lazy" src="assets/img/circulo.png" class="img-fluid img-animate-no-resultsD"><span>${horarioLott}</span>`;
+        let codAnimal = element.result.split("-",1)[0];
+        if(element.result !== '' ) 
+            template = `<img loading="lazy" src="${baseUrlS3}${element.result}.png" class='img-fluidAnimals'/>
+            <span>${horarioLott}</span>`;
+        
+        let variable = `<div class='itemResultsDTerminal'>${template}</div>`;
+        document.querySelector(".itemsResultsDayTerminal").innerHTML += variable;
+    });
+}
 //recorrer nombres 
 function getNameFiles(){
     const aleatorio = fileNames[Math.floor(Math.random() * fileNames.length)];
     printRandomAnimal(aleatorio);
-    }
+}
 
 let printRandomAnimal = (animalName) => {
     let divRandomAnimal = document.querySelector('.pronosticosDiv');
@@ -332,17 +421,35 @@ let printRandomAnimal = (animalName) => {
     randomAnimalDOM.classList.add('pronosticoImgAnimal','img-animate');
     divRandomAnimal.replaceChild(randomAnimalDOM, ElementoOriginal);
 }
+
+function generateRandomNumber() {
+    var randomNumber = Math.floor(Math.random() * 100);
+    const randomNumber_1 = (randomNumber == 0 || randomNumber < 10) ? '0' + randomNumber : randomNumber;
+    printRandomTerminal(randomNumber_1)
+}
+
+let printRandomTerminal = (terminalName) => {
+    let divRandomAnimal = document.querySelector('.pronosticosDivTerminal');
+    let ElementoOriginal = document.querySelectorAll('.pronosticosDivTerminal')[0].childNodes[1];
+    let randomAnimalDOM = document.createElement('img');
+    randomAnimalDOM.setAttribute('src', `${baseUrlS3}${terminalName}.png`);
+    randomAnimalDOM.classList.add('pronosticoImgAnimal','img-animate');
+    divRandomAnimal.replaceChild(randomAnimalDOM, ElementoOriginal);
+}
 let now = new Date();
 now = now.toISOString().substring(0,10);
 let registro = [];
+let registro_1 = [];
+
 document.querySelector('.dateInput').setAttribute("max", now);
+
 const loteries = [
     {
         "result": "",
         "lottery": {
             "id": 1,
-            "name": "LA GRANJITA  9:00 AM",
-            "hour": "2022-02-11T09:00:00-04:00",
+            "name": "LA GRANJITA  08:00 AM",
+            "hour": "2022-02-11T08:02:00-04:00",
             "type": "ANIMALES"
         },
         "product": {
@@ -359,8 +466,8 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 2,
-            "name": "LA GRANJITA  10:00 AM",
-            "hour": "2022-02-11T10:00:00-04:00",
+            "name": "LA GRANJITA  09:00 AM",
+            "hour": "2022-02-11T09:02:00-04:00",
             "type": "ANIMALES"
         },
         "product": {
@@ -377,8 +484,8 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 3,
-            "name": "LA GRANJITA  11:00 AM",
-            "hour": "2022-02-11T11:00:00-04:00",
+            "name": "LA GRANJITA  10:00 AM",
+            "hour": "2022-02-11T10:02:00-04:00",
             "type": "ANIMALES"
         },
         "product": {
@@ -395,8 +502,8 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 4,
-            "name": "LA GRANJITA  12:00 PM",
-            "hour": "2022-02-11T12:00:00-04:00",
+            "name": "LA GRANJITA  11:00 AM",
+            "hour": "2022-02-11T11:02:00-04:00",
             "type": "ANIMALES"
         },
         "product": {
@@ -413,8 +520,8 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 5,
-            "name": "LA GRANJITA  1:00 PM",
-            "hour": "2022-02-11T13:00:00-04:00",
+            "name": "LA GRANJITA  12:00 PM",
+            "hour": "2022-02-11T12:02:00-04:00",
             "type": "ANIMALES"
         },
         "product": {
@@ -431,8 +538,8 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 6,
-            "name": "LA GRANJITA  2:00 PM",
-            "hour": "2022-02-11T14:00:00-04:00",
+            "name": "LA GRANJITA  1:00 PM",
+            "hour": "2022-02-11T13:02:00-04:00",
             "type": "ANIMALES"
         },
         "product": {
@@ -449,8 +556,8 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 7,
-            "name": "LA GRANJITA  3:00 PM",
-            "hour": "2022-02-11T15:00:00-04:00",
+            "name": "LA GRANJITA  2:00 PM",
+            "hour": "2022-02-11T14:02:00-04:00",
             "type": "ANIMALES"
         },
         "product": {
@@ -467,8 +574,8 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 8,
-            "name": "LA GRANJITA  4:00 PM",
-            "hour": "2022-02-11T16:00:00-04:00",
+            "name": "LA GRANJITA  3:00 PM",
+            "hour": "2022-02-11T15:02:00-04:00",
             "type": "ANIMALES"
         },
         "product": {
@@ -485,8 +592,8 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 9,
-            "name": "LA GRANJITA  5:00 PM",
-            "hour": "2022-02-11T17:00:00-04:00",
+            "name": "LA GRANJITA  4:00 PM",
+            "hour": "2022-02-11T16:02:00-04:00",
             "type": "ANIMALES"
         },
         "product": {
@@ -503,8 +610,8 @@ const loteries = [
         "result": "",
         "lottery": {
             "id": 10,
-            "name": "LA GRANJITA  6:00 PM",
-            "hour": "2022-02-11T18:00:00-04:00",
+            "name": "LA GRANJITA  5:00 PM",
+            "hour": "2022-02-11T17:02:00-04:00",
             "type": "ANIMALES"
         },
         "product": {
@@ -520,9 +627,9 @@ const loteries = [
     {
         "result": "",
         "lottery": {
-            "id":11,
-            "name": "LA GRANJITA  7:00 PM",
-            "hour": "2022-02-11T19:00:00-04:00",
+            "id": 11,
+            "name": "LA GRANJITA  6:00 PM",
+            "hour": "2022-02-11T18:02:00-04:00",
             "type": "ANIMALES"
         },
         "product": {
@@ -534,239 +641,281 @@ const loteries = [
             "name": "LA GRANJITA"
         },
         "puesto": 11,
+    },
+    {
+        "result": "",
+        "lottery": {
+            "id":12,
+            "name": "LA GRANJITA  7:00 PM",
+            "hour": "2022-02-11T19:02:00-04:00",
+            "type": "ANIMALES"
+        },
+        "product": {
+            "id": 1,
+            "name": "LA GRANJITA"
+        },
+        "brand": {
+            "id": 2,
+            "name": "LA GRANJITA"
+        },
+        "puesto": 12,
     }
 ];
-const loteries2 = [
+
+const consTerminales = [
     {
         "result": "",
         "lottery": {
-            "id": 2,
-            "name": "LA GRANJITA  9:00 AM",
-            "hour": "2022-02-11T09:00:00-04:00",
-            "type": "ANIMALES"
+            "id": 240,
+            "name": "TERMINAL LA GRANJITA 08:00 AM",
+            "hour": "2023-08-02T08:00:00-04:00",
+            "type": "TERMINALES"
         },
         "product": {
-            "id": 1,
-            "name": "LA GRANJITA"
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
         },
         "brand": {
-            "id": 2,
-            "name": "LA GRANJITA"
+            "id": 0,
+            "name": 0
         }
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
-            "name": "LA GRANJITA  10:00 AM",
-            "hour": "2022-02-11T10:00:00-04:00",
-            "type": "ANIMALES"
+            "id": 241,
+            "name": "TERMINAL LA GRANJITA 09:00 AM",
+            "hour": "2023-08-02T09:00:00-04:00",
+            "type": "TERMINALES"
         },
         "product": {
-            "id": 1,
-            "name": "LA GRANJITA"
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
         },
         "brand": {
-            "id": 2,
-            "name": "LA GRANJITA"
+            "id": 0,
+            "name": 0
         }
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
-            "name": "LA GRANJITA  11:00 AM",
-            "hour": "2022-02-11T11:00:00-04:00",
-            "type": "ANIMALES"
+            "id": 242,
+            "name": "TERMINAL LA GRANJITA 10:00 AM",
+            "hour": "2023-08-02T10:00:00-04:00",
+            "type": "TERMINALES"
         },
         "product": {
-            "id": 1,
-            "name": "LA GRANJITA"
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
         },
         "brand": {
-            "id": 2,
-            "name": "LA GRANJITA"
+            "id": 0,
+            "name": 0
         }
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
-            "name": "LA GRANJITA  12:00 PM",
-            "hour": "2022-02-11T12:00:00-04:00",
-            "type": "ANIMALES"
+            "id": 243,
+            "name": "TERMINAL LA GRANJITA 11:00 AM",
+            "hour": "2023-08-02T11:00:00-04:00",
+            "type": "TERMINALES"
         },
         "product": {
-            "id": 1,
-            "name": "LA GRANJITA"
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
         },
         "brand": {
-            "id": 2,
-            "name": "LA GRANJITA"
+            "id": 0,
+            "name": 0
         }
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
-            "name": "LA GRANJITA  01:00 PM",
-            "hour": "2022-02-11T13:00:00-04:00",
-            "type": "ANIMALES"
+            "id": 244,
+            "name": "TERMINAL LA GRANJITA 12:00 PM",
+            "hour": "2023-08-02T12:00:00-04:00",
+            "type": "TERMINALES"
         },
         "product": {
-            "id": 1,
-            "name": "LA GRANJITA"
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
         },
         "brand": {
-            "id": 2,
-            "name": "LA GRANJITA"
+            "id": 0,
+            "name": 0
         }
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
-            "name": "LA GRANJITA  02:00 PM",
-            "hour": "2022-02-11T14:00:00-04:00",
-            "type": "ANIMALES"
+            "id": 245,
+            "name": "TERMINAL LA GRANJITA 01:00 PM",
+            "hour": "2023-08-02T13:00:00-04:00",
+            "type": "TERMINALES"
         },
         "product": {
-            "id": 1,
-            "name": "LA GRANJITA"
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
         },
         "brand": {
-            "id": 2,
-            "name": "LA GRANJITA"
+            "id": 0,
+            "name": 0
         }
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
-            "name": "LA GRANJITA  03:00 PM",
-            "hour": "2022-02-11T15:00:00-04:00",
-            "type": "ANIMALES"
+            "id": 246,
+            "name": "TERMINAL LA GRANJITA 02:00 PM",
+            "hour": "2023-08-02T14:00:00-04:00",
+            "type": "TERMINALES"
         },
         "product": {
-            "id": 1,
-            "name": "LA GRANJITA"
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
         },
         "brand": {
-            "id": 2,
-            "name": "LA GRANJITA"
+            "id": 0,
+            "name": 0
         }
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
-            "name": "LA GRANJITA  04:00 PM",
-            "hour": "2022-02-11T16:00:00-04:00",
-            "type": "ANIMALES"
+            "id": 247,
+            "name": "TERMINAL LA GRANJITA 03:00 PM",
+            "hour": "2023-08-02T15:00:00-04:00",
+            "type": "TERMINALES"
         },
         "product": {
-            "id": 1,
-            "name": "LA GRANJITA"
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
         },
         "brand": {
-            "id": 2,
-            "name": "LA GRANJITA"
+            "id": 0,
+            "name": 0
         }
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
-            "name": "LA GRANJITA  05:00 PM",
-            "hour": "2022-02-11T17:00:00-04:00",
-            "type": "ANIMALES"
+            "id": 248,
+            "name": "TERMINAL LA GRANJITA 04:00 PM",
+            "hour": "2023-08-02T16:00:00-04:00",
+            "type": "TERMINALES"
         },
         "product": {
-            "id": 1,
-            "name": "LA GRANJITA"
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
         },
         "brand": {
-            "id": 2,
-            "name": "LA GRANJITA"
+            "id": 0,
+            "name": 0
         }
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
-            "name": "LA GRANJITA  06:00 PM",
-            "hour": "2022-02-11T18:00:00-04:00",
-            "type": "ANIMALES"
+            "id": 249,
+            "name": "TERMINAL LA GRANJITA 05:00 PM",
+            "hour": "2023-08-02T17:00:00-04:00",
+            "type": "TERMINALES"
         },
         "product": {
-            "id": 1,
-            "name": "LA GRANJITA"
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
         },
         "brand": {
-            "id": 2,
-            "name": "LA GRANJITA"
+            "id": 0,
+            "name": 0
         }
     },
     {
         "result": "",
         "lottery": {
-            "id": 2,
-            "name": "LA GRANJITA  07:00 PM",
-            "hour": "2022-02-11T19:00:00-04:00",
-            "type": "ANIMALES"
+            "id": 250,
+            "name": "TERMINAL LA GRANJITA 06:00 PM",
+            "hour": "2023-08-02T18:00:00-04:00",
+            "type": "TERMINALES"
         },
         "product": {
-            "id": 1,
-            "name": "LA GRANJITA"
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
         },
         "brand": {
-            "id": 2,
-            "name": "LA GRANJITA"
+            "id": 0,
+            "name": 0
+        }
+    },
+    {
+        "result": "",
+        "lottery": {
+            "id": 251,
+            "name": "TERMINAL LA GRANJITA 07:00 PM",
+            "hour": "2023-08-02T19:00:00-04:00",
+            "type": "TERMINALES"
+        },
+        "product": {
+            "id": 25,
+            "name": "TERMINAL LA GRANJITA"
+        },
+        "brand": {
+            "id": 0,
+            "name": 0
         }
     }
 ];
+
 let  fileNames = 
-['0-DELFIN.png',
-'00-BALLENA.png',
-'1-CARNERO.png',
-'10-TIGRE.png',
-'11-GATO.png',
-'12-CABALLO.png',
-'13-MONO.png',
-'14-PALOMA.png',
-'15-ZORRO.png',
-'16-OSO.png',
-'17-PAVO.png',
-'18-BURRO.png',
-'19-CHIVO.png',
-'2-TORO.png',
-'20-COCHINO.png',
-'21-GALLO.png',
-'22-CAMELLO.png',
-'23-CEBRA.png',
-'24-IGUANA.png',
-'25-GALLINA.png',
-'26-VACA.png',
-'27-PERRO.png',
-'28-ZAMURO.png',
-'29-ELEFANTE.png',
-'3-CIEMPIES.png',
-'30-CAIMAN.png',
-'31-LAPA.png',
-'32-ARDILLA.png',
-'33-PESCADO.png',
-'34-VENADO.png',
-'35-JIRAFA.png',
-'36-CULEBRA.png',
-'4-ALACRAN.png',
-'5-LEON.png',
-'6-RANA.png',
-'7-PERICO.png',
-'8-RATON.png',
-'9-AGUILA.png'];
+[
+    '0-DELFIN.png',
+    '00-BALLENA.png',
+    '1-CARNERO.png',
+    '10-TIGRE.png',
+    '11-GATO.png',
+    '12-CABALLO.png',
+    '13-MONO.png',
+    '14-PALOMA.png',
+    '15-ZORRO.png',
+    '16-OSO.png',
+    '17-PAVO.png',
+    '18-BURRO.png',
+    '19-CHIVO.png',
+    '2-TORO.png',
+    '20-COCHINO.png',
+    '21-GALLO.png',
+    '22-CAMELLO.png',
+    '23-CEBRA.png',
+    '24-IGUANA.png',
+    '25-GALLINA.png',
+    '26-VACA.png',
+    '27-PERRO.png',
+    '28-ZAMURO.png',
+    '29-ELEFANTE.png',
+    '3-CIEMPIES.png',
+    '30-CAIMAN.png',
+    '31-LAPA.png',
+    '32-ARDILLA.png',
+    '33-PESCADO.png',
+    '34-VENADO.png',
+    '35-JIRAFA.png',
+    '36-CULEBRA.png',
+    '4-ALACRAN.png',
+    '5-LEON.png',
+    '6-RANA.png',
+    '7-PERICO.png',
+    '8-RATON.png',
+    '9-AGUILA.png'
+];
+
 obtenerLoterias();
+obtenerTerminales();
 startShowingMessage();
 handler(now);
+handlerTerminal(now);
 
 
 function imprimir(url) {

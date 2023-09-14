@@ -8,14 +8,6 @@ html,body{
     overflow-x: hidden;
     background-size: cover;
 }
-/* html,body{
-	background: url(../img/bkFull.png) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-    overflow-x: hidden;
-} */
 .lineAqua{
 	width: 100%;
 	border: solid 1px rgb(255 255 1);
@@ -104,7 +96,7 @@ span.menuItem3{
 .itemResults > span{
     font-weight: 900;
 }
-.itemResultsD {
+.itemResultsD, .itemResultsDTerminal {
     display: flex;
     flex-direction: column;
     flex: 0 0 33.33%;
@@ -113,6 +105,7 @@ span.menuItem3{
     align-content: center;
     margin: 15px 0;
 }
+
   .img-animate {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -174,6 +167,18 @@ span.menuItem3{
     align-content: center;
 }
 .itemsResultsDay {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 900;
+    margin: 12px 0px;
+    padding: 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.itemsResultsDayTerminal {
     color: white;
     font-size: 18px;
     text-align: center;
@@ -247,7 +252,7 @@ p.pronosticoSuerte {
     height: 300px;
     border-radius: 50%;
 }
-.pronosticosDiv{
+.pronosticosDiv, .pronosticosDivTerminal{
 	display: flex;
     justify-content: space-between;
     align-items: center;

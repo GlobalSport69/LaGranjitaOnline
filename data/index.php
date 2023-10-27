@@ -6,46 +6,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="assets/img/favicon/manifest.json">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/img/favicon/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
 
   <!-- Bootstrap CSS -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
   <!-- Slick CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/css/slick.css" />
 
   <!-- Bootstrap DatePicker CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main CSS -->
-  <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/assets/css/main.css" type="text/css">
 
   <!-- Jquery -->
-  <script src="assets/js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <!-- Bootstrap JS -->
-  <script src="assets/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <!-- fontawesome -->
   <script src="https://kit.fontawesome.com/cb9a6efe1a.js" crossorigin="anonymous"></script>
   <!-- Slick JS -->
-  <script type="text/javascript" src="assets/js/slick.min.js"></script>
+  <script type="text/javascript" src="/assets/js/slick.min.js"></script>
 
   <!-- Bootstrap DatePicker JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -53,8 +53,8 @@
 
   <!-- SCRIPTS -->
 
-  <script type="text/javascript" src="assets/js/fetchApi.js" defer></script>
-  <script type="text/javascript" src="assets/js/scripts.js"></script>
+  <script type="text/javascript" src="/assets/js/fetchApi.js" defer></script>
+  <script type="text/javascript" src="/assets/js/scripts.js"></script>
   <title> ..:: La Granjita Online ::.. </title>
 </head>
 <!--Un Comentario-->
@@ -88,7 +88,7 @@
         </div>
       </nav>
       <!---->
-      <div class="col-lg-3 img-menu"><img src="assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
+      <div class="col-lg-3 img-menu"><img src="/assets/img/logo.png" alt="Logo_Header" class="img-fluid"></div>
       <div class="col-lg-9 position-relative row p-0 mb-1 title-menu">
         <span class="slogan">El Hogar de los ANIMALITOS</span>
         <span class="alarmImg"></span>
@@ -131,7 +131,7 @@
         <p class="pronosticoSuerte">MUCHA SUERTE</p>
       </article>
       <div class="col-sm-12 pronosticosDiv">
-        <img src="assets/img/circulo.png" class="img-fluid" alt="Pronostico">
+        <img src="/assets/img/circulo.png" class="img-fluid" alt="Pronostico">
 
         <div class="btnLuck d-flex justify-content-center mb-5">
           <button class="custom-btn btn-5" onclick="getNameFiles()">DAME SUERTE</button>
@@ -187,7 +187,7 @@
         <p class="pronosticoSuerte">MUCHA SUERTE</p>
       </article>
       <div class="col-sm-12 pronosticosDivTerminal">
-        <img src="assets/img/circulo.png" class="img-fluid" alt="Pronostico">
+        <img src="/assets/img/circulo.png" class="img-fluid" alt="Pronostico">
 
         <div class="btnLuck d-flex justify-content-center mb-5">
           <button class="custom-btn btn-5" onclick="generateRandomNumber()">DAME SUERTE</button>
@@ -255,7 +255,7 @@
         </p>
         <p></p>
         <div class="text-rules">
-          <embed src="assets/doc/REGLAMENTO_LA_GRANJITA.pdf" style="width: 100%;height: 450px;" type="application/pdf">
+          <embed src="/assets/doc/REGLAMENTO_LA_GRANJITA.pdf" style="width: 100%;height: 450px;" type="application/pdf">
         </div> 
         <div class="rules-controls" style="color: white;">
           <div class="col-md-4 reglamento">
@@ -310,7 +310,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <img src="assets/img/logo.png" alt="" class="col-5">
+          <img src="/assets/img/logo.png" alt="" class="col-5">
           <h5 class="modal-title col-5" id="exampleModalLabel">Advertencia</h5>
         </div>
         <div class="modal-body">
@@ -332,9 +332,9 @@
           <p>Registro Nacional de Loteria. N°: 05-0-000016-2021</p>
         </div>
         <div class="footer d-flex justify-content-end col-md-7 col-sm-12">
-          <div class="imgFooter"><img src="assets/img/logo.png" alt="" class="img-fluid"></div>
-          <div class="imgFooter"><img src="assets/img/Logo_LoteriaDeMargarita_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
-          <div class="imgFooter"><img src="assets/img/Logo_Conalot_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
+          <div class="imgFooter"><img src="/assets/img/logo.png" alt="" class="img-fluid"></div>
+          <div class="imgFooter"><img src="/assets/img/Logo_LoteriaDeMargarita_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
+          <div class="imgFooter"><img src="/assets/img/Logo_Conalot_PieDePagina_LG_HD.png" alt="" class="img-fluid"></div>
         </div>
       </div>
     </section>

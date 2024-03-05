@@ -78,7 +78,7 @@ let obtenerTerminales = async () => {
 let printLastAnimalSlider = (data) => {
     let alarm = document.querySelector('.alarmImg');
     let DomLot = document.querySelectorAll('.carouselAnimalsSlider .slick-track')[0].children;
-    var audioAlarma = new Audio(`https://bucket-s3-images.s3.us-east-1.amazonaws.com/ruleta.mp3`);
+    var audioAlarma = new Audio(`${baseUrlS3}ruleta.mp3`);
     let horarioLott = data.lottery.name.slice(-8);
     var audio;
     var cod;
@@ -109,7 +109,7 @@ let printLastTerminalSlider = (data) => {
     //Encuentra los nodos del DOM de todas las loterias
     let alarm = document.querySelector('.alarmImg');
     let DomLot = document.querySelectorAll('.carouselTerminalSlider .slick-track')[0].children;
-    var audioAlarma = new Audio(`https://bucket-s3-images.s3.us-east-1.amazonaws.com/ruleta.mp3`);
+    var audioAlarma = new Audio(`${baseUrlS3}ruleta.mp3`);
     let horarioLott = data.lottery.name.slice(-8);
     var audio;
     var cod;
@@ -211,7 +211,7 @@ let printAllAnmilas = (data) => {
     document.querySelector(".carouselAnimales").innerHTML = "";
     document.querySelector('.carouselAnimalsSlider .slick-track').innerHTML = "";
     let alarm = document.querySelector('.alarmImg');
-    var audioAlarma = new Audio(`https://bucket-s3-images.s3.us-east-1.amazonaws.com/ruleta.mp3`);
+    var audioAlarma = new Audio(`${baseUrlS3}ruleta.mp3`);
     var audio;
     var primerAnimal = true;
     //console.log(data, 'data');
@@ -228,7 +228,7 @@ let printAllAnmilas = (data) => {
                 //console.log('tiene una loteria por delante');
                 alarm.src = 'assets/img/Alarma_ON_ResultadosDiarios_Carrusel_LG_HD.png';
                 alarm.classList.add("test")
-                playAlertSound(`https://bucket-s3-images.s3.us-east-1.amazonaws.com/ruleta.mp3`)
+                playAlertSound(`${baseUrlS3}ruleta.mp3`)
                 .then(function() {
                 // Automatic playback started!
                 alarm.src = 'assets/img/Alarma_OFF_ResultadosDiarios_Carrusel_LG_HD.png';
@@ -288,7 +288,7 @@ let printAllTerminales = (data) => {
         let codAnimal = element.result;
         if(element.lottery.id == 240 && element.result !== '') {
             if(data[1].result == '' || data[1].result == undefined){
-                playAlertSound(`https://bucket-s3-images.s3.us-east-1.amazonaws.com/ruleta.mp3`).then(function() {
+                playAlertSound(`${baseUrlS3}ruleta.mp3`).then(function() {
                     alarm.classList.remove("test");  
                     template = `<img loading="lazy" src="${baseUrlS3}${element.result}.png" onclick="playAudio('${codAnimal}')" class='img-fluid img-animate'/>
                     <span>${horarioLott}</span>`;
